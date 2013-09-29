@@ -48,7 +48,7 @@ Sitemap
 Die Sitemap für den Shop kurz nach Projektbeginn sah, wie nachfolgend gezeigt,
 aus.
 
-.. image:: images/sitemap1.png    :width: 200px
-    :align: center
+.. image:: images/sitemap1.png
     :width: 400px
+    :align: center
     :alt: Pencil Webshop Sitemap
