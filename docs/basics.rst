@@ -1,7 +1,7 @@
 .. 
 
-Basics
-======
+Grundlagen
+==========
 
 Produkte
 --------
