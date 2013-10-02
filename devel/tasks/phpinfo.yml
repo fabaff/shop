@@ -13,11 +13,11 @@
               state=present
               create=True
 
-- name: set permission for index.php file
+- name: set permission for phpinfo.php file
   file: path=/var/www/lighttpd/phpinfo.php
-        owner=root
-        group=root
-        mode=0775
+        owner=lighttpd
+        group=lighttpd
+        mode=0644
         state=file
 
 - name: add page content
