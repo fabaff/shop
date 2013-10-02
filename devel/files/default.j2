@@ -7,15 +7,16 @@ This file is licensed under BSD.
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Webshop | Webserver is up and running...</title>
+    <title>Webshop {{ company_name }} | Webserver is up and running...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Webshop">
-    <meta name="author" content="Fabian Affolter">
+    <meta name="author" content="{{ author_name }}">
 </head>
 <body>
     <center>
-    <p>This server is not hosting any content. It's just here to give you a target for reconnaissance tasks.</p>
-    <center><small>&copy; <a href="#">Pencil AG</a></small></center>
+    <h3>The web server is running on {{ ansible_distribution }} {{ ansible_distribution_version }}.</h3><br />
+    <p>This server is not hosting any content at the moment.</p>
+    <center><small>&copy; <a href="#">{{ company_name }}</a></small></center>
     </center>
 </body>
 </html>
