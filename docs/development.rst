@@ -49,14 +49,14 @@ Deployment der Seite von Bedeutung sein.
 
 Auf die Konfiguration von Ansible selber (Hinzufügen des Systems zu
 ``/etc/ansible/hosts`` und Kopieren des SSH-Schlüssel) wird an dieser Stelle
-nicht eingegangen (dies kann `hier`_ nachgelesen werden). Alle Playbooks
+nicht eingegangen, dies kann `hier`_ nachgelesen werden. Alle Playbooks
 befinden sich im Verzeichnis `devel`::
 
     $ sudo ansible-playbook setup.yml
 
 Der verwendete Gruppen-Name in ``/etc/ansible/hosts`` ist: **webshop**
 
-Virtuelle Maschine für den Webshop könnnen mit `short-virt`, einem
+Virtuelle Maschine für den Webshop könnnen mit `short-virt`_, einem
 einfachen bash-Skript, ohne Benutzerinteraktion erzeugt werden. Dies jetzt
 jedoch ein System mit installierten libvirt-Tools voraus.
 
