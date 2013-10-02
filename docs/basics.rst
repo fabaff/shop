@@ -110,3 +110,8 @@ Implementierung des Design, resp. Layout.
 - Produkte stehen im Mittelpunkt 
 - Reduziert auf das Wesentliche (Typographie, Farben, etc.)
 - Sinnvoller Einsatz von Whitespaces
+
+Statt das Rad neuzuerfinden, Implementation eines ausgereiften Front-end-
+Framework (`bootstrap`_) für das Layout, speziell in Bezug auf responsive Design.
+
+.. _bootstrap: http://getbootstrap.com/
