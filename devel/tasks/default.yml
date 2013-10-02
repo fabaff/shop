@@ -1,0 +1,13 @@
+# This playbook installs a default index.html page in the server's root.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install a default index.html file
+  template: src=files/default.j2 
+            dest=/var/www/lighttpd/index.html
+            owner=lighttpd
+            group=lighttpd
+            mode=0644

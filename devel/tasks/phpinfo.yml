@@ -1,0 +1,27 @@
+# This playbook install a simple file for displaying details about the PHP
+# installation.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create a new index.php file
+  lineinfile: dest=/var/www/lighttpd/phpinfo.php
+              regexp='^'
+              line=''
+              state=present
+              create=True
+
+- name: set permission for index.php file
+  file: path=/var/www/lighttpd/phpinfo.php
+        owner=root
+        group=root
+        mode=0775
+        state=file
+
+- name: add page content
+  lineinfile: dest=/var/www/lighttpd/phpinfo.php
+              regexp='^'
+              line='<?php\nphpinfo();\n?>'
+              state=present
