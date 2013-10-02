@@ -44,8 +44,8 @@ Konfigurationsmanagement
 Um reproduzierbare Umgebungen für die Entwicklung und Laufzeit zu haben, wird
 `Ansible`_ als Konfigurationsmanagement-Lösung eingesetzt. Alle Schritte der
 Installation sind automatisiert. Die Konfiguration unterscheidet nicht zwischen
-einer lokalen Installation und einer remote Installation. Dies hat jedoch beim
-Deployment der Seite eine Bedeutung.
+einer lokalen Installation und einer remote Installation. Dies wird jedoch beim
+Deployment der Seite von Bedeutung sein.
 
 Auf die Konfiguration von Ansible selber (Hinzufügen des Systems zu
 ``/etc/ansible/hosts`` und Kopieren des SSH-Schlüssel) wird an dieser Stelle
@@ -54,10 +54,15 @@ befinden sich im Verzeichnis `devel`::
 
     $ sudo ansible-playbook setup.yml
 
-Der verwendete Gruppen-Name ist: **webshop**
+Der verwendete Gruppen-Name in ``/etc/ansible/hosts`` ist: **webshop**
+
+Virtuelle Maschine für den Webshop könnnen mit `short-virt`, einem
+einfachen bash-Skript, ohne Benutzerinteraktion erzeugt werden. Dies jetzt
+jedoch ein System mit installierten libvirt-Tools voraus.
 
 .. _Ansible: https://github.com/ansible/ansible
 .. _hier: https://github.com/fabaff/fedora-ansible/blob/master/README.md
+.. _shop-virt: https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop/blob/master/devel/shop-virt
 
 Git-Respository
 ---------------
