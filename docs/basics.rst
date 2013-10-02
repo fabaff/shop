@@ -112,6 +112,7 @@ Implementierung des Design, resp. Layout.
 - Sinnvoller Einsatz von Whitespaces
 
 Statt das Rad neuzuerfinden, Implementation eines ausgereiften Front-end-
-Framework (`bootstrap`_) für das Layout, speziell in Bezug auf responsive Design.
+Framework (`bootstrap`_) für das Layout, speziell in Bezug auf responsive
+Design.
 
 .. _bootstrap: http://getbootstrap.com/
