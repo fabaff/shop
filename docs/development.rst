@@ -7,6 +7,15 @@ Dieser Abschnitt beschreibt die Konfiguration der Entwicklungs- und Laufzeit-
 Umgebung für den Webshop.
 
 
+Git-Respository
+---------------
+Alle projektrelevanten Unterlagen (Source code, Templates, Dokumentation, etc)
+befindet sich in einem öffentlichen `Git`_-Repository bei `Github`_.
+
+https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop 
+
+.. _Github: https://github.com
+.. _Git: http://git-scm.com/
 
 Dokumentation
 -------------
