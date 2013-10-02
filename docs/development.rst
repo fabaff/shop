@@ -2,10 +2,62 @@
 
 Development
 ===========
-
 Dieser Abschnitt beschreibt die Konfiguration der Entwicklungs- und Laufzeit-
 Umgebung für den Webshop.
 
+Web-Server
+----------
+Als Web-Server wird, anders als vorgeschlagen nicht `Apache`_, sondern
+`Lighttpd`_ benutzt. Die Gründe sind, dass Lighttpd einfachere Konfiguration
+und bessere Performance bietet. Lighttpd wird mit `FastCGI`_ betrieben.
+
+Der Web-Server-Pfad ist ``/var/www/lighttpd/`` und die SELinux-Konfiguration
+in den Standard-Einstellungen belassen.
+
+.. _Apache: http://apache.org/
+.. _Lighttpd: http://www.lighttpd.net/
+.. _FastCGI: http://www.fastcgi.com/drupal/
+
+Datenbank-Server
+----------------
+Im Hintergrund arbeitet eine `MySQL`_-Datenbank. Für eine vereinfachte
+Administration steht, neben den Kommandozeilen-Werkzeugen auch `phpMyAdmin`
+unter `/phpmyadmin/` auf dem Web-Server zur Verfügung. 
+
+.. _MySQL: http://www.mysql.com/
+.. _phpMyAdmin: http://www.phpmyadmin.net
+
+Versionen
+---------
+Der Webshop wird mit den nachfolgend aufgeführten Koponenten entwickelt und
+getestet. Andere Versionen werden nicht getestet, jedoch wird es wahrscheinlich
+möglich sein, diese zu verwenden, wenn auch mit Einschränkungen.
+
+- Betriebssystem: Fedora 19
+- Kernel: 3.11.1-200.fc19.x86_64
+- Lighttpd: 1.4.32
+- PHP: 5.5.4
+- MySQL: 5.5.33
+
+Konfigurationsmanagement
+------------------------
+Um reproduzierbare Umgebungen für die Entwicklung und Laufzeit zu haben, wird
+`Ansible`_ als Konfigurationsmanagement-Lösung eingesetzt. Alle Schritte der
+Installation sind automatisiert. Die Konfiguration unterscheidet nicht zwischen
+einer lokalen Installation und einer remote Installation. Dies hat jedoch beim
+Deployment der Seite eine Bedeutung.
+
+Auf die Konfiguration von Ansible selber (Hinzufügen des Systems zu
+``/etc/ansible/hosts`` und Kopieren des SSH-Schlüssel) wird an dieser Stelle
+nicht eingegangen (dies kann `hier`_ nachgelesen werden). Alle Playbooks
+befinden sich im Verzeichnis `devel`::
+
+    $ sudo ansible-playbook setup.yml
+
+Der verwendete Gruppen-Name ist: **webshop**
+
+.. _Ansible: https://github.com/ansible/ansible
+.. _hier: https://github.com/fabaff/fedora-ansible/blob/master/README.md
 
 Git-Respository
 ---------------
