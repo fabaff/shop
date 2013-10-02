@@ -25,8 +25,8 @@
 - name: enable fastcgi support
   template: src=files/lighttpd-fastcgi.j2 
             dest=/etc/lighttpd/conf.d/fastcgi.conf
-            owner=lighttpd
-            group=lighttpd
+            owner=root
+            group=root
             mode=0644
 
 - name: create directory for the socket
