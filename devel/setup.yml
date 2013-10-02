@@ -12,11 +12,12 @@
   user: root
   vars_files:
     - variables/sensitive.yml
+    - variables/common.yml
 
   tasks:
     - include: tasks/motd.yml  # Not needed, just for fun and to test ansible
     - include: tasks/lighttpd.yml
-    - include: tasks/mysql.yml
+#    - include: tasks/mysql.yml
     - include: tasks/default.yml  # A default index.html to test the web server
-    - include: tasks/phpinfo.yml  # Test for the PHP installation
-    - include: tasks/phpmyadmin.yml
+#    - include: tasks/phpinfo.yml  # Test for the PHP installation
+#    - include: tasks/phpmyadmin.yml
