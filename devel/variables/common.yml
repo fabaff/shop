@@ -1,0 +1,19 @@
+# This variables file contains common elements for re-use.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+# Year:
+year: 2013
+
+# Author(s):
+author_name: 'Fabian Affolter'
+
+# Company details:
+company_name: 'Pencil AG'
+company_street: 'Musterstrasse 1'
+company_zip: 3000
+company_city: Bern
+company_country: Schweiz
