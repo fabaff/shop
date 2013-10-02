@@ -1,0 +1,22 @@
+# This playbook contains tasks to create a test or runtime environment for a
+# PHP based webshop.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# Usage: sudo ansible-playbook setup.yml
+# 
+---
+- hosts: webshop
+  user: root
+  vars_files:
+    - variables/sensitive.yml
+
+  tasks:
+    - include: tasks/motd.yml  # Not needed, just for fun and to test ansible
+    - include: tasks/lighttpd.yml
+    - include: tasks/mysql.yml
+    - include: tasks/default.yml  # A default index.html to test the web server
+    - include: tasks/phpinfo.yml  # Test for the PHP installation
+    - include: tasks/phpmyadmin.yml
