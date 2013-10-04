@@ -5,6 +5,8 @@ Web shop Design
 
 Allgemeines
 -----------
+Die verwendete Firma und ihre Daten sind fiktiv. Es existiert keine Verbindung
+zu irgendwelchen Unternehmen mit ähnlichen oder gleichen Namen.
 
 Firmenname
 ^^^^^^^^^^
@@ -32,6 +34,8 @@ Domain.
 
 .. _Tango-Projekts: http://tango.freedesktop.org/
 
+.. _layout:
+
 Layout
 ------
 Das Layout gliedert sich in diverse Abschnitte. Die Inhalte der Elemente,
@@ -41,7 +45,7 @@ der Seite definiert.
 .. image:: images/prototyp1.png
     :width: 400px
     :align: center
-    :alt: alternate text
+    :alt: Prototyp für das Layout
 
 Sitemap
 -------
@@ -49,6 +53,6 @@ Die Sitemap für den Shop kurz nach Projektbeginn sah, wie nachfolgend gezeigt,
 aus.
 
 .. image:: images/sitemap1.png
-    :width: 400px
+    :width: 600px
     :align: center
     :alt: Pencil Webshop Sitemap
