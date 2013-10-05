@@ -11,6 +11,7 @@ Contents:
 
    basics
    webdesign
+   design
    development
 
 Indices and tables
