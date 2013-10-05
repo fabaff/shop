@@ -4,6 +4,8 @@
 Welcome to Shop's documentation!
 ================================
 
+This is the documentation of the genesi of a web shop.
+
 Contents:
 
 .. toctree::
