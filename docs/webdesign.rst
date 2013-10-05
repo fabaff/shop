@@ -3,18 +3,18 @@
 Web shop Design
 ===============
 
-Allgemeines
------------
-Die verwendete Firma und ihre Daten sind fiktiv. Es existiert keine Verbindung
-zu irgendwelchen Unternehmen mit ähnlichen oder gleichen Namen.
+General
+-------
+The used company and all data are notional. There is no exisiting connection 
+to any existing company mit the same or similar name.
 
-Firmenname
-^^^^^^^^^^
+Company name
+^^^^^^^^^^^^
 Der Firmenname ist: **Pencil AG**
 
-Anschrift
-^^^^^^^^^
-Die komplette Anschrift lautet::
+Address
+^^^^^^^
+The complete address of the company is ::
 
     Pencil AG
     Musterstrasse 1
@@ -32,15 +32,15 @@ Domain.
     :align: center
     :alt: Pencil AG Logo
 
-.. _Tango-Projekts: http://tango.freedesktop.org/
+.. _Tango project: http://tango.freedesktop.org/
 
 .. _layout:
 
 Layout
 ------
-Das Layout gliedert sich in diverse Abschnitte. Die Inhalte der Elemente,
-speziell des Hauptbereichs (Content), werden durch die spätere Verwendung
-der Seite definiert.
+The layout is splitted in different sections. The content of the elements, 
+especially of the main section (content), will be definied by the later usage
+of the page.
 
 .. image:: images/prototyp1.png
     :width: 400px
@@ -49,19 +49,17 @@ der Seite definiert.
 
 Sitemap
 -------
-Die Sitemap für den Shop kurz nach Projektbeginn sah, wie nachfolgend gezeigt,
-aus.
+The sitemap shows the clustering of the shop at the beginning of the project.
 
 .. image:: images/sitemap1.png
     :width: 600px
     :align: center
     :alt: Pencil Webshop Sitemap
 
-Haupt-Seite
------------
-
-Der erste Entwurf der Hauptseite basiert auf dem Prototyp, gezeigt in Abschnitt
-:ref:`layout`, ohne Format- und Stil-Informationen. ::
+Main page
+---------
+The first draft of the main page is based on the prototype shown in section
+:ref:`layout`, without any format- und style informationen. ::
 
     <!DOCTYPE html>
     <html lang="en">
@@ -117,12 +115,12 @@ Der erste Entwurf der Hauptseite basiert auf dem Prototyp, gezeigt in Abschnitt
         </body>
     </html>
 
-In einem Browser dargestellt, sieht die Seite wie in nachfolgend gezeigten 
-:ref:`Screenshot <main1>` aus.
+Loaded in a browser the initial draft of the main page looks like in the
+following :ref:`screenshot <main1>`.
 
 .. _main1:
 
 .. image:: images/main1.png
     :width: 400px
     :align: center
-    :alt: Screenshot der Seite in Midori
+    :alt: Screenshot of the page in Midori
