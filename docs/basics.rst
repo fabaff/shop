@@ -22,7 +22,8 @@ Variants or options:
 
 Product overview
 ^^^^^^^^^^^^^^^^
-
+(The product names are in German because the main language of the shop will
+not be English)
 +------------------------+------------+----------+----------+------------+
 | Type                   | Variant    | Color    | Hardness | Price CHF  |
 +========================+============+==========+==========+============+
@@ -69,10 +70,10 @@ Product overview
 
 Personas
 --------
-Die nachfolgenden Personas sollen mit dem Webshop interagieren.
+The following personas are defined to interact with the web shop.
 
-Grosskunde
-^^^^^^^^^^
+Major customer
+^^^^^^^^^^^^^^
 Eva ist verantwortlich für die Büromaterialbestellungen in ihrer Holzbau-Firma.
 Sie bestellt zweimal pro Monat eine grössere Menge von Bleistiften für diverse
 Verbraucher (Management, Büro und Fertigung. Eva hat ein fixes Budget für 
@@ -87,12 +88,12 @@ gekommen und nutzt seit kurzen die Vorteile von online-Bestellungen.
 
 Use cases
 ---------
-Der Shop wird auf zwei Anwendungsfälle reduziert, denn so sind mit kleinen 
-Abwandlungen alle möglichen Fälle abgedeckt. Der Anwendungsfall für die
-Abministration des Shop wird nicht separat betrachet. 
+The shop will be stripped-down to two use cases. With those use cases are 
+all major use cases with only little modifications covered. The use cases for 
+the shop adimistration will be considered out of scope. 
 
-Grosskunde
-^^^^^^^^^^
+Major customer
+^^^^^^^^^^^^^^
 - Ordering of a large amount of one single products or several products
 - Volume discount
 - Splitting of oders (ev. delivery to different locations)
