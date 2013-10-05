@@ -1,30 +1,30 @@
 .. 
 
-Grundlagen
-==========
+Basics
+======
 
-Produkte
+Products
 --------
-Der Webshop verkauft Bleistifte in diversen Ausführungen und Varianten.
+The Web shop will be for selling pencils in various types.
 
-Kategorien:
+Categories:
 
-- Standard-Bleistift
-- mechanische Bleistifte (Druck- oder Minenbleistifte)
-- Spezial-Bleistifte
+- Standard pencils
+- Mechnical pencils
+- Spezial pencils
 
-Optionen oder Varianten:
+Variants or options:
 
-- Farbe (rot, gelb)
-- Härte (standard: HB; hart: F, H, 2H; weich: B, 2B)
-- Zusatzfunktion (Radiergummi am Ende, Schutzkappe, Griff) 
+- Color (red, yellow, black, white, etc.)
+- Hardness (standard: HB; hard: F, H, 2H; soft: B, 2B)
+- Additional function (Eraser at the end, Protection cap, handle) 
 
 
-Übersicht alle Produkte
-^^^^^^^^^^^^^^^^^^^^^^^
+Product overview
+^^^^^^^^^^^^^^^^
 
 +------------------------+------------+----------+----------+------------+
-| Typ                    | Option     | Farbe    | Härte    | Preis CHF  |
+| Type                   | Variant    | Color    | Hardness | Price CHF  |
 +========================+============+==========+==========+============+
 | Bleistift              | keine      | rot      | HB       | 1          |
 +------------------------+------------+----------+----------+------------+
@@ -78,8 +78,8 @@ Sie bestellt zweimal pro Monat eine grössere Menge von Bleistiften für diverse
 Verbraucher (Management, Büro und Fertigung. Eva hat ein fixes Budget für 
 Materialbestellungen und kennt sich gut mit Webshops aus.
 
-Endverbraucher
-^^^^^^^^^^^^^^
+End user
+^^^^^^^^
 Hugo ist Architekt und im besten Alter. Er erstellt Skizzen und technische
 Zeichnungen, aber auch künstlerisch anspruchsvollere Werke. Früher kaufte er
 alle Hilfsmittel bei einer Papeterie. Durch CAD ist er mit dem Web in Kontakt
@@ -93,17 +93,17 @@ Abministration des Shop wird nicht separat betrachet.
 
 Grosskunde
 ^^^^^^^^^^
-- Bestellungen von grossen Mengen des gleichen Produkt
-- Mengenrabatt
-- Aufteilen von Bestellungen (ev. Lieferung an andere Standorte)
+- Ordering of a large amount of one single products or several products
+- Volume discount
+- Splitting of oders (ev. delivery to different locations)
 
-Endverbraucher
-^^^^^^^^^^^^^^
-- Bestellungen von einzelnen Produkten
-- Kleinmengenzusschlag
+End user
+^^^^^^^^
+- Ordering of single products
+- Small quantities
 
-Design-Entscheidungen
----------------------
+Design principles
+-----------------
 Die nachfolgend aufgelisteten Punkte bilden die Grundlage für die spätere
 Implementierung des Design, resp. Layout.
 
