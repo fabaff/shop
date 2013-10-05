@@ -10,7 +10,7 @@ to any existing company mit the same or similar name.
 
 Company name
 ^^^^^^^^^^^^
-Der Firmenname ist: **Pencil AG**
+The company name is: **Pencil AG**
 
 Address
 ^^^^^^^
@@ -23,10 +23,9 @@ The complete address of the company is ::
 
 Logo
 ^^^^
-Das Logo, welches in diesem Projekt verwendet wird, kommt aus dem Icon-Set des
-`Tango-Projekts`_. Die Datei kommt aus der Gruppe `categories`, der Dateiname
-der Original-Datei ist ``applications-office.svg`` und steht unter der Public
-Domain.
+The logo used in this project is borrowed from the `Tango projekts`_ icon set.
+The file is out of the `categories` section, the file name of the origin file
+is ``applications-office.svg`` and is licensed under Public Domain.
 
 .. image:: images/logo.png
     :align: center
