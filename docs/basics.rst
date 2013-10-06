@@ -74,17 +74,17 @@ The following personas are defined to interact with the web shop.
 
 Major customer
 ^^^^^^^^^^^^^^
-Eva ist verantwortlich für die Büromaterialbestellungen in ihrer Holzbau-Firma.
-Sie bestellt zweimal pro Monat eine grössere Menge von Bleistiften für diverse
-Verbraucher (Management, Büro und Fertigung. Eva hat ein fixes Budget für 
-Materialbestellungen und kennt sich gut mit Webshops aus.
+Eva is responsible for the ordering of office supplies in her joinery. She is 
+ordering twice a month a large amount of various product for different users
+(management, back office, and production). Eva has a fix budget for the orders
+and she knows her way around web shops.
 
 End user
 ^^^^^^^^
-Hugo ist Architekt und im besten Alter. Er erstellt Skizzen und technische
-Zeichnungen, aber auch künstlerisch anspruchsvollere Werke. Früher kaufte er
-alle Hilfsmittel bei einer Papeterie. Durch CAD ist er mit dem Web in Kontakt
-gekommen und nutzt seit kurzen die Vorteile von online-Bestellungen.
+Hugo is an architect and middle aged. He is drawing sketches and technical 
+drawings but also artistically demanding pieces by hand. Thanks to the work
+with CAD he decovers the web and its advantages. Before he bought all his 
+tools in a local stationery, nowadays he is ordering stuff online.
 
 Use cases
 ---------
@@ -108,12 +108,12 @@ Design principles
 Die nachfolgend aufgelisteten Punkte bilden die Grundlage für die spätere
 Implementierung des Design, resp. Layout.
 
-- Produkte stehen im Mittelpunkt 
-- Reduziert auf das Wesentliche (Typographie, Farben, etc.)
-- Sinnvoller Einsatz von Whitespaces
+- Products should be in the spot light 
+- Reduced to the essentials (typography, colors, fonts, etc.)
+- meaningful use of whitespaces
 
-Statt das Rad neuzuerfinden, Implementation eines ausgereiften Front-end-
-Framework (`bootstrap`_) für das Layout, speziell in Bezug auf responsive
-Design.
+Instead of reinventing the wheel it should be considered to use a matured
+front-end framework like `bootstrap`_ for the layout, especially regarding 
+responsive design.
 
 .. _bootstrap: http://getbootstrap.com/
