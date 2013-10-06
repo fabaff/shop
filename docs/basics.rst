@@ -24,6 +24,7 @@ Product overview
 ^^^^^^^^^^^^^^^^
 (The product names are in German because the main language of the shop will
 not be English)
+
 +------------------------+------------+----------+----------+------------+
 | Type                   | Variant    | Color    | Hardness | Price CHF  |
 +========================+============+==========+==========+============+
