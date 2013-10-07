@@ -2,96 +2,97 @@
 
 Development
 ===========
-Dieser Abschnitt beschreibt die Konfiguration der Entwicklungs- und Laufzeit-
-Umgebung für den Webshop.
+This sections describes the configuration of the development and runtime 
+environment for the web shop.
 
-Web-Server
+Web server
 ----------
-Als Web-Server wird, anders als vorgeschlagen nicht `Apache`_, sondern
-`Lighttpd`_ benutzt. Die Gründe sind, dass Lighttpd einfachere Konfiguration
-und bessere Performance bietet. Lighttpd wird mit `FastCGI`_ betrieben.
+Instead of `Apache`_ the project is running on `Lighttpd`_. The reasons are
+that Lighttpd provides fast setup, easy configuration, and better performance.
+Lighttpd is running with `FastCGI`_.
 
-Der Web-Server-Pfad ist ``/var/www/lighttpd/`` und die SELinux-Konfiguration
-in den Standard-Einstellungen belassen.
+The path of the web server is ``/var/www/lighttpd/`` and the SELinux
+configuration are still defaults.
 
 .. _Apache: http://apache.org/
 .. _Lighttpd: http://www.lighttpd.net/
 .. _FastCGI: http://www.fastcgi.com/drupal/
 
-Datenbank-Server
-----------------
-Im Hintergrund arbeitet eine `MySQL`_-Datenbank. Für eine vereinfachte
-Administration steht, neben den Kommandozeilen-Werkzeugen auch `phpMyAdmin`
-unter `/phpmyadmin/` auf dem Web-Server zur Verfügung. 
+Database server
+---------------
+For persistence storage a `MySQL`_ data base is used. `phpMyAdmin` is available
+under `/phpmyadmin/` on the web server, beside the command-line tools, for easy
+administration.
 
 .. _MySQL: http://www.mysql.com/
 .. _phpMyAdmin: http://www.phpmyadmin.net
 
-Versionen
----------
-Der Webshop wird mit den nachfolgend aufgeführten Koponenten entwickelt und
-getestet. Andere Versionen werden nicht getestet, jedoch wird es wahrscheinlich
-möglich sein, diese zu verwenden, wenn auch mit Einschränkungen.
+Versions
+--------
+The web shop is built with the following listed components and tested. Other
+releases can be used and may work but this will not be tested. Probably it
+will work with different releases. 
 
-- Betriebssystem: Fedora 19
+- Operating system: Fedora 19
 - Kernel: 3.11.1-200.fc19.x86_64
 - Lighttpd: 1.4.32
 - PHP: 5.5.4
 - MySQL: 5.5.33
 
-Konfigurationsmanagement
+Configuration management
 ------------------------
-Um reproduzierbare Umgebungen für die Entwicklung und Laufzeit zu haben, wird
-`Ansible`_ als Konfigurationsmanagement-Lösung eingesetzt. Alle Schritte der
-Installation sind automatisiert. Die Konfiguration unterscheidet nicht zwischen
-einer lokalen Installation und einer remote Installation. Dies wird jedoch beim
-Deployment der Seite von Bedeutung sein.
+For the creation of reproducable and identical environment for the development
+and the run-time across different systems `Ansible`_ is used as configuration
+management solution. All needed steps of the installation are automated. The
+configuration doesn't differentiate between local or remote installations. This
+matters only for the deployment of the web content.
 
-Auf die Konfiguration von Ansible selber (Hinzufügen des Systems zu
-``/etc/ansible/hosts`` und Kopieren des SSH-Schlüssel) wird an dieser Stelle
-nicht eingegangen, dies kann `hier`_ nachgelesen werden. Alle Playbooks
-befinden sich im Verzeichnis `devel`::
+The configuration of Ansible itself (adding the system to ``/etc/ansible/hosts``
+and copying the SSH keys) is not documented at this place. There are various
+resources available, like `here`_. All playbooks are located in the folder
+`devel`::
 
     $ sudo ansible-playbook setup.yml
 
-Der verwendete Gruppen-Name in ``/etc/ansible/hosts`` ist: **webshop**
+The used group name in ``/etc/ansible/hosts`` is: **webshop**
 
-Virtuelle Maschine für den Webshop könnnen mit `short-virt`_, einem
-einfachen bash-Skript, ohne Benutzerinteraktion erzeugt werden. Dies jetzt
-jedoch ein System mit installierten libvirt-Tools voraus.
+For testing the deployment of new instances of the web shop, `short-virt`_ can
+help. This simple bash script creates virtual machines without user interaction.
+Requirements for this are installed libvirt tools and additional storage space
+(ca. 8 GB) for the image.
 
 .. _Ansible: https://github.com/ansible/ansible
-.. _hier: https://github.com/fabaff/fedora-ansible/blob/master/README.md
+.. _here: https://github.com/fabaff/fedora-ansible/blob/master/README.md
 .. _shop-virt: https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop/blob/master/devel/shop-virt
 
-Git-Respository
+Git respository
 ---------------
-Alle projektrelevanten Unterlagen (Source code, Templates, Dokumentation, etc)
-befindet sich in einem öffentlichen `Git`_-Repository bei `Github`_.
+All project relevante informations (Source code, templates, documentation, etc)
+is located in a public `Git`_ repository on `Github`_.
 
 https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop 
 
 .. _Github: https://github.com
 .. _Git: http://git-scm.com/
 
-Dokumentation
+Documentation
 -------------
-Für die Dokumentation wird `reStructuredText`_ als Markup-Sprache benutzt. Zum
-lokalen Bauen der Dokumentation wird `Sphinx`_ benötigt. `Sphinx`_ ist in der 
-`Fedora Package Collection`_ verfügbar und kann unter Fedora mit ``yum`` oder
-anderen Paket-Verwaltungswerkzeugen installiert werden::
+The documentation is using `reStructuredText`_ as markup language. For a 
+local build `Sphinx`_ is needed. `Sphinx`_ is available in the 
+`Fedora Package Collection`_ and can be installed with ``yum`` or any other
+package management tool::
 
     # yum -y install python-sphinx python-docutils
 
-Die einzelnen Dateien der Dokumentation befinden sich in ``docs``::
+The source files of the documentation are located under ``docs``::
 
     $ cd docs
     $ make html
 
-Das erzeugte Resultat wird unter ``docs/_build/html`` gespeichert.
+The output is stored under ``docs/_build/html``.
 
-Bei jedem Push nach `Github`_ wird ein Rebuild der Dokumentation ausgeführt.
-Die neuste Version wird danach automatisch bei `Read the Docs`_ veröffentlicht.
+After every push to `Github`_ a hook launch a rebuild of the documentation.
+The latest release will be published on `Read the Docs`_ automatically.
 
 https://shop.rtfd.org/
 
