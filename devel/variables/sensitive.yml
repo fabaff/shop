@@ -13,7 +13,7 @@
 server_hostname: shop
 
 # Server root password
-server_root_password: weshop
+server_root_password: webshop
 
 # Default mysql password
 mysql_root_password: webshop
