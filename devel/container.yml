@@ -1,0 +1,56 @@
+# This playbook create an LXC container for the web shop.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- hosts: 127.0.0.1
+  connection: local
+  gather_facts: no
+  user: root
+  vars_files:
+    - variables/sensitive.yml
+    - variables/common.yml
+
+  tasks:
+    - name: install the needed packages
+      yum: pkg=$item
+           state=present
+      with_items:
+        - lxc
+        - libvirt-daemon-lxc
+        - libvirt-daemon-driver-lxc
+        - libvirt-daemon-config-network
+        - virt-install
+
+    - name: start libvirtd
+      service: name=libvirtd
+               state=running
+               enabled=yes
+
+    - name: create the script to bootstrap fedora
+      template: src=files/lxc-virt-install.j2 
+                dest=/tmp/lxc-virt-install
+                mode=0755
+
+    - name: create container
+      command: /usr/bin/bash /tmp/lxc-virt-install webshop
+
+    - name: define container in libvirt
+      virt: name=web01
+            command=define
+            xml="{{ lookup('template', 'files/webshop.xml.j2') }}"
+            uri=lxc:///
+
+    - name: start container
+      virt: name=webshop
+            state=running
+            uri=lxc:///
+
+    - name: delete temp files
+      file: path=/tmp/{{ item }}
+            state=absent
+      with_items:
+        - lxc-virt-install
+        - fedora-release-19-2.noarch.rpm
