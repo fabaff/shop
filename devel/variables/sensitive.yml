@@ -5,9 +5,6 @@
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
-# Details:
-# https://github.com/ansible/ansible/blob/devel/examples/playbooks/user_commands.yml
-# python -c 'import crypt; print crypt.crypt("password", "$1$TestBench$")'
 ---
 # Host name
 server_hostname: shop
