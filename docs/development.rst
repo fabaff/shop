@@ -29,12 +29,12 @@ administration.
 
 Versions
 --------
-The web shop is built with the following listed components and tested. Other
+The web shop is built with the below listed components and tested. Other
 releases can be used and may work but this will not be tested. Probably it
 will work with different releases. 
 
 - Operating system: Fedora 19
-- Kernel: 3.11.1-200.fc19.x86_64
+- Kernel: 3.11.3-201.fc19.x86_64
 - Lighttpd: 1.4.32
 - PHP: 5.5.4
 - MySQL: 5.5.33
