@@ -6,7 +6,7 @@ Web shop Design
 General
 -------
 The used company and all data are notional. There is no exisiting connection 
-to any existing company mit the same or similar name.
+to any existing company with the same or similar name.
 
 Company name
 ^^^^^^^^^^^^
