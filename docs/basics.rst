@@ -106,8 +106,8 @@ End user
 
 Design principles
 -----------------
-Die nachfolgend aufgelisteten Punkte bilden die Grundlage für die spätere
-Implementierung des Design, resp. Layout.
+The below listed points are the fundation for the implementation of the design 
+and the layout to the shop.
 
 - Products should be in the spot light 
 - Reduced to the essentials (typography, colors, fonts, etc.)
