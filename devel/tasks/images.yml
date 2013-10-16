@@ -1,0 +1,26 @@
+# This playbook puts the images in the server's root.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory for the image files
+  file: path=/var/www/lighttpd/images
+        mode=0755
+        state=directory
+
+- name: copy the logo file
+  copy: src=../../logo/logo.png
+        dest=/var/www/lighttpd/images/logo.png
+        owner=lighttpd
+        group=lighttpd
+        mode=0644
+
+#- name: copy the images files
+#  copy: src=../../{{ item }}
+#        dest=/var/www/lighttpd/images/{{ item }}
+#        owner=lighttpd
+#        group=lighttpd
+#        mode=0644
+#  with_items: images
