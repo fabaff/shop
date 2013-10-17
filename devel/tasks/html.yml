@@ -1,0 +1,14 @@
+# This playbook installs a default index.html page in the server's root.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: copy the .html files
+  copy: src=../../{{ item }}
+        dest=/var/www/lighttpd/{{ item }}
+        owner=lighttpd
+        group=lighttpd
+        mode=0644
+  with_items: html

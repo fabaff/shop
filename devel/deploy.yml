@@ -1,0 +1,23 @@
+# This playbook deploy the content of the webshop to the web server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# Usage: sudo ansible-playbook setup.yml
+# 
+---
+- hosts: webshop
+  user: root
+  var:
+    - html: [index.html]
+    - php: [index.php]
+  vars_files:
+    - variables/sensitive.yml
+    - variables/common.yml
+
+  tasks:
+    - include: tasks/css.yml
+    - include: tasks/images.yml
+    - include: tasks/html.yml
+    - include: tasks/php.yml
