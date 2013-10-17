@@ -17,7 +17,7 @@
   file: path=/var/www/lighttpd/phpinfo.php
         owner=lighttpd
         group=lighttpd
-        mode=0644
+        mode=0755
         state=file
 
 - name: add page content
