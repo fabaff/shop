@@ -42,6 +42,11 @@
            state=running
            enabled=yes
 
+- name: start firewalld
+  service: name=firewalld
+           state=running
+           enabled=yes
+
 - name: configure firewall, allow http traffic
   command: /usr/bin/firewall-cmd --permanent --add-port=80/tcp
 
