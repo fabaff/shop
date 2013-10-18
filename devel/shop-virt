@@ -23,7 +23,7 @@ keyboard sg-latin1
 #keyboard us
 
 # Networking
-network --onboot yes --device eth0 --bootproto dhcp --ipv6 auto --hostname test-bench
+network --onboot yes --device eth0 --bootproto dhcp --ipv6 auto --hostname webshop
 
 # Authentication
 auth --enableshadow --passalgo=sha512
