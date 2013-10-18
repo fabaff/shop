@@ -61,6 +61,15 @@ help. This simple bash script creates virtual machines without user interaction.
 Requirements for this are installed libvirt tools and additional storage space
 (ca. 8 GB) for the image.
 
+For local development it's possbile to use an LXC container to save resources.::
+
+    $ sudo ansible-playbook container.yml
+
+To get everything running some additional steps (check the network inside the
+container, generate keys, etc.) are needed. After you are done, check it::
+
+    $ sudo ansible webshop -m setup
+
 .. _Ansible: https://github.com/ansible/ansible
 .. _here: https://github.com/fabaff/fedora-ansible/blob/master/README.md
 .. _shop-virt: https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop/blob/master/devel/shop-virt
