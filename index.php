@@ -15,7 +15,7 @@
         <div>
             <div>
               <!-- Logo and company name -->
-              <img src="logo/logo.png">
+              <img src="images/logo.png">
               <h2>Webshop Pencil AG</h2>
               <!-- Navigation -->
               <ul class="navigation">
