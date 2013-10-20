@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Webshop Pencil AG für Bleistifte">
-        <meta name="author" content="Fabian Affolter">
-        <title>Webshop Pencil AG | Home</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Webshop Pencil AG für Bleistifte">
+    <meta name="author" content="Fabian Affolter">
+    <title>Webshop Pencil AG | Home</title>
 
-        <link href="css/webshop.css" rel="stylesheet">
-    </head>
+    <link href="css/webshop.css" rel="stylesheet">
+  </head>
 
-    <body>
-        <!-- Header container-->
-        <div>
-            <div>
-              <!-- Logo and company name -->
-              <img src="images/logo.png">
-              <h2>Webshop Pencil AG</h2>
-              <!-- Navigation -->
-              <ul class="navigation">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Produkte</a></li>
-                  <li><a href="#">Über uns</a></li>
-              </ul>
-              <!-- Breadcrumb -->
-              <ol class="breadcrumb">
-                  <li><a href="#">Ebene 1</a></li>
-                  <li><a href="#">Ebene 2</a></li>
-                  <li><a href="#">Ebene 3</a></li>
-              </ol>
-            </div>
-        </div>
-        <!-- Header container-->
+  <body>
+    <div class="container" style="margin-top: 10px;">
+    <!-- Header -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+        <!-- Logo and company name -->
+          <div>
+            <a class="brand-logo" href="index.html"></a>
+            <p class="brand-name">Webshop Pencil AG</p>
+          </div>
+        <!-- Navigation -->
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">Home</a></li>
+          <li classe=""><a href="#">Produkte</a></li>
+          <li class=""><a href="#">Über uns</a></li>
+        </ul>
+        <!-- Breadcrumb not really needed the site is flat.
+        <ol class="breadcrumb">
+          <li><a href="#">Ebene 1</a></li>
+          <li><a href="#">Ebene 2</a></li>
+          <li><a href="#">Ebene 3</a></li>
+        </ol>-->
+    <!-- Header -->
 
-        <!-- Action container -->
+    <!-- Content -->
+        <!-- Action container aka Jumbotron Bootstrap
         <div class="action">
-            <h1>Wochen-Aktion</h1>
-            <p>Dies ist eine super Aktion. 10 Bleistifte für CHF 8.</p>
+          <h1>Wochen-Aktion</h1>
+          <p>Dies ist eine super Aktion. 10 Bleistifte für CHF 8.</p>
         </div>
-        <!-- Action container -->
+        Action container -->
 
         <!-- Selected products -->
-        <div class="row">
-            <p>Hier hat es zufällige Produkte...</p>
+        <div>
+          <p>Hier hat es zufällige Produkte...Der Bleistifte und anderes...</p>
         </div>
         <!-- Selected products -->
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>&copy; Pencil AG <?php echo date("Y") ?></p>
-        <!-- Footer -->
+        <!-- Content -->
         </div>
-    </body>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; Pencil AG <?php echo date("Y") ?></p>
+    </div>
+    <!-- Footer -->
+  </body>
 </html>
