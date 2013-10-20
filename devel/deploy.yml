@@ -12,7 +12,7 @@
   vars:
     - css: [webshop.css, bootstrap.css]
     - html: [index.html]
-    - php: [index.php, test.php]
+    - php: [index.php, products.php]
     - images: []
   vars_files:
     - variables/sensitive.yml
