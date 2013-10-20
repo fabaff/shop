@@ -22,8 +22,8 @@
           </div>
         <!-- Navigation -->
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#">Home</a></li>
-          <li classe=""><a href="#">Produkte</a></li>
+          <li class="active"><a href="index.php">Home</a></li>
+          <li classe=""><a href="products.php">Produkte</a></li>
           <li class=""><a href="#">Über uns</a></li>
         </ul>
         <!-- Breadcrumb not really needed the site is flat.
