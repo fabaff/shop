@@ -14,6 +14,7 @@ Contents:
    basics
    webdesign
    design
+   dynamics
    development
 
 Indices and tables
