@@ -9,15 +9,17 @@
 ---
 - hosts: webshop
   user: root
-  var:
+  vars:
+    - css: [webshop.css, bootstrap.css]
     - html: [index.html]
-    - php: [index.php]
+    - php: [index.php, test.php]
+    - images: []
   vars_files:
     - variables/sensitive.yml
     - variables/common.yml
 
   tasks:
-    - include: tasks/css.yml
     - include: tasks/images.yml
-    - include: tasks/html.yml
+    - include: tasks/css.yml
+#    - include: tasks/html.yml
     - include: tasks/php.yml
