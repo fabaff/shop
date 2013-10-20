@@ -250,7 +250,7 @@ table {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 2cm .5cm;
   }
   p,
@@ -2757,7 +2757,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .nav {
   padding-left: 0;
-  margin-bottom: 20;
+  margin-bottom: 20px;
   list-style: none;
 }
 
