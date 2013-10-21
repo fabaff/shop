@@ -1,0 +1,19 @@
+# This playbook installs all javascript files in the server's root.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory for the javascript files
+  file: path=/var/www/lighttpd/scripts
+        mode=0755
+        state=directory
+
+- name: copy the css files
+  copy: src=../../scripts/{{ item }}
+        dest=/var/www/lighttpd/scripts/{{ item }}
+        owner=lighttpd
+        group=lighttpd
+        mode=0644
+  with_items: css
