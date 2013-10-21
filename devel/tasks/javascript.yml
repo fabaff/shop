@@ -10,7 +10,7 @@
         mode=0755
         state=directory
 
-- name: copy the css files
+- name: copy the javascript files
   copy: src=../../scripts/{{ item }}
         dest=/var/www/lighttpd/scripts/{{ item }}
         owner=lighttpd
