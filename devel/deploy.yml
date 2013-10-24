@@ -10,7 +10,7 @@
 - hosts: webshop
   user: root
   vars:
-    - css: [webshop.css, bootstrap.css]
+    - css: [webshop.css]
     - html: [index.html]
     - php: [index.php, products.php]
     - images: []
