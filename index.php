@@ -22,9 +22,18 @@
           </div>
         <!-- Navigation -->
         <ul class="nav nav-tabs">
-          <li class="active"><a href="index.php">Home</a></li>
-          <li classe=""><a href="products.php">Produkte</a></li>
-          <li class=""><a href="#">Über uns</a></li>
+        <?php 
+            $menu = array('Home' => 'index.php',
+                          'Produkte' => 'products.php', 
+                          'Über uns' => 'about.php');
+            foreach($menu as $label => $link) {
+                echo '<li class=""><a href="', $link, '">', $label, '</a></li>';    
+        } 
+        ?>
+
+        <!--  <li class="active"><a href="index.php">Home</a></li>
+          <li class=""><a href="products.php">Produkte</a></li>
+          <li class=""><a href="#">Über uns</a></li>-->
         </ul>
         <!-- Breadcrumb not really needed the site is flat.
         <ol class="breadcrumb">
@@ -44,7 +53,7 @@
 
         <!-- Selected products -->
         <div>
-          <p>Hier hat es zufällige Produkte...Der Bleistifte und anderes...</p>
+            <p>Hier hat es zufällige Produkte...Die Bleistifte und deren Freunde...</p>
         </div>
         <!-- Selected products -->
 
