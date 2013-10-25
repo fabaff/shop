@@ -6,22 +6,9 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: create a new index.php file
-  lineinfile: dest=/var/www/lighttpd/phpinfo.php
-              regexp='^'
-              line=''
-              state=present
-              create=True
-
-- name: set permission for phpinfo.php file
-  file: path=/var/www/lighttpd/phpinfo.php
+- name: copy the phpinfo file
+  copy: src=files/phpinfo.j2
+        dest=/var/www/lighttpd/phpinfo.php
         owner=lighttpd
         group=lighttpd
-        mode=0755
-        state=file
-
-- name: add page content
-  lineinfile: dest=/var/www/lighttpd/phpinfo.php
-              regexp='^'
-              line='<?php\nphpinfo();\n?>'
-              state=present
+        mode=0644
