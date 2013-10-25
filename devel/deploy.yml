@@ -12,7 +12,8 @@
   vars:
     - css: [webshop.css]
     - html: [index.html]
-    - php: [index.php, products.php]
+    - php: [index.php, products.php, about.php]
+    - static: [company.txt]
     - images: []
   vars_files:
     - variables/sensitive.yml
@@ -22,4 +23,5 @@
     - include: tasks/images.yml
     - include: tasks/css.yml
 #    - include: tasks/html.yml ## This playbook is no longer needed.
+    - include: tasks/static.yml
     - include: tasks/php.yml

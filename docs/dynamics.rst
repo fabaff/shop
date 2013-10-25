@@ -61,3 +61,13 @@ List of Products
 ----------------
 
 tbd
+
+Comapny details
+---------------
+The data for the **About** page are included out of a static and plain text
+file. ::
+
+    <?php
+        $str = file_get_contents("company.txt");
+        echo $str;
+    ?>
