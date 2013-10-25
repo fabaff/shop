@@ -40,7 +40,7 @@ The basic menu was built with the following snippet. ::
 
 The issue with that snippet was that the CSS class was missing. In regards to
 a future separation and reusability an additional statements was added. This
-way the label of the active page is highlighted.
+way the label of the active page is highlighted. ::
 
     <?php
         $menu = array('Home' => 'index.php',
