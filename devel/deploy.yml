@@ -21,5 +21,5 @@
   tasks:
     - include: tasks/images.yml
     - include: tasks/css.yml
-#    - include: tasks/html.yml
+#    - include: tasks/html.yml ## This playbook is no longer needed.
     - include: tasks/php.yml
