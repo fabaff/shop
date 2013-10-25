@@ -34,7 +34,7 @@ releases can be used and may work but this will not be tested. Probably it
 will work with different releases. 
 
 - Operating system: Fedora 19
-- Kernel: 3.11.3-201.fc19.x86_64
+- Kernel: 3.11.4-201.fc19.x86_64
 - Lighttpd: 1.4.32
 - PHP: 5.5.4
 - MySQL: 5.5.33
@@ -73,6 +73,13 @@ container, generate keys, etc.) are needed. After you are done, check it::
 .. _Ansible: https://github.com/ansible/ansible
 .. _here: https://github.com/fabaff/fedora-ansible/blob/master/README.md
 .. _shop-virt: https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop/blob/master/devel/shop-virt
+
+Deployment
+----------
+For the simple deployment of the lastest version of the shop a playbook called
+``deploy.yml`` is provided. This palybook put all files in place. ::
+
+    $ sudo ansible-playbook deploy.yml
 
 Git respository
 ---------------
