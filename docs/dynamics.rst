@@ -62,7 +62,7 @@ List of Products
 
 tbd
 
-Comapny details
+Company details
 ---------------
 The data for the **About** page are included out of a static and plain text
 file. ::
