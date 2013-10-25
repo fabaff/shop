@@ -26,7 +26,7 @@ a need to update the year. ::
 
 Navigation Menu
 ---------------
-The basic menu is build with the following snippet. ::
+The basic menu was built with the following snippet. ::
 
     <?php
         $menu = array('Home' => 'index.php',
@@ -38,7 +38,26 @@ The basic menu is build with the following snippet. ::
         }
     ?>
 
+The issue with that snippet was that the CSS class was missing. In regards to
+a future separation and reusability an additional statements was added. This
+way the label of the active page is highlighted.
+
+    <?php
+        $menu = array('Home' => 'index.php',
+                      'Produkte' => 'products.php', 
+                      'Über uns' => 'about.php'
+            );
+        foreach ($menu as $label => $link) {
+            $url = trim($_SERVER['PHP_SELF'], '/');
+            if ($link == $url) {
+                echo '<li class="active"><a href="', $link, '">', $label, '</a></li>';
+            } else {
+                echo '<li class=""><a href="', $link, '">', $label, '</a></li>';    
+            }
+        }
+    ?>
+
 List of Products
 ----------------
 
-
+tbd
