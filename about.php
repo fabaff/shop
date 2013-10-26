@@ -16,10 +16,14 @@
       <div class="panel panel-default">
         <div class="panel-body">
         <!-- Logo and company name -->
-          <div>
-            <a class="brand-logo" href="index.html"></a>
-            <p class="brand-name">Webshop Pencil AG</p>
-          </div>
+            <?php 
+                $start_page = "index.php";
+                $part1 = "<div>\n";
+                $part2 = "\t<a class='brand-logo' href='".$start_page."'></a>\n";
+                $part3 = "\t<p class='brand-name'>Webshop Pencil AG</p>\n";
+                $part4 = "</div>\n";
+                echo $part1.$part2.$part3.$part4;
+            ?>
         <!-- Navigation -->
             <?php 
                 include('menu.php');
