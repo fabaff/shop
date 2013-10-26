@@ -12,7 +12,7 @@
   vars:
     - css: [webshop.css]
     - html: [index.html]
-    - php: [index.php, products.php, about.php]
+    - php: [index.php, products.php, about.php, menu.php, header.php]
     - static: [company.txt]
     - images: []
   vars_files:
