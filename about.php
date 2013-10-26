@@ -21,30 +21,10 @@
             <p class="brand-name">Webshop Pencil AG</p>
           </div>
         <!-- Navigation -->
-        <ul class="nav nav-tabs">
-        <?php
-            // Menu array with page title and assigned file
-            $menu = array('Home' => 'index.php',
-                          'Produkte' => 'products.php', 
-                          'Über uns' => 'about.php'
-                );
-            foreach ($menu as $label => $link) {
-                // For the CSS only the file name without / is needed
-                $url = trim($_SERVER['PHP_SELF'], '/');
-                if ($link == $url) {
-                    echo '<li class="active"><a href="', $link, '">', $label, '</a></li>';
-                } else {
-                    echo '<li class=""><a href="', $link, '">', $label, '</a></li>';    
-                }
-            }
-        ?>
-        </ul>
-        <!-- Breadcrumb not really needed the site is flat.
-        <ol class="breadcrumb">
-          <li><a href="#">Ebene 1</a></li>
-          <li><a href="#">Ebene 2</a></li>
-          <li><a href="#">Ebene 3</a></li>
-        </ol>-->
+            <?php 
+                include('menu.php');
+                echo menu();
+            ?>
     <!-- Header -->
     <!-- Content -->
         <?php
