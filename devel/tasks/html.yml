@@ -1,4 +1,4 @@
-# This playbook installs a default index.html page in the server's root.
+# This playbook installs html pages in the server's root.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
