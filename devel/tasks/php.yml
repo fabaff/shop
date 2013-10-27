@@ -1,4 +1,4 @@
-# This playbook installs a default index.html page in the server's root.
+# This playbook installs all PHP files in the server's root.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
