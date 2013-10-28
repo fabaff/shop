@@ -9,12 +9,13 @@ This is the documentation of the genesi of a web shop.
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    basics
    webdesign
    design
    dynamics
+   external
    development
 
 Indices and tables
