@@ -5,7 +5,7 @@ External files
 
 Navigation Menu
 ---------------
-The menu is outsourced in the file ``menu.php``.
+The menu is outsourced in the file ``menu.php``. ::
 
     <?php    
         function menu() {
