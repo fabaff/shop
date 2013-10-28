@@ -45,134 +45,32 @@
         <div>
             <table class="table table-striped">
             <thead valign="bottom">
-            <tr><th class="head">Type</th>
-            <th class="head">Variant</th>
-            <th class="head">Color</th>
-            <th class="head">Hardness</th>
-            <th class="head">Price CHF</th>
+            <tr>
+            <?php
+                $heading = array('Type', 'Variant', 'Color', 'Hardness', 'Price CHF');
+                foreach ($heading as $element) {
+                    echo '<th class="head">'.$element.'</th>'."\n";
+                }
+            ?>
             </tr>
             </thead>
             <tbody valign="top">
-            <tr><td>Bleistift</td>
-            <td>keine</td>
-            <td>rot</td>
-            <td>HB</td>
-            <td>1</td>
-            </tr>
-            <tr><td>Bleistift</td>
-            <td>keine</td>
-            <td>rot</td>
-            <td>B</td>
-            <td>1</td>
-            </tr>
-            <tr><td>Bleistift</td>
-            <td>keine</td>
-            <td>rot</td>
-            <td>2B</td>
-            <td>1</td>
-            </tr>
-            <tr><td>Bleistift</td>
-            <td>keine</td>
-            <td>gelb</td>
-            <td>F</td>
-            <td>1.20</td>
-            </tr>
-            <tr><td>Bleistift</td>
-            <td>keine</td>
-            <td>gelb</td>
-            <td>H</td>
-            <td>1.20</td>
-            </tr>
-            <tr><td>Bleistift</td>
-            <td>keine</td>
-            <td>gelb</td>
-            <td>2H</td>
-            <td>1.20</td>
-            </tr>
-            <tr><td>Bleistift</td>
-            <td>Gummi</td>
-            <td>rot</td>
-            <td>HB</td>
-            <td>1.10</td>
-            </tr>
-            <tr><td>Schreiner-Bleistift</td>
-            <td>keine</td>
-            <td>rot</td>
-            <td>HB</td>
-            <td>1.80</td>
-            </tr>
-            <tr><td>Schreiner-Bleistift</td>
-            <td>keine</td>
-            <td>rot</td>
-            <td>B</td>
-            <td>1.80</td>
-            </tr>
-            <tr><td>Bleistift</td>
-            <td>keine</td>
-            <td>rot</td>
-            <td>HB</td>
-            <td>0.5</td>
-            </tr>
-            <tr><td>Bleistift</td>
-            <td>Gummi</td>
-            <td>rot</td>
-            <td>HB</td>
-            <td>0.6</td>
-            </tr>
-            <tr><td>Künstler-Bleistift</td>
-            <td>Griff</td>
-            <td>gelb</td>
-            <td>2B</td>
-            <td>2</td>
-            </tr>
-            <tr><td>Künstler-Bleistift</td>
-            <td>Griff</td>
-            <td>rot</td>
-            <td>2B</td>
-            <td>2</td>
-            </tr>
-            <tr><td>Künstler-Bleistift</td>
-            <td>Griff</td>
-            <td>schwarz</td>
-            <td>2B</td>
-            <td>2</td>
-            </tr>
-            <tr><td>Minien-Bleistift</td>
-            <td>keine</td>
-            <td>weiss</td>
-            <td>&nbsp;</td>
-            <td>4</td>
-            </tr>
-            <tr><td>Minien-Bleistift</td>
-            <td>keine</td>
-            <td>blau</td>
-            <td>&nbsp;</td>
-            <td>4</td>
-            </tr>
-            <tr><td>Minien-Bleistift</td>
-            <td>keine</td>
-            <td>gelb</td>
-            <td>&nbsp;</td>
-            <td>4</td>
-            </tr>
-            <tr><td>Minien-Bleistift</td>
-            <td>keine</td>
-            <td>rot</td>
-            <td>&nbsp;</td>
-            <td>4</td>
-            </tr>
-            <tr><td>Minien-Bleistift</td>
-            <td>keine</td>
-            <td>silber</td>
-            <td>&nbsp;</td>
-            <td>9</td>
-            </tr>
-            <tr><td>Minien-Bleistift</td>
-            <td>keine</td>
-            <td>schwarz</td>
-            <td>&nbsp;</td>
-            <td>9</td>
-            </tr>
+            <?php
+                $products = array(array('Bleistift', 'keine', 'rot', 'HB', '1'),
+                                  array('Bleistift', 'keine', 'rot', 'B', '1'),
+                                  array('Bleistift', 'keine', 'rot', '2B', '1',),
+                                  array('Bleistift', 'keine', 'gelb', 'F', '1.2'),
+                                  array('Bleistift', 'keine', 'gelb', 'H', '1.2'),
+                                  array('Bleistift', 'keine', 'gelb', '2H', '1.2')
+                            );
+                foreach ($products as $product => $details) {
+                    echo "<tr>";
+                    foreach ($details as $detail) {
+                        echo "<td>".$detail."</td>";
+                    }
+                    echo "</tr>";
+                }
+            ?>
             </tbody>
             </table>
         </div>

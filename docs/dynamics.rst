@@ -59,8 +59,41 @@ way the label of the active page is highlighted. ::
 
 List of Products
 ----------------
+The product overiew is a simple table. The heading of the table is placed in 
+an array. ::
 
-tbd
+        <div>
+            <table class="table table-striped">
+            <thead valign="bottom">
+            <tr>
+            <?php
+                $heading = array('Type', 'Variant', 'Color', 'Hardness', 'Price CHF');
+                foreach ($heading as $element) {
+                    echo '<th class="head">'.$element.'</th>'."\n";
+                }
+            ?>
+            </tr>
+            </thead>
+            <tbody valign="top">
+            <?php
+                $products = array(array('Bleistift', 'keine', 'rot', 'HB', '1'),
+                                  array('Bleistift', 'keine', 'rot', 'B', '1'),
+                                  array('Bleistift', 'keine', 'rot', '2B', '1',),
+                                  array('Bleistift', 'keine', 'gelb', 'F', '1.2'),
+                                  array('Bleistift', 'keine', 'gelb', 'H', '1.2'),
+                                  array('Bleistift', 'keine', 'gelb', '2H', '1.2')
+                            );
+                foreach ($products as $product => $details) {
+                    echo "<tr>";
+                    foreach ($details as $detail) {
+                        echo "<td>".$detail."</td>";
+                    }
+                    echo "</tr>";
+                }
+            ?>
+            </tbody>
+            </table>
+        </div>
 
 Company details
 ---------------
