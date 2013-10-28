@@ -17,22 +17,18 @@
         <div class="panel-body">
         <!-- Logo and company name -->
             <?php 
-                $start_page = "index.php";
-                $part1 = "<div>\n";
-                $part2 = "\t<a class='brand-logo' href='".$start_page."'></a>\n";
-                $part3 = "\t<p class='brand-name'>Webshop Pencil AG</p>\n";
-                $part4 = "</div>\n";
-                echo $part1.$part2.$part3.$part4;
+                require('header.php');
+                echo head();
             ?>
         <!-- Navigation -->
             <?php 
-                include('menu.php');
+                require('menu.php');
                 echo menu();
             ?>
     <!-- Header -->
     <!-- Content -->
         <?php
-            $str = file_get_contents("company.txt");
+            $str = file_get_contents('company.txt');
             echo $str;
         ?>
     <!-- Content -->
@@ -41,9 +37,10 @@
     </div>
 
     <!-- Footer -->
-    <div class="footer">
-      <p>&copy; Pencil AG <?php echo date("Y") ?></p>
-    </div>
+    <?php 
+        require('footer.php');
+        echo foot();
+    ?>
     <!-- Footer -->
   </body>
 </html>

@@ -16,13 +16,13 @@
       <div class="panel panel-default">
         <div class="panel-body">
         <!-- Logo and company name -->
-          <div>
-            <a class="brand-logo" href="index.html"></a>
-            <p class="brand-name">Webshop Pencil AG</p>
-          </div>
+            <?php 
+                require('header.php');
+                echo head();
+            ?>
         <!-- Navigation -->
             <?php 
-                include('menu.php');
+                require('menu.php');
                 echo menu();
             ?>
         <!-- Breadcrumb not really needed the site is flat.
@@ -53,9 +53,10 @@
     </div>
 
     <!-- Footer -->
-    <div class="footer">
-      <p>&copy; Pencil AG <?php echo date("Y") ?></p>
-    </div>
+    <?php 
+        require('footer.php');
+        echo foot();
+    ?>
     <!-- Footer -->
   </body>
 </html>
