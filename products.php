@@ -25,22 +25,9 @@
                 require('menu.php');
                 echo menu();
             ?>
-        <!-- Breadcrumb not really needed the site is flat.
-        <ol class="breadcrumb">
-          <li><a href="#">Ebene 1</a></li>
-          <li><a href="#">Ebene 2</a></li>
-          <li><a href="#">Ebene 3</a></li>
-        </ol>-->
     <!-- Header -->
 
     <!-- Content -->
-        <!-- Action container aka Jumbotron Bootstrap
-        <div class="action">
-          <h1>Wochen-Aktion</h1>
-          <p>Dies ist eine super Aktion. 10 Bleistifte für CHF 8.</p>
-        </div>
-        Action container -->
-
         <!-- Selected products -->
         <div>
             <table class="table table-striped">

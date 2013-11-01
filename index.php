@@ -25,12 +25,6 @@
                 require('menu.php');
                 echo menu();
             ?>
-        <!-- Breadcrumb not really needed the site is flat.
-        <ol class="breadcrumb">
-          <li><a href="#">Ebene 1</a></li>
-          <li><a href="#">Ebene 2</a></li>
-          <li><a href="#">Ebene 3</a></li>
-        </ol>-->
     <!-- Header -->
 
     <!-- Content -->
