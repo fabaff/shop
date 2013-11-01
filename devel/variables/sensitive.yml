@@ -14,3 +14,11 @@ server_root_password: webshop
 
 # Default mysql password
 mysql_root_password: webshop
+
+# Cert information
+cert_country: CH
+cert_province: BE
+cert_city: Berne
+cert_org: webshop
+cert_cn: ${ansible_fqdn}
+cert_email: root@localhost
