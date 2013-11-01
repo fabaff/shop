@@ -62,7 +62,7 @@ The used group name in ``/etc/ansible/hosts`` is: **webshop**
 For testing the deployment of new instances of the web shop, `short-virt`_ can
 help. This simple bash script creates virtual machines without user interaction.
 Requirements for this are installed libvirt tools and additional storage space
-(ca. 8 GB) for the image.
+(approx. 8 GB) for the image.
 
 For local development it's possbile to use an LXC container to save resources.::
 
