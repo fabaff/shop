@@ -10,17 +10,10 @@
         mode=0755
         state=directory
 
-- name: copy the logo file
-  copy: src=../../logo/logo.png
-        dest=/var/www/lighttpd/images/logo.png
+- name: copy the images files
+  copy: src=../../{{ item }}
+        dest=/var/www/lighttpd/images/{{ item }}
         owner=lighttpd
         group=lighttpd
         mode=0644
-
-#- name: copy the images files
-#  copy: src=../../{{ item }}
-#        dest=/var/www/lighttpd/images/{{ item }}
-#        owner=lighttpd
-#        group=lighttpd
-#        mode=0644
-#  with_items: images
+  with_items: images
