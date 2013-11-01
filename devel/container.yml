@@ -38,7 +38,7 @@
       command: /usr/bin/bash /tmp/lxc-virt-install webshop
 
     - name: define container in libvirt
-      virt: name=web01
+      virt: name=webshop
             command=define
             xml="{{ lookup('template', 'files/webshop.xml.j2') }}"
             uri=lxc:///
