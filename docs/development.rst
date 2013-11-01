@@ -37,7 +37,7 @@ releases can be used and may work but this will not be tested. Probably it
 will work with different releases. 
 
 - Operating system: Fedora 19
-- Kernel: 3.11.4-201.fc19.x86_64
+- Kernel: 3.11.6-200.fc19.x86_64
 - Lighttpd: 1.4.32
 - PHP: 5.5.4
 - MySQL: 5.5.33
