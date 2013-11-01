@@ -8,11 +8,14 @@ environment for the web shop.
 Web server
 ----------
 Instead of `Apache`_ the project is running on `Lighttpd`_. The reasons are
-that Lighttpd provides fast setup, easy configuration, and better performance.
-Lighttpd is running with `FastCGI`_.
+that Lighttpd provides faster setup, easier configuration, and better 
+performance. Lighttpd is running with `FastCGI`_.
 
 The path of the web server is ``/var/www/lighttpd/`` and the SELinux
 configuration are still defaults.
+
+The web server is running in SSL-only mode and the certificate is generated
+during the server setup.
 
 .. _Apache: http://apache.org/
 .. _Lighttpd: http://www.lighttpd.net/
