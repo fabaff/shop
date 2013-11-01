@@ -15,6 +15,7 @@
     - php-cli
     - net-tools
     - firewalld
+    - openssl
 
 - name: enable fastcgi support in modules.conf
   lineinfile: dest=/etc/lighttpd/modules.conf
@@ -37,6 +38,36 @@
         owner=lighttpd
         group=lighttpd
 
+- name: change port for ssl-only
+  lineinfile: dest=/etc/lighttpd/lighttpd.conf
+              regexp='^server.port = 80'
+              line='server.port = 443'
+              state=present
+
+- name: enable ssl support
+  lineinfile: dest=/etc/lighttpd/lighttpd.conf
+              regexp='^ssl.engine = "enable"'
+              insertafter='^##   ssl.engine = "enable"'
+              line='ssl.engine = "enable"'
+              state=present
+
+- name: set ssl path
+  lineinfile: dest=/etc/lighttpd/lighttpd.conf
+              regexp='^ssl.pemfile = "/path/to/server.pem"'
+              insertafter='^##   ssl.pemfile = "/path/to/server.pem"'
+              line='ssl.pemfile = "/etc/lighttpd/certs/webshop.pem"'
+              state=present
+
+- name: create directory for certs
+  file: path=/etc/lighttpd/certs
+        state=directory
+        mode=0775
+        owner=lighttpd
+        group=lighttpd
+
+- name: create ssl certificates
+  command: openssl req -x509 -nodes -days 7300 -subj "/C=$cert_country/ST=$cert_province/L=$cert_city/O=$cert_org/CN=$cert_cn/Email=$cert_email" -newkey rsa:2048 -keyout /etc/lighttpd/certs/webshop.pem -out /etc/lighttpd/certs/webshop.pem
+
 - name: start lighttpd
   service: name=lighttpd
            state=running
@@ -47,8 +78,8 @@
            state=running
            enabled=yes
 
-- name: configure firewall, allow http traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=80/tcp
+- name: configure firewall, allow https traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=443/tcp
 
 - name: reload firewall configuration
   command: /usr/bin/firewall-cmd --reload
