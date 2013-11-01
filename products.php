@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Webshop Pencil AG für Bleistifte">
     <meta name="author" content="Fabian Affolter">
-    <title>Webshop Pencil AG | Home</title>
+    <title>Webshop Pencil AG | Produkte</title>
 
     <link href="css/webshop.css" rel="stylesheet">
   </head>
@@ -51,11 +51,12 @@
                                   array('Bleistift', 'keine', 'gelb', '2H', '1.2')
                             );
                 foreach ($products as $product => $details) {
-                    echo "<tr>";
+                    echo "<tr>"."\n";
                     foreach ($details as $detail) {
-                        echo "<td>".$detail."</td>";
+                        echo "<td>".$detail."</td>"."\n";
                     }
-                    echo "</tr>";
+                    echo "<td>"."<button type='button' class='btn btn-default'>Kauf mich</button>"."</td>"."\n";
+                    echo "</tr>"."\n";
                 }
             ?>
             </tbody>
