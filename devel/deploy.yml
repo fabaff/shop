@@ -12,9 +12,11 @@
   vars:
     - css: [webshop.css]
     - html: [index.html]
-    - php: [index.php, products.php, about.php, menu.php, header.php]
+    - php: [index.php, products.php, product.php, about.php, menu.php,
+            header.php, footer.php, helpers.php, variables.php]
     - static: [company.txt]
-    - images: []
+    - logos: [logo.png]
+    - images: [default.png]
   vars_files:
     - variables/sensitive.yml
     - variables/common.yml
