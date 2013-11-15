@@ -55,7 +55,7 @@ and copying the SSH keys) is not documented at this place. There are various
 resources available, like `here`_. All playbooks are located in the folder
 `devel`::
 
-    $ sudo ansible-playbook setup.yml
+    $ sudo ansible-playbook devel/setup.yml
 
 The used group name in ``/etc/ansible/hosts`` is: **webshop**
 
@@ -66,7 +66,7 @@ Requirements for this are installed libvirt tools and additional storage space
 
 For local development it's possbile to use an LXC container to save resources.::
 
-    $ sudo ansible-playbook container.yml
+    $ sudo ansible-playbook devel/container.yml
 
 To get everything running some additional steps (check the network inside the
 container, generate keys, etc.) are needed. After you are done, check it::
