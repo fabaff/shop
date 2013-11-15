@@ -32,7 +32,8 @@
                 $color=$_GET['color'];
                 $hardness=$_GET['hardness'];
                 $options=$_GET['options'];
-                echo "Ich bin ein $type, $color und $hardness. Ich habe $options Optionen.";
+                $price=$_GET['price'];
+                echo "Ich bin ein $type, in $color und mit der Härte $hardness. Ich habe $options Optionen und koste $price CHF.";
             ?>
     <!-- Content -->
         </div>

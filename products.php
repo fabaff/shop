@@ -56,14 +56,12 @@
                         echo "<td>".$detail."</td>"."\n";
                     }
                     echo "<td>"."\n";
-
                     echo "<form action='product.php' method='get' name='pencil'>"."\n";
                     echo "<input type='hidden' name='type' value='$details[0]'/>"."\n";
                     echo "<input type='hidden' name='options' value='$details[1]'/>"."\n";
                     echo "<input type='hidden' name='color' value='$details[2]'/>"."\n";
                     echo "<input type='hidden' name='hardness' value='$details[3]'/>"."\n";
-
-
+                    echo "<input type='hidden' name='price' value='$details[4]'/>"."\n";
                     echo "<input type='submit' class='btn btn-default' value='Kauf mich'/>"."\n";
                     echo "</form>"."\n";
                     echo "</td>"."\n";
@@ -73,23 +71,7 @@
             </tbody>
             </table>
         </div>
-
-<!--
-<form action="product.php" method="get" name="pencil">
-<input type="hidden" name="type" value="Bleistift"/>
-<input type="hidden" name="options" value="keine"/>
-<input type="hidden" name="color" value="rot"/>
-<input type="hidden" name="hardness" value="HB"/>
-<input type="submit" value="Login" />
-</form>
-
-<form action="product.php" method="get" name="pencil">
-<input type="hidden" name="type" value="Bleistift"/>
-</form>
-<a href="javascript:document.pencil.submit();">Login</a>
--->
         <!-- Selected products -->
-
         <!-- Content -->
         </div>
       </div>
