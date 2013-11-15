@@ -59,6 +59,9 @@ resources available, like `here`_. All playbooks are located in the folder
 
 The used group name in ``/etc/ansible/hosts`` is: **webshop**
 
+If the setup completes without errors, then the web server is accessible and show
+a default page.
+
 For testing the deployment of new instances of the web shop, `short-virt`_ can
 help. This simple bash script creates virtual machines without user interaction.
 Requirements for this are installed libvirt tools and additional storage space
@@ -82,7 +85,7 @@ Deployment
 For the simple deployment of the lastest version of the shop a playbook called
 ``deploy.yml`` is provided. This palybook put all files in place. ::
 
-    $ sudo ansible-playbook deploy.yml
+    $ sudo ansible-playbook devel/deploy.yml
 
 Git respository
 ---------------
