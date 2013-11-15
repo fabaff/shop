@@ -17,6 +17,8 @@ Contents:
    dynamics
    external
    input
+   javascript
+   sessions
    development
 
 Indices and tables
