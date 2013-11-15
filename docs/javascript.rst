@@ -1,0 +1,14 @@
+.. 
+
+Javascript
+==========
+
+Purchase confirmation
+---------------------
+
+
+
+Confirmation
+------------
+
+
