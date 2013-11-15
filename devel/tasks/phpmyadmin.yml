@@ -29,3 +29,7 @@
 - name: delete the archive
   file: path=/var/www/lighttpd/phpmyadmin-4.0.7.tar.gz
         state=absent
+
+- name: restart lighttpd
+  service: name=lighttpd
+           state=restart
