@@ -1,4 +1,4 @@
-.. 
+.. _basic:
 
 Basics
 ======
@@ -19,6 +19,7 @@ Variants or options:
 - Hardness (standard: HB; hard: F, H, 2H; soft: B, 2B)
 - Additional function (Eraser at the end, Protection cap, handle) 
 
+.. _basic-product-overview:
 
 Product overview
 ^^^^^^^^^^^^^^^^
@@ -103,6 +104,8 @@ End user
 ^^^^^^^^
 - Ordering of single products
 - Small quantities
+
+.. _design-principles:
 
 Design principles
 -----------------
