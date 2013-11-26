@@ -23,7 +23,7 @@ The complete address of the company is ::
 
 Logo
 ^^^^
-The logo used in this project is borrowed from the `Tango projekts`_ icon set.
+The logo used in this project is borrowed from the `Tango project`_ icon set.
 The file is out of the `categories` section, the file name of the origin file
 is ``applications-office.svg`` and is licensed under Public Domain.
 
@@ -54,6 +54,9 @@ The sitemap shows the clustering of the shop at the beginning of the project.
     :width: 600px
     :align: center
     :alt: Pencil Webshop Sitemap
+
+This doesn't mean that everything will be done. Static pages are easy to make
+and to maintain.
 
 Main page
 ---------
