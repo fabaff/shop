@@ -13,10 +13,11 @@
     - css: [webshop.css]
     - html: [index.html]
     - php: [index.php, products.php, product.php, about.php, menu.php,
-            header.php, footer.php, helpers.php, variables.php]
+            header.php, footer.php, helpers.php, variables.php, admin.php,
+            authentification.php]
     - static: [company.txt]
     - logos: [logo.png]
-    - images: [default.png]
+    - images: [default.png, black.png, blue.png, red.png, white.png]
   vars_files:
     - variables/sensitive.yml
     - variables/common.yml
