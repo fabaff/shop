@@ -31,7 +31,7 @@
         <!-- Selected products -->
         <div>
             <h3>Übersicht Tabellen-Inhalte</h3>
-
+            <!-- This page is more or less a simple test page for the database connection. -->
             <?php
                 $connection = @mysql_connect("localhost", "root", "webshop");
                 if ($connection) {
