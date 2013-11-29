@@ -19,6 +19,7 @@ Contents:
    input
    javascript
    sessions
+   database
    development
 
 Indices and tables
