@@ -5,7 +5,7 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: copy the .html files
+- name: copy the .php files
   copy: src=../../{{ item }}
         dest=/var/www/lighttpd/{{ item }}
         owner=lighttpd
