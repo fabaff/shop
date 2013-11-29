@@ -62,3 +62,7 @@
 - name: remove the mysql test database
   mysql_db: db=test
             state=absent
+
+- name: create the webshop database
+  mysql_db: db=webshop
+            state=present
