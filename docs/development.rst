@@ -23,12 +23,13 @@ during the server setup.
 
 Database server
 ---------------
-For persistence storage a `MySQL`_ data base is used. `phpMyAdmin` is available
-under `/phpmyadmin/` on the web server, beside the command-line tools, for easy
-administration.
+For persistence storage a `MySQL`_ or the drop-in replacement `MariaDB`_
+database is used. `phpMyAdmin` is available under `/phpmyadmin/` on the
+web server, beside the command-line tools, for easy administration.
 
 .. _MySQL: http://www.mysql.com/
 .. _phpMyAdmin: http://www.phpmyadmin.net
+.. _MariaDB: https://mariadb.org/
 
 Versions
 --------
