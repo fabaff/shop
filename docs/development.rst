@@ -26,7 +26,7 @@ Database server
 For persistence storage a `MySQL`_ or the drop-in replacement `MariaDB`_
 database is used. `phpMyAdmin` is available under `/phpmyadmin/` on the
 web server, beside the command-line tools, for easy administration. The
-credentials for `phpMyAdmin` is root/webshop.
+default credentials for `phpMyAdmin` are root/webshop.
 
 .. _MySQL: http://www.mysql.com/
 .. _phpMyAdmin: http://www.phpmyadmin.net
