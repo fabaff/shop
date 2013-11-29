@@ -15,6 +15,9 @@ server_root_password: webshop
 # Default mysql password
 mysql_root_password: webshop
 
+# Default database name
+mysql_db_name: webshop
+
 # Cert information
 cert_country: CH
 cert_province: BE
