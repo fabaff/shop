@@ -10,7 +10,7 @@
     if ($connection->query($query)) {
         echo "<script type=\"text/javascript\">
                   alert(\"New entry $entry added successfully.\");
-                  window.location = \"../admin.php\"
+                  window.location = \"../tables.php\"
               </script>";
     } else {
         die("Failed: ".mysqli_error());
