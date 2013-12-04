@@ -31,8 +31,8 @@
             <?php
                 require_once('config/dbconnect.php');
                 
-                $table = $_GET["table"];
-                $entry = $_GET["id"];
+                $table = $_POST["table"];
+                $entry = $_POST["id"];
 
                 // Create SQl statement
                 $sql = "SELECT * FROM $table WHERE id='$entry'";
