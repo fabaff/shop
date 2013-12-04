@@ -130,8 +130,7 @@
                     echo "<input type=\"hidden\" name=\"lang\" value=\"$lang\"/>"."\n";
                     echo "</form>"."\n";
                 }
-                $_SESSION["SESSION_LANG1"] = $_GET['lang'];
-                //echo $_SESSION["SESSION_LANG1"]."\n";
+                $_SESSION["SESSION_LANG"] = $_GET['lang'];
                 $locale = $_GET['lang'];
                 putenv('LANG='.$locale);
                 setlocale(LC_ALL, $locale);
