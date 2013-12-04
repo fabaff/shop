@@ -37,13 +37,13 @@
                 // Create SQl statement
                 $sql = "SELECT * FROM $table";
                 // Get entries from table
-                $result = $connection->query($sql);
+                $results = $connection->query($sql);
                 // Count rows
-                echo mysqli_num_rows($result)." entries in ".$table." found."."<br />"."\n";
+                echo $results->num_rows." entries in ".$table." found."."<br />"."\n";
                 // Displays rows
                 echo "<ul>"."\n";
-                while ($s_results = mysqli_fetch_assoc($result)) {
-                    echo "<li>".$s_results["type"]."</li>";
+                while ($result = $results->fetch_object()) {
+                    echo "<li>".$result->type."</li>";
                 }
                 echo "</ul>"."\n";
                 $connection->close();
