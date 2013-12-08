@@ -1,0 +1,29 @@
+# This playbook install leafletjs (http://leafletjs.com).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory for the javascript files
+  file: path=/var/www/lighttpd/scripts
+        mode=0755
+        state=directory
+
+- name: download the leafletjs zip archive
+  get_url: url=http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.1.zip
+           dest=/var/www/lighttpd/leaflet.zip
+           mode=0644
+
+- name: unpack the bootstrap archive
+  command: /usr/bin/unzip -o /var/www/lighttpd/leaflet.zip -d /var/www/lighttpd/
+
+- name: delete the leafletjs archive
+  file: path=/var/www/lighttpd/leaflet.zip
+        state=absent
+
+- name: move the css file
+  command: /usr/bin/mv /var/www/lighttpd/leaflet.css /var/www/lighttpd/css/leaflet.css
+
+- name: move the javascript file
+  command: /usr/bin/mv /var/www/lighttpd/leaflet.js /var/www/lighttpd/scripts/leaflet.js
