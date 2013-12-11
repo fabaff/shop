@@ -1,3 +1,6 @@
+//            <?php 
+//               require('auth.php');
+////           ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,21 +35,19 @@
         <div>
             <h3>Übersicht Tabellen-Inhalte</h3>
             <!-- This page is more or less a simple test page for the database connection. -->
+            <!-- Keep in mind: The connection details are only in this page included (-> dbconnect.php). -->
             <?php
-                $connection = @mysql_connect("localhost", "root", "webshop");
-                if ($connection) {
-                    // Select database
-                    mysql_select_db("webshop");
-
+                $connection = new mysqli("localhost", "root", "webshop", "webshop");
+                if (mysqli_connect_errno() == 0) {
                     // Products
                     // tbd
                     
                     // Get pencils
                     $sql_pencils = "SELECT * FROM pencil";
-                    $res_pencils = mysql_query($sql_pencils);
-                    echo mysql_num_rows($res_pencils)." pencil entries found."."<br />"."\n";
+                    $res_pencils = $connection->query($sql_pencils);
+                    echo mysqli_num_rows($res_pencils)." pencil entries found."."<br />"."\n";
                     echo "<ul>"."\n";
-                    while ($s_pencils = mysql_fetch_assoc($res_pencils)) {
+                    while ($s_pencils = mysqli_fetch_assoc($res_pencils)) {
                         echo "<li>".$s_pencils["type"]."</li>";
                     }
                     echo "</ul>"."\n";
@@ -54,10 +55,10 @@
                     echo "<br />";
                     // Get colors
                     $sql_colors = "SELECT * FROM colors";
-                    $res_colors = mysql_query($sql_colors);
-                    echo mysql_num_rows($res_colors)." color entries found."."<br />"."\n";
+                    $res_colors = $connection->query($sql_colors);
+                    echo mysqli_num_rows($res_colors)." color entries found."."<br />"."\n";
                     echo "<ul>"."\n";
-                    while ($s_colors = mysql_fetch_assoc($res_colors)) {
+                    while ($s_colors = mysqli_fetch_assoc($res_colors)) {
                         echo "<li>".$s_colors["type"]."</li>";
                     }
                     echo "</ul>"."\n";
@@ -65,16 +66,16 @@
                     echo "<br />";
                     // Get hardness
                     $sql_hard = "SELECT * FROM hardness";
-                    $res_hard = mysql_query($sql_hard);
-                    echo mysql_num_rows($res_hard)." hardness entries found."."<br />"."\n";
+                    $res_hard = $connection->query($sql_hard);
+                    echo mysqli_num_rows($res_hard)." hardness entries found."."<br />"."\n";
                     echo "<ul>"."\n";
-                    while ($s_hard = mysql_fetch_assoc($res_hard)) {
+                    while ($s_hard = mysqli_fetch_assoc($res_hard)) {
                         echo "<li>".$s_hard["type"]."</li>";
                     }
                     echo "</ul>"."\n";
-                    mysql_close();
+                    mysqli_close();
                 }
-                else echo "Connection error";
+                else echo "Database connection error";
             ?>
         </div>
         <!-- Selected products -->
