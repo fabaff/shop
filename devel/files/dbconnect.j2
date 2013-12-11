@@ -3,10 +3,9 @@
     $user = "root";
     $pass = "{{ mysql_root_password }}";
     $dbase= "{{ mysql_db_name }}";
-    $connection = @mysql_connect($host, $user, $pass);
-    if ($connection) {
-        mysql_select_db($dbase);
-    } else {
-        exit("Connection error");
+    $connection = new mysqli($host, $user, $pass, $dbase);
+
+    if ($connection->connect_errno) {
+       echo "Failed to connect to MySQL/MariaDB: (".$connection->connect_errno . ") ".$connection->connect_error;
     }
 ?>
