@@ -16,4 +16,4 @@
         owner=lighttpd
         group=lighttpd
         mode=0644
-  with_items: css
+  with_items: javascript
