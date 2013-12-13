@@ -20,6 +20,7 @@ Contents:
    javascript
    sessions
    database
+   messaging
    development
 
 Indices and tables
