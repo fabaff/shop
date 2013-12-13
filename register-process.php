@@ -35,5 +35,5 @@ $connection->query($query);
  
 $connection->close();
  
-header('Location: login.php');
+header('Location: admin.php');
 ?>
