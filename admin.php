@@ -34,16 +34,17 @@
         $part2 = '';
         $part3 = "</p>\n";
         // Menu array
-        $menu = array('Products' => array(array('Tables', 'tables.php')),
-                      'Database' => array(array('Users', 'users.php'),
-                                          array('Usersqq', 'usersqq.php')),
-                      'Misc'     => array(array('MQTT messaging', 'send-msg.php'),
-                                          array('Tests', 'tests.php'))
+        $menu = array('Products' => array(array('Show tables', 'tables.php')),
+                      'CRM' => array(array('Show customers', 'customers.php')),
+                      'Database' => array(array('Show users', 'users.php'),
+                                          array('Register new users', 'register.php')),
+                      'Misc'     => array(array('Test MQTT messaging', 'send-msg.php'),
+                                          array('Other tests', 'tests.php'))
             );
             foreach ($menu as $section => $elements) {
                 echo "<h4>".$section."</h4>";
                 foreach ($elements as $element) {
-                    echo "<a href='".$element[1]."'>Show ".$element[0]."</a>"."\n";
+                    echo "<a href='".$element[1]."'>".$element[0]."</a>"."\n";
                     echo"<br/>";
                 }
             }
