@@ -39,7 +39,6 @@
         <div>
         <h2>Sending test messages to MQTT</h2>
             <p>This page sends a single MQTT message to the topic <b>webshop/test</b>.</p>
-            <br>
             <!-- Add error handling -->
             <?php
                 define('BROKER', 'localhost');
@@ -55,10 +54,8 @@
                 $message = "Test message from webshop at ".date("Y-m-d H:i:s");
                 $client->publish($completeTopic, $message, 0, false);
 
-                echo "The message '".$message." ' was sent to '".$completeTopic." '.\n";
+                echo "<h3><span class='label label-success'>The message '".$message." ' was sent to '".$completeTopic." '.</span></h3>\n";
             ?>
-            <br>
-            <br>
             <p>To see the messages, subscribe to the topic <b>webshop/#</b>.</p>
             <code>mosquitto_sub -h localhost -t webshop/#</code>
         </div>
