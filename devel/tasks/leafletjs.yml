@@ -27,3 +27,8 @@
 
 - name: move the javascript file
   command: /usr/bin/mv /var/www/lighttpd/leaflet.js /var/www/lighttpd/scripts/leaflet.js
+
+- name: download the provider plugin (needed for OSM)
+  get_url: url=https://raw.github.com/leaflet-extras/leaflet-providers/master/leaflet-providers.js
+           dest=/var/www/lighttpd/scripts/leaflet-providers.js
+           mode=0644
