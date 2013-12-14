@@ -8,8 +8,8 @@
     <title>Webshop Pencil AG | About</title>
 
     <link href="css/webshop.css" rel="stylesheet">
+    <link href="css/leaflet.css" rel="stylesheet"/>
   </head>
-
   <body>
     <div class="container" style="margin-top: 10px;">
     <!-- Header -->
@@ -23,7 +23,8 @@
         <!-- Navigation -->
             <?php 
                 require('menu.php');
-                echo menu();
+              
+  echo menu();
             ?>
     <!-- Header -->
     <!-- Content -->
@@ -31,16 +32,24 @@
             $str = file_get_contents('company.txt');
             echo $str;
         ?>
+
+    <!-- Map -->
+        <h3>Lageplan</h3>
+	    <div id="map" class="map" style="width: 600px; height: 400px"></div>
     <!-- Content -->
         </div>
       </div>
     </div>
-
     <!-- Footer -->
     <?php 
         require('footer.php');
         echo foot();
     ?>
     <!-- Footer -->
+    <!-- Javascript -->
+	<script src="scripts/leaflet.js"></script>
+	<script src="scripts/leaflet-providers.js"></script>
+	<script src="scripts/leaflet_osm.js"></script>
+    <!-- Javascript -->
   </body>
 </html>
