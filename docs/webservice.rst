@@ -34,7 +34,7 @@ Weather
 The `OpenWeatherMap`_ service provides free weather data and a forecast API for
 web applications. 
 
-.. OpenWeatherMap: _http://openweathermap.org/
+.. _OpenWeatherMap: http://openweathermap.org/
 
     <?php
         // Details about the API:
