@@ -36,6 +36,12 @@
     <!-- Map -->
         <h3>Lageplan</h3>
 	    <div id="map" class="map" style="width: 600px; height: 400px"></div>
+    <!-- Weather -->
+    <?php 
+        require('scripts/openweathermap.php');
+    ?>
+
+
     <!-- Content -->
         </div>
       </div>
