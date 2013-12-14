@@ -18,7 +18,8 @@
     - include: tasks/motd.yml  # Not needed, just for fun and to test ansible
     - include: tasks/lighttpd.yml
     - include: tasks/mysql.yml
-    - include: tasks/default.yml  # A default index.html to test the web server
+    - include: tasks/mosquitto.yml
+#    - include: tasks/default.yml  # A default index.html to test the web server
     - include: tasks/phpinfo.yml  # Test for the PHP installation
     - include: tasks/leafletjs.yml  # Leaflet javascript library
     - include: tasks/phpmyadmin.yml
