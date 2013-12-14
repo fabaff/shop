@@ -32,9 +32,7 @@ The basic steps to integrate a map is shown below::
 Weather
 -------
 The `OpenWeatherMap`_ service provides free weather data and a forecast API for
-web applications. 
-
-.. _OpenWeatherMap: http://openweathermap.org/
+web applications. ::
 
     <?php
         // Details about the API:
@@ -52,3 +50,5 @@ web applications.
         echo "Luftfeuchtigkeit: $humidity %<br/>\n";
         echo "Luftdruck: $pressure Pa</p>\n";
     ?>
+
+.. _OpenWeatherMap: http://openweathermap.org/
