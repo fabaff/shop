@@ -1,6 +1,3 @@
-//            <?php 
-//               require('auth.php');
-////           ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,7 +40,7 @@
                     echo mysqli_num_rows($res_users)." users entries found."."<br />"."\n";
                     echo "<ul>"."\n";
                     while ($s_users = mysqli_fetch_assoc($res_users)) {
-                        echo "<li>".$s_users["name"]."</li>";
+                        echo "<li>".$s_users["username"]."</li>";
                     }
                     echo "</ul>"."\n";
                     mysqli_close();
