@@ -11,7 +11,7 @@ On the PHP side `Mosquitto-PHP`_ is used as a wrapper.
 Broker
 ------
 `Mosquitto`_ is a message broker that implements the MQ Telemetry Transport
-protocol. 
+protocol. ::
 
     $ sudo systemctl status mosquitto.service
 
