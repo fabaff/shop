@@ -1,9 +1,9 @@
 <?php
-    $host = "localhost";
-    $user = "root";
-    $pass = "{{ mysql_root_password }}";
-    $dbase= "{{ mysql_db_name }}";
-    $connection = new mysqli($host, $user, $pass, $dbase);
+    $host       = "localhost";
+    $user       = "root";
+    $password   = "{{ mysql_root_password }}";
+    $dbase      = "{{ mysql_db_name }}";
+    $connection = new mysqli($host, $user, $password, $dbase);
 
     if ($connection->connect_errno) {
        echo "Failed to connect to MySQL/MariaDB: (".$connection->connect_errno . ") ".$connection->connect_error;
