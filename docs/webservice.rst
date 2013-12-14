@@ -7,8 +7,8 @@ sources.
 
 Map
 ---
- `Leafletjs`_, a JavaScript library for working with interactive maps from
-OpenStreetMap (`OSM`_), implemented.
+`Leafletjs`_, a JavaScript library for working with interactive maps from
+OpenStreetMap (`OSM`_), is implemented as a show case for a simple web service.
 
 .. _Leafletjs: http://leafletjs.com/
 .. _OSM: http://www.openstreetmap.org
