@@ -1,6 +1,3 @@
-//            <?php 
-//               require('auth.php');
-////           ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,10 +36,8 @@
             <?php
                 $connection = new mysqli("localhost", "root", "webshop", "webshop");
                 if (mysqli_connect_errno() == 0) {
-                    // Products
-                    // tbd
-                    
                     // Get pencils
+                    echo "<h4>Pencils</h4>"."\n";
                     $sql_pencils = "SELECT * FROM pencil";
                     $res_pencils = $connection->query($sql_pencils);
                     echo mysqli_num_rows($res_pencils)." pencil entries found."."<br />"."\n";
@@ -51,9 +46,10 @@
                         echo "<li>".$s_pencils["type"]."</li>";
                     }
                     echo "</ul>"."\n";
-
-                    echo "<br />";
+                    echo "<a href=\"add.php?table=pencil\">Add new entry</a>";
+                    echo "<hr>";
                     // Get colors
+                    echo "<h4>Colors</h4>"."\n";
                     $sql_colors = "SELECT * FROM colors";
                     $res_colors = $connection->query($sql_colors);
                     echo mysqli_num_rows($res_colors)." color entries found."."<br />"."\n";
@@ -62,9 +58,10 @@
                         echo "<li>".$s_colors["type"]."</li>";
                     }
                     echo "</ul>"."\n";
-
-                    echo "<br />";
+                    echo "<a href=\"add.php?table=color\">Add new entry</a>";
+                    echo "<hr>";
                     // Get hardness
+                    echo "<h4>Hardness</h4>"."\n";
                     $sql_hard = "SELECT * FROM hardness";
                     $res_hard = $connection->query($sql_hard);
                     echo mysqli_num_rows($res_hard)." hardness entries found."."<br />"."\n";
@@ -73,6 +70,20 @@
                         echo "<li>".$s_hard["type"]."</li>";
                     }
                     echo "</ul>"."\n";
+                    echo "<a href=\"add.php?table=hardness\">Add new entry</a>";
+                    echo "<hr>";
+                    // Get options
+                    echo "<h4>Options</h4>"."\n";
+                    $sql_options = "SELECT * FROM options";
+                    $res_options = $connection->query($sql_options);
+                    echo mysqli_num_rows($res_options)." options entries found."."<br />"."\n";
+                    echo "<ul>"."\n";
+                    while ($s_options = mysqli_fetch_assoc($res_options)) {
+                        echo "<li>".$s_options["type"]."</li>";
+                    }
+                    echo "</ul>"."\n";
+                    echo "<a href=\"add.php?table=options\">Add new entry</a>";
+
                     mysqli_close();
                 }
                 else echo "Database connection error";
