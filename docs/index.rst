@@ -4,7 +4,9 @@
 Welcome to Shop's documentation!
 ================================
 
-This is the documentation of the genesi of a web shop.
+This is the documentation of the genesi of a web shop. It describes the taken 
+steps and the features. The code is not production-ready but shows at various 
+locations different way to do things. 
 
 Contents:
 
