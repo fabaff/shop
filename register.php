@@ -32,30 +32,30 @@
         <div>
             <h3>Erstellen von Benutzern</h3>
 
-            <form name="register" action="register-process.php" method="post">
+            <form name="register" action="scripts/register-process.php" method="post">
             <table width="510" border="0">
             <tr>
-            <td colspan="2"></td>
+                <td colspan="2"></td>
             </tr>
             <tr>
-            <td>Benutzername:</td>
-            <td><input class="form-control input-lg" type="text" name="username" maxlength="20" /></td>
+                <td>Benutzername:</td>
+                <td><input class="form-control" type="text" name="username" maxlength="20" /></td>
             </tr>
             <tr>
-            <td>Passwort:</td>
-            <td><input class="form-control input-lg" type="password" name="password1" /></td>
+                <td>Passwort:</td>
+                <td><input class="form-control" type="password" name="password1" /></td>
             </tr>
             <tr>
-            <td>Bestätigung Passwort:</td>
-            <td><input class="form-control input-lg" type="password" name="password2" /></td>
+                <td>Bestätigung Passwort:</td>
+                <td><input class="form-control" type="password" name="password2" /></td>
             </tr>
             <tr>
-            <td>E-Mail:</td>
-            <td><input class="form-control input-lg" type="text" name="email" id="email" /></td>
+                <td>E-Mail:</td>
+                <td><input class="form-control" type="text" name="email" id="email" /></td>
             </tr>
             <tr>
-            <td>&nbsp;</td>
-            <td><button class="btn btn-success btn-lg" type="submit" value="Register">Registrieren</button></td>
+                <td>&nbsp;</td>
+                <td><button class="btn btn-success" type="submit" value="Register">Registrieren</button></td>
             </tr>
             </table>
             </form>
