@@ -28,14 +28,6 @@
     <!-- Header -->
 
     <!-- Content -->
-        <!-- Action container aka Jumbotron Bootstrap
-        <div class="action">
-          <h1>Wochen-Aktion</h1>
-          <p>Dies ist eine super Aktion. 10 Bleistifte für CHF 8.</p>
-        </div>
-        Action container -->
-
-        <!-- Selected products -->
         <div>
         <h2>Sending test messages to MQTT</h2>
             <p>This page sends a single MQTT message to the topic <b>webshop/test</b>.</p>
@@ -61,7 +53,7 @@
         </div>
       </div>
     </div>
-
+    <!-- Content -->
     <!-- Footer -->
     <?php 
         require('footer.php');
