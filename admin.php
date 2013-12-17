@@ -36,7 +36,7 @@
         // Menu array
         $menu = array('Products' => array(array('Show all tables', 'tables.php'),
                                           array('Show products', 'products.php'),
-                                          array('Add products', 'products-add.php'),
+                                          array('Add products', 'add-products.php'),
                                           ),
                       'CRM' => array(array('Show customers', 'customers.php')
                                            ),
