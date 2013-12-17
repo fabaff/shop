@@ -24,13 +24,11 @@
     $salt = createSalt();
     $password = hash('sha256', $salt . $hash);
     
-    // Sanitize username
     $username = $connection->real_escape_string($username);
     
     $query = "INSERT INTO login ( username, password, email, salt ) VALUES
         ( '$username', '$password', '$email', '$salt' )";
     
-    // Remove $conn variable in order to connect to our database using OOP.
     $connection->query($query);
     $connection->close();
     header('Location: ../login.php');
