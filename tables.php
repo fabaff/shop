@@ -30,7 +30,7 @@
     <!-- Content -->
         <!-- Selected products -->
         <div>
-            <h3>Übersicht Tabellen-Inhalte</h3>
+            <h3>Overview Table content</h3>
             <!-- This page is more or less a simple test page for the database connection. -->
             <!-- Keep in mind: The connection details are only in this page included (-> dbconnect.php). -->
             <?php
@@ -38,7 +38,7 @@
                 if (mysqli_connect_errno() == 0) {
                     // Get pencils
                     echo "<h4>Pencils</h4>"."\n";
-                    $sql_pencils = "SELECT * FROM pencil";
+                    $sql_pencils = "SELECT * FROM pencils";
                     $res_pencils = $connection->query($sql_pencils);
                     echo mysqli_num_rows($res_pencils)." pencil entries found."."<br />"."\n";
                     echo "<ul>"."\n";
@@ -46,7 +46,7 @@
                         echo "<li>".$s_pencils["type"]."</li>";
                     }
                     echo "</ul>"."\n";
-                    echo "<a href=\"add.php?table=pencil\">Add new entry</a>";
+                    echo "<a href=\"add.php?table=pencils\">Add new entry</a>";
                     echo "<hr>";
                     // Get colors
                     echo "<h4>Colors</h4>"."\n";
@@ -58,7 +58,7 @@
                         echo "<li>".$s_colors["type"]."</li>";
                     }
                     echo "</ul>"."\n";
-                    echo "<a href=\"add.php?table=color\">Add new entry</a>";
+                    echo "<a href=\"add.php?table=colors\">Add new entry</a>";
                     echo "<hr>";
                     // Get hardness
                     echo "<h4>Hardness</h4>"."\n";
