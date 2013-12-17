@@ -55,7 +55,7 @@
     <!-- Javascript -->
 	<script src="scripts/leaflet.js"></script>
 	<script src="scripts/leaflet-providers.js"></script>
-	<script src="scripts/leaflet_osm.js"></script>
+	<script src="scripts/leaflet-osm.js"></script>
     <!-- Javascript -->
   </body>
 </html>
