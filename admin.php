@@ -43,7 +43,7 @@
                       'Database' => array(array('Show users', 'users.php'),
                                           array('Register new users', 'register.php')
                                                 ),
-                      'Misc'     => array(array('Test MQTT messaging', 'send-msg.php'),
+                      'Misc'     => array(array('Test MQTT messaging', 'test-send-msg.php'),
                                           array('Other tests', 'tests.php')
                                           )
             );
