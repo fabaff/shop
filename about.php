@@ -17,14 +17,13 @@
         <div class="panel-body">
         <!-- Logo and company name -->
             <?php 
-                require('header.php');
+                require('scripts/header.php');
                 echo head();
             ?>
         <!-- Navigation -->
             <?php 
-                require('menu.php');
-              
-  echo menu();
+                require('scripts/menu.php');
+                echo menu();
             ?>
     <!-- Header -->
     <!-- Content -->
@@ -32,7 +31,6 @@
             $str = file_get_contents('company.txt');
             echo $str;
         ?>
-
     <!-- Map -->
         <h3>Lageplan</h3>
 	    <div id="map" class="map" style="width: 600px; height: 400px"></div>
@@ -40,15 +38,13 @@
     <?php 
         require('scripts/openweathermap.php');
     ?>
-
-
     <!-- Content -->
         </div>
       </div>
     </div>
     <!-- Footer -->
     <?php 
-        require('footer.php');
+        require('scripts/footer.php');
         echo foot();
     ?>
     <!-- Footer -->
