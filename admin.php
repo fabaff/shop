@@ -1,3 +1,7 @@
+<?php 
+    require_once('scripts/send-msg.php');
+    defaultMsg("admin", getShortPage());
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +20,8 @@
       <div class="panel panel-default">
         <div class="panel-body">
         <!-- Logo and company name -->
-            <?php 
+            <?php
+                ob_start();
                 require('header.php');
                 echo head();
             ?>
@@ -29,40 +34,38 @@
     <!-- Content -->
         <h3>Administration</h3>
             <?php
-
-        $part1 = "<p>\n";
-        $part2 = '';
-        $part3 = "</p>\n";
-        // Menu array
-        $menu = array('Products' => array(array('Show all tables', 'tables.php'),
-                                          array('Show products', 'products.php'),
-                                          array('Add products', 'add-product.php'),
-                                          ),
-                      'CRM' => array(array('Show customers', 'customers.php')
-                                           ),
-                      'Database' => array(array('Show users', 'users.php'),
-                                          array('Register new users', 'register.php')
-                                                ),
-                      'Misc'     => array(array('Test MQTT messaging', 'test-send-msg.php'),
-                                          array('Other tests', 'tests.php')
-                                          )
-            );
-            foreach ($menu as $section => $elements) {
-                echo "<h4>".$section."</h4>";
-                foreach ($elements as $element) {
-                    echo "<a href='".$element[1]."'>".$element[0]."</a>"."\n";
-                    echo"<br/>";
-                }
-            }
+                $part1 = "<p>\n";
+                $part2 = '';
+                $part3 = "</p>\n";
+                // Menu array
+                $menu = array('Products' => array(array('Show all tables', 'tables.php'),
+                                                  array('Show products', 'products.php'),
+                                                  array('Add products', 'add-product.php'),
+                                                  ),
+                              'CRM' => array(array('Show customers', 'customers.php')
+                                                   ),
+                              'Database' => array(array('Show users', 'users.php'),
+                                                  array('Register new users', 'register.php')
+                                                        ),
+                              'Misc'     => array(array('Test MQTT messaging', 'send-test-msg.php'),
+                                                  array('Other tests', 'tests.php')
+                                                  )
+                    );
+                    foreach ($menu as $section => $elements) {
+                        echo "<h4>".$section."</h4>";
+                        foreach ($elements as $element) {
+                            echo "<a href='".$element[1]."'>".$element[0]."</a>"."\n";
+                            echo"<br/>";
+                        }
+                    }
             ?>
     <!-- Content -->
         </div>
       </div>
     </div>
-
     <!-- Footer -->
     <?php 
-        require('footer.php');
+        require('scripts/footer.php');
         echo foot();
     ?>
     <!-- Footer -->
