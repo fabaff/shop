@@ -32,16 +32,34 @@
             <h3>Overview Users</h3>
             <?php
                 require_once('config/dbconnect.php');
-                if (mysqli_connect_errno() == 0) {
-                    // Get users
+                if (mysqli_connect_errno() == 0) {                  
+                    // Get data
                     $sql = "SELECT * FROM login";
                     $results = $connection->query($sql);
-                    echo mysqli_num_rows($results)." users entries found."."<br />"."\n";
-                    echo "<ul>"."\n";
-                    while ($result = $results->fetch_object()) {
-                        echo "<li>".$result->username."</li>";
+                    $tableinfo = $results->fetch_fields();
+                    echo $results->num_rows." users entries found."."<br />"."\n";
+                    // Create table
+                    echo "<table class=\"table table-striped\">"."\n";
+                    echo "<thead valign=\"bottom\">"."\n";
+                    echo "<tr>"."\n";
+                    foreach ($tableinfo as $element) {
+                        echo "<th class=\"head\">".ucfirst($element->name)."</th>"."\n";
                     }
-                    echo "</ul>"."\n";
+                    echo "</tr>"."\n";
+                    echo "</thead>"."\n";
+                    echo "<tbody valign=\"top\">"."\n";
+                    while ($result = $results->fetch_object()) {
+                        echo "<tr>"."\n";
+                        echo "<td>".$result->id."</td>";
+                        echo "<td>".$result->username."</td>";
+                        echo "<td>".$result->password."</td>";
+                        echo "<td>".$result->email."</td>";
+                        echo "<td>".$result->salt."</td>";
+                        echo "<td>"."Edit me"."</td>";
+                        echo "</tr>"."\n";
+                    }
+                    echo "</tbody>"."\n";
+                    echo "</table>"."\n";
                     $results->close();
                 } else {
                     echo "Database connection error";
