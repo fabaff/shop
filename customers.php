@@ -54,6 +54,7 @@
                         echo "<td>".$result->lastname."</td>";
                         echo "<td>".$result->firstname."</td>";
                         echo "<td>".$result->email."</td>";
+                        echo "<td>".$result->password."</td>";
                         echo "<td>".$result->birthdate."</td>";
                         echo "<td>".$result->gender."</td>";
                         echo "</tr>"."\n";
