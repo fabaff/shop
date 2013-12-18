@@ -1,6 +1,3 @@
-//            <?php 
-//               require('auth.php');
-////           ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,12 +17,12 @@
         <div class="panel-body">
         <!-- Logo and company name -->
             <?php 
-                require('header.php');
+                require('scripts/header.php');
                 echo head();
             ?>
         <!-- Navigation -->
             <?php 
-                require('menu.php');
+                require('scripts/menu.php');
                 echo menu();
             ?>
     <!-- Header -->
@@ -33,22 +30,24 @@
     <!-- Content -->
         <!-- Selected products -->
         <div>
-            <h3>Übersicht Kunden</h3>
+            <h3>Overview Customers</h3>
             <?php
                 require_once('config/dbconnect.php');
                 if (mysqli_connect_errno() == 0) {                  
-                    // Get users
-                    $sql_customers = "SELECT * FROM customers";
-                    $res_customers = $connection->query($sql_users);
-                    echo mysqli_num_rows($res_customers)." customers entries found."."<br />"."\n";
+                    // Get data
+                    $sql = "SELECT * FROM customers";
+                    $results = $connection->query($sql);
+                    echo mysqli_num_rows($results)." customers entries found."."<br />"."\n";
                     echo "<ul>"."\n";
-                    while ($s_customers = mysqli_fetch_assoc($res_customers)) {
-                        echo "<li>".$s_customers["name"]."</li>";
+                    while ($result = $results->fetch_object()) {
+                        echo "<li>".$result->lname."</li>";
                     }
                     echo "</ul>"."\n";
-                    mysqli_close();
+                    $results->close();
+                } else {
+                    echo "Database connection error";
                 }
-                else echo "Database connection error";
+                $connection->close();
             ?>
         </div>
         <!-- Selected products -->
@@ -59,7 +58,7 @@
 
     <!-- Footer -->
     <?php 
-        require('footer.php');
+        require('scripts/footer.php');
         echo foot();
     ?>
     <!-- Footer -->
