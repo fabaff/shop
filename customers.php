@@ -28,7 +28,6 @@
     <!-- Header -->
 
     <!-- Content -->
-        <!-- Selected products -->
         <div>
             <h3>Overview Customers</h3>
             <?php
@@ -37,12 +36,30 @@
                     // Get data
                     $sql = "SELECT * FROM customers";
                     $results = $connection->query($sql);
-                    echo mysqli_num_rows($results)." customers entries found."."<br />"."\n";
-                    echo "<ul>"."\n";
-                    while ($result = $results->fetch_object()) {
-                        echo "<li>".$result->lname."</li>";
+                    $tableinfo = $results->fetch_fields();
+                    echo $results->num_rows." customers entries found."."<br />"."\n";
+                    // Create table
+                    echo "<table class=\"table table-striped\">"."\n";
+                    echo "<thead valign=\"bottom\">"."\n";
+                    echo "<tr>"."\n";
+                    foreach ($tableinfo as $element) {
+                        echo "<th class=\"head\">".$element->name."</th>"."\n";
                     }
-                    echo "</ul>"."\n";
+                    echo "</tr>"."\n";
+                    echo "</thead>"."\n";
+                    echo "<tbody valign=\"top\">"."\n";
+                    while ($result = $results->fetch_object()) {
+                        echo "<tr>"."\n";
+                        echo "<td>".$result->id."</td>";
+                        echo "<td>".$result->lastname."</td>";
+                        echo "<td>".$result->firstname."</td>";
+                        echo "<td>".$result->email."</td>";
+                        echo "<td>".$result->birthdate."</td>";
+                        echo "<td>".$result->gender."</td>";
+                        echo "</tr>"."\n";
+                    }
+                    echo "</tbody>"."\n";
+                    echo "</table>"."\n";
                     $results->close();
                 } else {
                     echo "Database connection error";
@@ -50,7 +67,6 @@
                 $connection->close();
             ?>
         </div>
-        <!-- Selected products -->
         <!-- Content -->
         </div>
       </div>
