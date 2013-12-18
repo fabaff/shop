@@ -17,18 +17,17 @@
         <div class="panel-body">
         <!-- Logo and company name -->
             <?php 
-                require('header.php');
+                require('scripts/header.php');
                 echo head();
             ?>
         <!-- Navigation -->
             <?php 
-                require('menu.php');
+                require('scripts/menu.php');
                 echo menu();
             ?>
     <!-- Header -->
 
     <!-- Content -->
-        <!-- Selected products -->
         <div>
             <h3>Overview Table content</h3>
             <!-- This page is more or less a simple test page for the database connection. -->
@@ -36,60 +35,26 @@
             <?php
                 $connection = new mysqli("localhost", "root", "webshop", "webshop");
                 if (mysqli_connect_errno() == 0) {
-                    // Get pencils
-                    echo "<h4>Pencils</h4>"."\n";
-                    $sql_pencils = "SELECT * FROM pencils";
-                    $res_pencils = $connection->query($sql_pencils);
-                    echo mysqli_num_rows($res_pencils)." pencil entries found."."<br />"."\n";
-                    echo "<ul>"."\n";
-                    while ($s_pencils = mysqli_fetch_assoc($res_pencils)) {
-                        echo "<li>".$s_pencils["type"]."</li>";
+                    $sections = array('pencils', 'colors', 'hardness', 'options');
+                    foreach ($sections as $section) {
+                        echo "<h4>".ucfirst($section)."</h4>"."\n";
+                        $sql = "SELECT * FROM $section";
+                        $results = $connection->query($sql);
+                        echo mysqli_num_rows($results)." ".$section." entries found."."<br />"."\n";
+                        echo "<ul>"."\n";
+                        while ($result = $results->fetch_object()) {
+                            echo "<li>".$result->type."</li>";
+                        }
+                        echo "</ul>"."\n";
+                        echo "<a href=\"add.php?table=$section\">Add new entry</a>";
                     }
-                    echo "</ul>"."\n";
-                    echo "<a href=\"add.php?table=pencils\">Add new entry</a>";
-                    echo "<hr>";
-                    // Get colors
-                    echo "<h4>Colors</h4>"."\n";
-                    $sql_colors = "SELECT * FROM colors";
-                    $res_colors = $connection->query($sql_colors);
-                    echo mysqli_num_rows($res_colors)." color entries found."."<br />"."\n";
-                    echo "<ul>"."\n";
-                    while ($s_colors = mysqli_fetch_assoc($res_colors)) {
-                        echo "<li>".$s_colors["type"]."</li>";
-                    }
-                    echo "</ul>"."\n";
-                    echo "<a href=\"add.php?table=colors\">Add new entry</a>";
-                    echo "<hr>";
-                    // Get hardness
-                    echo "<h4>Hardness</h4>"."\n";
-                    $sql_hard = "SELECT * FROM hardness";
-                    $res_hard = $connection->query($sql_hard);
-                    echo mysqli_num_rows($res_hard)." hardness entries found."."<br />"."\n";
-                    echo "<ul>"."\n";
-                    while ($s_hard = mysqli_fetch_assoc($res_hard)) {
-                        echo "<li>".$s_hard["type"]."</li>";
-                    }
-                    echo "</ul>"."\n";
-                    echo "<a href=\"add.php?table=hardness\">Add new entry</a>";
-                    echo "<hr>";
-                    // Get options
-                    echo "<h4>Options</h4>"."\n";
-                    $sql_options = "SELECT * FROM options";
-                    $res_options = $connection->query($sql_options);
-                    echo mysqli_num_rows($res_options)." options entries found."."<br />"."\n";
-                    echo "<ul>"."\n";
-                    while ($s_options = mysqli_fetch_assoc($res_options)) {
-                        echo "<li>".$s_options["type"]."</li>";
-                    }
-                    echo "</ul>"."\n";
-                    echo "<a href=\"add.php?table=options\">Add new entry</a>";
-
-                    mysqli_close();
+                } else {
+                    echo "Database connection error";
                 }
-                else echo "Database connection error";
+                $results->close();
+                $connection->close();
             ?>
         </div>
-        <!-- Selected products -->
         <!-- Content -->
         </div>
       </div>
@@ -97,7 +62,7 @@
 
     <!-- Footer -->
     <?php 
-        require('footer.php');
+        require('scripts/footer.php');
         echo foot();
     ?>
     <!-- Footer -->
