@@ -40,11 +40,11 @@
 					<div class="rows">
 						<div class="col-md-8">
 							<div class="col-lg-6">
-								<input class="form-control" id="fname" name="fname" placeholder="First Name" type="text">
+								<input class="form-control" id="firstname" name="firstname" placeholder="First Name" type="text">
 							</div>
 
 							<div class="col-lg-6">
-								<input class="form-control" id="lname" name="lname" placeholder="Last Name" type="text">
+								<input class="form-control" id="lastname" name="lastname" placeholder="Last Name" type="text">
 							</div>
 						</div>
 					</div>
