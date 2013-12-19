@@ -47,6 +47,18 @@
             <p>Hier hat es zufällige Produkte...Die Bleistifte und deren Freunde...</p>
         </div>
         <!-- Selected products -->
+            <?php
+                require_once('config/dbconnect.php');
+                if (mysqli_connect_errno() == 0) {
+                    $sql = "SELECT * FROM products";
+                    $results = $connection->query($sql);
+                    echo "Wir haben die unglaubliche  Menge von ".$results->num_rows." Produkten am Lager."."<br />"."\n";
+                    $results->close();
+                } else {
+                    echo "Database connection error";
+                }
+                $connection->close();
+            ?>
         <!-- Content -->
         <a href=>
         </div>
