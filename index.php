@@ -35,12 +35,12 @@
     <!-- Header -->
 
     <!-- Content -->
-        <!-- Action container aka Jumbotron Bootstrap
+        <!-- Action container aka Jumbotron Bootstrap -->
         <div class="action">
           <h1>Wochen-Aktion</h1>
           <p>Dies ist eine super Aktion. 10 Bleistifte für CHF 8.</p>
         </div>
-        Action container -->
+        <!-- Action container -->
 
         <!-- Selected products -->
         <div>
