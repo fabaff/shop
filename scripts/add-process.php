@@ -4,7 +4,7 @@
     // Get the parameters
     $entry = $_POST['entry'];
     $table = $_POST['table'];
-    // Create SQl query
+    // Create SQL query
     $query = "INSERT INTO $table ( id, type ) VALUES ( NULL, '$entry' )";
     // Run query and redirect to admin page
     if ($connection->query($query)) {
