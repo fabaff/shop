@@ -1,4 +1,7 @@
 <?php
+    // The short way
+    //$connection = new mysqli('localhost', 'root', 'webshop', 'webshop');
+
     $host       = "localhost";
     $user       = "root";
     $password   = "{{ mysql_root_password }}";
@@ -6,7 +9,7 @@
     $connection = new mysqli($host, $user, $password, $dbase);
 
     if ($connection->connect_errno) {
-       echo "Failed to connect to MySQL/MariaDB: (".$connection->connect_errno . ") ".$connection->connect_error;
+       echo "Failed to connect to MariaDB/MySQL: (".$connection->connect_errno.") ".$connection->connect_error;
     }
     mysqli_report(MYSQLI_REPORT_ERROR);
 ?>
