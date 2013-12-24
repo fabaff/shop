@@ -1,0 +1,27 @@
+# This playbook installs the Savant (http://phpsavant.com/) templating engine.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: download the savant archive
+  get_url: url=http://phpsavant.com/get/Savant3-3.0.1.tgz
+           dest=/var/www/lighttpd/savant.tgz
+           mode=0644
+
+- name: unpack the source tarball
+  command: /usr/bin/tar -xzf /var/www/lighttpd/savant.tgz -C /var/www/lighttpd/
+
+- name: move the class file
+  command: /usr/bin/mv /var/www/lighttpd/Savant3-3.0.1/Savant3.php /var/www/lighttpd/scripts/Savant3.php
+
+- name: move the class file
+  command: /usr/bin/mv /var/www/lighttpd/Savant3-3.0.1/Savant3 /var/www/lighttpd/scripts/
+
+- name: cleanup
+  file: path=/var/www/lighttpd/{{ item }}
+        state=absent
+  with_items:
+    - savant.tgz
+    - Savant3-3.0.1
