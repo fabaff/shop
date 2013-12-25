@@ -1,0 +1,15 @@
+# This playbook install firewalld.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install firewalld
+  yum: pkg={{ item }}
+       state=present 
+  with_items:
+    - firewalld
+
+- name: start firewalld
+  command: /usr/sbin/firewalld
