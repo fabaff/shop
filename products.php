@@ -17,12 +17,12 @@
         <div class="panel-body">
         <!-- Logo and company name -->
             <?php 
-                require('header.php');
+                require('scripts/header.php');
                 echo head();
             ?>
         <!-- Navigation -->
             <?php 
-                require('menu.php');
+                require('scripts/menu.php');
                 echo menu();
             ?>
     <!-- Header -->
@@ -79,7 +79,7 @@
 
     <!-- Footer -->
     <?php 
-        require('footer.php');
+        require('scripts/footer.php');
         echo foot();
     ?>
     <!-- Footer -->
