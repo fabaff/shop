@@ -8,13 +8,13 @@
     <title>Webshop Pencil AG | Home</title>
 
     <link href="css/webshop.css" rel="stylesheet">
-    <script type="text/javascript">
+<!--    <script type="text/javascript">
     function dialog() {
         name = window.prompt("Name", "your name");
         result = window.confirm("Hello " + name + ". Continue?");
     if (result) window.alert("Welcome!");
     }
-    </script>
+    </script>-->
   </head>
 
   <body onload="dialog()">
