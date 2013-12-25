@@ -42,7 +42,7 @@ will work with different releases.
 - Kernel: 3.12.5-302.fc20.x86_64
 - Lighttpd: 1.4.32
 - PHP: 5.5.7
-- MySQL: 5.5.33
+- MariaDB: 5.5.34
 
 Configuration management
 ------------------------
