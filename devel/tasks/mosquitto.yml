@@ -22,3 +22,6 @@
   service: name=mosquitto
            state=running
            enabled=yes
+
+# PHP extension
+# ftp://rpmfind.net/linux/remi/fedora/20/remi/x86_64/php-pecl-mosquitto-0.2.1-1.fc20.remi.5.5.x86_64.rpm
