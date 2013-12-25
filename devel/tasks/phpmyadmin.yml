@@ -24,7 +24,7 @@
   command: /usr/bin/tar -xzf /var/www/lighttpd/phpmyadmin-4.1.0.tar.gz -C /var/www/lighttpd/
 
 - name: rename the source directory
-  command: /usr/bin/mv /var/www/lighttpd/phpMyAdmin-4.1.0all-languages /var/www/lighttpd/phpmyadmin
+  command: /usr/bin/mv /var/www/lighttpd/phpMyAdmin-4.1.0-all-languages /var/www/lighttpd/phpmyadmin
 
 - name: delete the archive
   file: path=/var/www/lighttpd/phpmyadmin-4.1.0.tar.gz
@@ -32,4 +32,4 @@
 
 - name: restart lighttpd
   service: name=lighttpd
-           state=restart
+           state=restarted
