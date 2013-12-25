@@ -10,6 +10,11 @@
         mode=0755
         state=directory
 
+- name: create the directory for the css files
+  file: path=/var/www/lighttpd/css
+        mode=0755
+        state=directory
+
 - name: download the leafletjs zip archive
   get_url: url=http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.1.zip
            dest=/var/www/lighttpd/leaflet.zip
