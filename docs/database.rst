@@ -63,10 +63,9 @@ Some addiditional tables are needed to store data for the `products` table::
 
 If you like to have some data in it::
 
-    INSERT INTO `pencils` VALUES (NULL, 'Bleistift');
-    INSERT INTO `pencils` VALUES (NULL, 'Schreiner-Bleistift');
-    INSERT INTO `pencils` VALUES (NULL, 'Künstler-Bleistift');
-    INSERT INTO `pencils` VALUES (NULL, 'Minien-Bleistift');
+    INSERT INTO `pencils` VALUES (NULL, 'Pencil');
+    INSERT INTO `pencils` VALUES (NULL, 'Mechanical pencil');
+    INSERT INTO `pencils` VALUES (NULL, 'Spezial pencil');
 
 This SQL snipplet is for the colors table::
 
@@ -78,8 +77,8 @@ This SQL snipplet is for the colors table::
 
 If you like to have some initial data in it::
 
-    INSERT INTO `colors` VALUES (NULL, 'blau');
-    INSERT INTO `colors` VALUES (NULL, 'schwarz');
+    INSERT INTO `colors` VALUES (NULL, 'blue');
+    INSERT INTO `colors` VALUES (NULL, 'black');
 
 This SQL snipplet is for the hardness table::
 
@@ -104,6 +103,7 @@ This SQL snipplet is for the hardness table::
 If you like to have some initial data in it::
 
     INSERT INTO `options` VALUES (NULL, 'Rubber');
+    INSERT INTO `options` VALUES (NULL, 'Handle');
 
 Login
 '''''
