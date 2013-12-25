@@ -22,12 +22,12 @@
         <!-- Logo and company name -->
             <?php
                 ob_start();
-                require('header.php');
+                require('scripts/header.php');
                 echo head();
             ?>
         <!-- Navigation -->
             <?php 
-                require('menu.php');
+                require('scripts/menu.php');
                 echo menu();
             ?>
     <!-- Header -->
