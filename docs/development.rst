@@ -38,8 +38,8 @@ The web shop is built with the below listed components and tested. Other
 releases can be used and may work but this will not be tested. Probably it
 will work with different releases. 
 
-- Operating system: Fedora 19
-- Kernel: 3.11.10-200.fc19.x86_64
+- Operating system: Fedora 20
+- Kernel: 3.12.5-302.fc20.x86_64
 - Lighttpd: 1.4.32
 - PHP: 5.5.7
 - MySQL: 5.5.33
