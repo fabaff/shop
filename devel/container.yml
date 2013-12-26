@@ -15,7 +15,7 @@
 
   tasks:
     - name: install the needed packages
-      yum: pkg=$item
+      yum: pkg={{ item }}
            state=present
       with_items:
         - lxc
@@ -53,4 +53,4 @@
             state=absent
       with_items:
         - lxc-virt-install
-        - fedora-release-19-2.noarch.rpm
+        - fedora-release-20-1.noarch.rpm
