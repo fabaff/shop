@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Webshop Pencil AG für Bleistifte">
     <meta name="author" content="Fabian Affolter">
-    <title>Webshop Pencil AG | Anmeldung</title>
+    <title>Webshop Pencil AG | Registration</title>
 
     <link href="css/webshop.css" rel="stylesheet">
   </head>
@@ -38,24 +38,24 @@
                 <td colspan="2"></td>
             </tr>
             <tr>
-                <td>Benutzername:</td>
+                <td>User name:</td>
                 <td><input class="form-control" type="text" name="username" maxlength="20" /></td>
             </tr>
             <tr>
-                <td>Passwort:</td>
+                <td>Password:</td>
                 <td><input class="form-control" type="password" name="password1" /></td>
             </tr>
             <tr>
-                <td>Bestätigung Passwort:</td>
+                <td>Password again:</td>
                 <td><input class="form-control" type="password" name="password2" /></td>
             </tr>
             <tr>
-                <td>E-Mail:</td>
+                <td>Email:</td>
                 <td><input class="form-control" type="text" name="email" id="email" /></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td><button class="btn btn-success" type="submit" value="Register">Registrieren</button></td>
+                <td><button class="btn btn-success" type="submit" value="Register">Register</button></td>
             </tr>
             </table>
             </form>
