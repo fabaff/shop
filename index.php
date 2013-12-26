@@ -1,9 +1,13 @@
+<?php 
+    require_once('scripts/cookie.php');
+    lastVisit('LastVisit', 3600);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Webshop Pencil AG für Bleistifte">
+    <meta name="description" content="Webshop Pencil AG for Pencils">
     <meta name="author" content="Fabian Affolter">
     <title>Webshop Pencil AG | Home</title>
 
@@ -60,7 +64,6 @@
                 $connection->close();
             ?>
         <!-- Content -->
-        <a href=>
         </div>
       </div>
     </div>
@@ -70,6 +73,16 @@
         require('scripts/footer.php');
         echo foot();
     ?>
+<div class="footer">
+    <?php 
+     if(isset($_COOKIE['LastVisit'])) { 
+        $last = $_COOKIE['LastVisit']; 
+        echo "You last visited us on ".$last; 
+     } else { 
+        echo "This is your first visit."; 
+     } 
+    ?>
+    </div>
     <!-- Footer -->
   </body>
 </html>
