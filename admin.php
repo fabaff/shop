@@ -48,7 +48,9 @@
                                                   array('Register new users', 'register.php')
                                                         ),
                               'Misc'     => array(array('Test MQTT messaging', 'send-test-msg.php'),
-                                                  array('Other tests', 'tests.php')
+                                                  array('Cookies', 'cookies.php'),
+                                                  array('Sessions', 'sessions.php'),
+                                                  array('Localisation', 'l10n.php')
                                                   )
                     );
                     foreach ($menu as $section => $elements) {
@@ -59,6 +61,17 @@
                         }
                     }
             ?>
+<?php
+
+echo $_SERVER['SERVER_NAME'];
+echo $_SERVER['SERVER_SOFTWARE'];
+echo $_SERVER['GATEWAY_INTERFACE'];
+echo $_SERVER['SERVER_PROTOCOL'];
+echo $_SERVER['SERVER_PORT'];
+echo $_SERVER['REMOTE_HOST'];
+echo $_SERVER['REMOTE_ADDR'];
+?>
+
     <!-- Content -->
         </div>
       </div>
