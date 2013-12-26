@@ -48,4 +48,12 @@
     function getTimeHMS() {
         return date('H:i:s');
     }
+    /**
+     * Get the time.
+     *
+     * @return time
+     */
+    function getTimeHM() {
+        return date('H:i');
+    }
 ?>
