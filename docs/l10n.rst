@@ -1,0 +1,49 @@
+.. 
+
+Localisation (L10n)
+===================
+There are several ways to add localisation to a web site. For small projects
+arrays with string can work but this is not very efficient and user-friendly.
+With `Gettext`_ is a toolset available that provide a framework to produce
+multi-lingual content in a wide area of programming languages.
+
+.. _Gettext: http://www.gnu.org/software/gettext/
+.. _php-gettext: http://php.net/gettext
+
+Make sure that the `php-gettext`_ package is available on your system. If not
+install it.::
+
+    $ sudo yum -y install php-php-gettext
+
+Check if gettext support is available.::
+
+    <?php
+        if (!function_exists("gettext")){
+            echo "gettext is not installed\n";
+        }
+        else{
+            echo "gettext is supported\n";
+        }
+    ?>
+
+Make sure that all locales your want are available on the server::
+
+    locale -a
+
+The first step is to mark all string which should be translatable as shown
+below. For further details please refer to the `Gettext`_ documentation.::
+
+    echo _('Some text');
+
+The next step is to extract all strings. ::
+
+    xgettext --from-code=UTF-8 -o locale/webshop.pot *.php
+
+For every language a po file is needed for the transations. Generate it with
+the command mentioned below::
+
+    msginit --no-translator -l de_CH -o locale/de_CH.po -i locale/webshop.pot
+
+Create the mo file for the specific language
+
+    msgfmt -c -v -o locale/de_CH/LC_MESSAGES/webshop.mo locale/de_CH.po
