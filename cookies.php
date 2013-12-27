@@ -35,7 +35,7 @@
             <h4>Check Browser-Support</h4>
             <p>
             <?php
-                if (isset($_COOKIE['checked'])) {
+                if (isset($_COOKIE['Check'])) {
                     echo "You have been on this page in the last 10 s.";
                 } else {
                     echo "You have not been on this page in the last 10 s.";
