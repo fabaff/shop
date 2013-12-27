@@ -39,6 +39,22 @@
                 }
             ?>
             </p>
+            <h3>Check translations</h3>
+            <p>
+            <?php
+                $locale = 'de_CH';
+                putenv('LANG='.$locale);
+                setlocale(LC_ALL, $locale);
+                $domain = 'webshop';
+                bindtextdomain($domain, 'locale');
+                bind_textdomain_codeset($domain, 'UTF-8');
+                textdomain($domain);
+                
+                echo 'Source : Good morning ==> Target : ';
+                echo _('Good morning');
+                echo ' ('.$locale.')';
+            ?>
+            </p>
         </div>
         <!-- Content -->
         </div>
