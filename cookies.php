@@ -1,5 +1,5 @@
 <?php
-    setcookie("checked", "yes", time() + 10, "/", $_SERVER['SERVER_NAME'], true, true);
+    setcookie("Check", "yes", time() + 10, "/", $_SERVER['SERVER_NAME'], true, true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,11 +45,15 @@
             <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Reload</a>
             <h4>Read all cookies and their values</h4>
             <?php
-                foreach($_COOKIE as $key => $value) {
-                    echo "<p>".$key." : ".$value."</p>";
+                if(!empty($_COOKIE)) {
+                    foreach($_COOKIE as $key => $value) {
+                        echo "<p>".$key." : ".$value."</p>";
+                    }
+                } else {
+                    echo 'There are no cookies configured for this website so far.';
                 }
             ?>
-            <h4>Delete cookie</h4>
+            <!-- <h4>Delete cookie</h4> -->
         </div>
         <!-- Content -->
         </div>
