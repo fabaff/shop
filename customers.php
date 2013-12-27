@@ -43,7 +43,7 @@
                     echo "<thead valign=\"bottom\">"."\n";
                     echo "<tr>"."\n";
                     foreach ($tableinfo as $element) {
-                        echo "<th class=\"head\">".$element->name."</th>"."\n";
+                        echo "<th class=\"head\">".ucfirst($element->name)."</th>"."\n";
                     }
                     echo "</tr>"."\n";
                     echo "</thead>"."\n";
