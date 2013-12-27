@@ -21,7 +21,6 @@
         <div class="panel-body">
         <!-- Logo and company name -->
             <?php
-                ob_start();
                 require('scripts/header.php');
                 echo head();
             ?>
@@ -33,6 +32,11 @@
     <!-- Header -->
     <!-- Content -->
         <h3>Administration</h3>
+            <?php
+                require('scripts/details.php');
+                //echo head();
+            ?>
+
             <?php
                 $part1 = "<p>\n";
                 $part2 = '';
@@ -61,17 +65,6 @@
                         }
                     }
             ?>
-<?php
-
-echo $_SERVER['SERVER_NAME'];
-echo $_SERVER['SERVER_SOFTWARE'];
-echo $_SERVER['GATEWAY_INTERFACE'];
-echo $_SERVER['SERVER_PROTOCOL'];
-echo $_SERVER['SERVER_PORT'];
-echo $_SERVER['REMOTE_HOST'];
-echo $_SERVER['REMOTE_ADDR'];
-?>
-
     <!-- Content -->
         </div>
       </div>
