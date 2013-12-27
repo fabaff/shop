@@ -56,7 +56,7 @@
                 if (mysqli_connect_errno() == 0) {
                     $sql = "SELECT * FROM products";
                     $results = $connection->query($sql);
-                    echo "Wir haben die unglaubliche  Menge von ".$results->num_rows." Produkten am Lager."."<br />"."\n";
+                    echo "Wir haben die unglaubliche Menge von ".$results->num_rows." Produkten im Sortiment."."<br />"."\n";
                     $results->close();
                 } else {
                     echo "Database connection error";
