@@ -30,7 +30,7 @@
     <!-- Content -->
         <!-- Selected products -->
         <div>
-            <h3>Erstellen von Benutzern</h3>
+            <h3>Register a new user</h3>
 
             <form name="register" action="scripts/register-process.php" method="post">
             <table width="510" border="0">
