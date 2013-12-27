@@ -24,6 +24,7 @@ Contents:
    database
    webservice
    messaging
+   l10n
    development
 
 Indices and tables
