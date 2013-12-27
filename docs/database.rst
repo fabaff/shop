@@ -105,11 +105,11 @@ If you like to have some initial data in it::
     INSERT INTO `options` VALUES (NULL, 'Rubber');
     INSERT INTO `options` VALUES (NULL, 'Handle');
 
-Login
+Users
 '''''
-The SQL snipplet for the login table::
+The SQL snipplet for the users table::
 
-    CREATE TABLE `login` (
+    CREATE TABLE `users` (
         `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         `username` VARCHAR(30) NOT NULL,
         `password` CHAR(128) NOT NULL,

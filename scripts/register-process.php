@@ -22,14 +22,14 @@
     }
      
     $salt = createSalt();
-    $password = hash('sha256', $salt . $hash);
+    $password = hash('sha256', $salt.$hash);
     
     $username = $connection->real_escape_string($username);
     
-    $query = "INSERT INTO login ( username, password, email, salt ) VALUES
+    $query = "INSERT INTO users ( username, password, email, salt ) VALUES
         ( '$username', '$password', '$email', '$salt' )";
     
     $connection->query($query);
     $connection->close();
-    header('Location: ../login.php');
+    header('Location: ../admin.php');
 ?>
