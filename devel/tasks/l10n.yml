@@ -1,0 +1,20 @@
+# This playbook installs all localisations.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directories for l10n files
+  file: path=/var/www/lighttpd/locale/{{ item }}/LC_MESSAGES
+        mode=0755
+        state=directory
+  with_items: l10n
+
+- name: copy the mo files of the languages
+  copy: src=../../locale/{{ item }}/LC_MESSAGES/webshop.mo
+        dest=/var/www/lighttpd/locale/{{ item }}/LC_MESSAGES/webshop.mo
+        owner=lighttpd
+        group=lighttpd
+        mode=0644
+  with_items: l10n
