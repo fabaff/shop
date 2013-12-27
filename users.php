@@ -34,7 +34,7 @@
                 require_once('config/dbconnect.php');
                 if (mysqli_connect_errno() == 0) {                  
                     // Get data
-                    $sql = "SELECT * FROM login";
+                    $sql = "SELECT * FROM users";
                     $results = $connection->query($sql);
                     $tableinfo = $results->fetch_fields();
                     echo $results->num_rows." users entries found."."<br />"."\n";
