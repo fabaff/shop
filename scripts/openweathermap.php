@@ -1,5 +1,5 @@
 <?php
-    echo _("<h3>Weather data</h3>");
+    echo _('<h3>Weather data</h3>');
     // Details about the API:
     // http://bugs.openweathermap.org/projects/api/wiki/Api_2_5_weather
     $url = 'http://api.openweathermap.org/data/2.5/weather?q=Berne,ch&unit=metrics&mode=json';
@@ -12,14 +12,22 @@
 
     // Decode the json
     $data = json_decode($json);
-    
-    // Vars
-    $tempC = round((273.15 - $data->main->temp)*100) / 100;
-    $humidity = $data->main->humidity;
-    $pressure = $data->main->pressure;
 
-    // Output
-    echo _("<p>Temperatur: $tempC °C<br/>\n");
-    echo _("Humidity: $humidity %<br/>\n");
-    echo _("Pressure: $pressure Pa</p>\n");
+    if(!empty($data)) {
+        // Get the relevant data out of the json object
+        $tempC = round((273.15 - $data->main->temp)*100) / 100;
+        $humidity = $data->main->humidity;
+        $pressure = $data->main->pressure;
+
+        // Output
+        echo '<p>';
+        echo _('Temperature: $tempC °C');
+        echo '<br/>';
+        echo _('Humidity: $humidity %');
+        echo '<br/>';
+        echo _('Pressure: $pressure Pa');
+        echo '</p>';
+    } else {
+        echo _('Sorry, there are no data available right now.');
+    }
 ?>
