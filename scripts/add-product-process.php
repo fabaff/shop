@@ -23,7 +23,6 @@
 
     // Create SQLquery
     $query = "INSERT INTO $table (`id`, `pname`, `ptype`, `poption`, `color`, `hardness`, `price`, `adate`) VALUES ( NULL, '$pname', $ptype, $poption, $color, $hardness, $price, '$adate')";
-    echo $query;
     //Run query and redirect to admin page
     if ($connection->query($query)) {
         echo "<script type=\"text/javascript\">
