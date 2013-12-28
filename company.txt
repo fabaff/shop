@@ -1,6 +1,0 @@
-<h2>Pencil AG</h2>
-<p>
-Musterstrasse 1 <br/>
-3000 Bern <br/>
-Schweiz <br/>
-</p>
