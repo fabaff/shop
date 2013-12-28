@@ -35,15 +35,29 @@ below. For further details please refer to the `Gettext`_ documentation.::
 
     echo _('Some text');
 
-The next step is to extract all strings. ::
+The next step is to extract all strings.::
 
-    xgettext --from-code=UTF-8 -o locale/webshop.pot *.php
+    xgettext --from-code=UTF-8 -o locale/webshop.pot *.php scripts/*.php
+
+To re-generate the file after an update, join the strings.::
+
+    xgettext -j --from-code=UTF-8 -o locale/webshop.pot *.php scripts/*.php
 
 For every language a po file is needed for the transations. Generate it with
 the command mentioned below::
 
     msginit --no-translator -l de_CH -o locale/de_CH.po -i locale/webshop.pot
 
-Create the mo file for the specific language
+Once created there are only updates of the message catalog needed in the
+futures:: 
+
+    msgmerge -U locale/de_CH.po locale/webshop.pot
+
+If you re finish, create the mo file for the specific language.::
 
     msgfmt -c -v -o locale/de_CH/LC_MESSAGES/webshop.mo locale/de_CH.po
+
+.. Note: The first time a domain (MO file) is being initialized, it is cached
+    by the server. This means that after updating an MO file with a newer
+    version, it is necessary to restart the server in order to work with the
+    latest version.
