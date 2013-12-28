@@ -19,9 +19,9 @@
     - php: [index.php, add.php, customers.php, products.php, product.php, 
             about.php, register.php, signup.php, admin.php, send-test-msg.php,
             tables.php, tables.php, users.php, cookies.php, l10n.php,
-            add-product.php]
-    - config: [dbconnect]
-    - static: [company.txt]
+            add-product.php, overview-products.php]
+    - config: [dbconnect, variables]
+    - static: [company]
     - logos: [logo.png]
     - l10n: [de_CH, fr_FR, en_US]
     - images: [default.png, black.png, blue.png, red.png, white.png]
