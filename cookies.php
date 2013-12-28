@@ -42,7 +42,7 @@
                 }
             ?>
             </p>
-            <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Reload</a>
+            <a class="btn btn-link" href="<?php echo $_SERVER['PHP_SELF']; ?>">Check it.</a>
             <h4>Read all cookies and their values</h4>
             <?php
                 if(!empty($_COOKIE)) {
