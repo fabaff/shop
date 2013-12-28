@@ -8,16 +8,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-27 11:08+0100\n"
-"PO-Revision-Date: 2013-12-27 11:08+0100\n"
+"POT-Creation-Date: 2013-12-27 21:28+0100\n"
+"PO-Revision-Date: 2013-12-27 11:56+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: de_CH\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: l10n.php:53
+#: l10n.php:54
 msgid "Good morning"
 msgstr "Guten Morgen"
+
+#: l10n.php:57 l10n.php:58
+msgid "Good night"
+msgstr "Gute Nacht"
+
+#: scripts/openweathermap.php:2
+msgid "<h3>Weather data</h3>"
+msgstr "<h3>Wetter-Daten</h3>"
+
+#: scripts/openweathermap.php:24
+msgid "Temperature: $tempC °C"
+msgstr "Temperatur: $tempC °C"
+
+#: scripts/openweathermap.php:26
+msgid "Humidity: $humidity %"
+msgstr "Luftfeuchtigkeit: $humidity %"
+
+#: scripts/openweathermap.php:28
+msgid "Pressure: $pressure Pa"
+msgstr "Luftdruck: $pressure Pa"
+
+#: scripts/openweathermap.php:31
+msgid "Sorry, there are no data available right now."
+msgstr "Entschuldigung, momentan sind keine Daten verfügbar."
