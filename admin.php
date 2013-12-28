@@ -31,12 +31,10 @@
             ?>
     <!-- Header -->
     <!-- Content -->
+        <?php
+            require('scripts/details.php');
+        ?>
         <h3>Administration</h3>
-            <?php
-                require('scripts/details.php');
-                //echo head();
-            ?>
-
             <?php
                 $part1 = "<p>\n";
                 $part2 = '';
