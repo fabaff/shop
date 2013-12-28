@@ -56,4 +56,16 @@
     function getTimeHM() {
         return date('H:i');
     }
+    /**
+     * Sanitize a given string
+     *
+     * @param String
+     * @return string
+     */
+    function sanitizeString($string) {
+        $string = strip_tags($string);
+        $string = htmlentities($string);
+        $string = stripslashes($string);
+        return mysql_real_escape_string($string);
+    }
 ?>
