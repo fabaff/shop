@@ -6,9 +6,9 @@
 #
 ---
 - name: copy the static files
-  copy: src=../../{{ item }}
-        dest=/var/www/lighttpd/{{ item }}
-        owner=lighttpd
-        group=lighttpd
-        mode=0644
+  template: src=../files/{{ item }}.j2
+            dest=/var/www/lighttpd/{{ item }}.txt
+            owner=lighttpd
+            group=lighttpd
+            mode=0644
   with_items: static
