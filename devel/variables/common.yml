@@ -17,3 +17,8 @@ company_street: 'Musterstrasse 1'
 company_zip: 3000
 company_city: Bern
 company_country: Schweiz
+
+# Website
+website_desc: 'Webshop for pencils'
+website_css: 'css/webshop.css'
+website_start: 'index.php'

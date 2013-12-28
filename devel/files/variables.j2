@@ -1,4 +1,15 @@
 <?php
-    $company = "{{ company_name }}"
-    $author = "{{ author_name }}"
+    /**
+     * This file contains common variables used across the whole site.
+     * 
+     * Keep in mind that this file is generated dynamically during the 
+     * deployment of the site with Ansible.
+     *
+     * Source: devel/variables/common.yml
+     */
+    $company = "{{ company_name }}";
+    $author = "{{ author_name }}";
+    $description = "{{ website_desc }}";
+    $css_file = "{{ website_css }}";
+    $start_page = "{{ website_start }}";
 ?>
