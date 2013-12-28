@@ -14,10 +14,12 @@
     - html: [index.html]
     - script: [menu.php, header.php, footer.php, helpers.php, add-process.php,
               openweathermap.php, send-msg.php, signup-process.php,
-              leaflet-osm.js, cookie.php, details.php]
+              leaflet-osm.js, cookie.php, details.php, register-process.php,
+              check-username.php, add-product-process.php]
     - php: [index.php, add.php, customers.php, products.php, product.php, 
             about.php, register.php, signup.php, admin.php, send-test-msg.php,
-            tables.php, tables.php, users.php, cookies.php, l10n.php]
+            tables.php, tables.php, users.php, cookies.php, l10n.php,
+            add-product.php]
     - config: [dbconnect]
     - static: [company.txt]
     - logos: [logo.png]
