@@ -53,6 +53,10 @@
                 echo 'Source : Good morning ==> Target : ';
                 echo _('Good morning');
                 echo ' ('.$locale.')';
+                echo '<br/>';
+                echo 'Source : Good night ==> Target : ';
+                echo _('Good night');
+                echo ' ('.$locale.')';
             ?>
             </p>
         </div>
