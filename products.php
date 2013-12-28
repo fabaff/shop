@@ -28,9 +28,8 @@
     <!-- Header -->
 
     <!-- Content -->
-        <!-- Selected products -->
         <div>
-            <table class="table table-striped">
+<!--        <table class="table table-striped">
             <thead valign="bottom">
             <tr>
             <?php
@@ -70,8 +69,48 @@
             ?>
             </tbody>
             </table>
+-->
+            <?php
+                require_once('config/dbconnect.php');
+                if (mysqli_connect_errno() == 0) {                  
+                    // Get data
+                    $sql = "SELECT * FROM products";
+                    $results = $connection->query($sql);
+                    $tableinfo = $results->fetch_fields();
+                    echo $results->num_rows." products entries found."."<br />"."\n";
+                    // Create table
+                    echo "<table class=\"table table-striped\">"."\n";
+                    echo "<thead valign=\"bottom\">"."\n";
+                    echo "<tr>"."\n";
+                    foreach ($tableinfo as $element) {
+                        echo "<th class=\"head\">".ucfirst($element->name)."</th>"."\n";
+                    }
+                    echo "<th class=\"head\">  </th>"."\n";
+                    echo "</tr>"."\n";
+                    echo "</thead>"."\n";
+                    echo "<tbody valign=\"top\">"."\n";
+                    while ($result = $results->fetch_object()) {
+                        echo "<tr>"."\n";
+                        echo "<td>".$result->id."</td>";
+                        echo "<td>".$result->pname."</td>";
+                        echo "<td>".$result->ptype."</td>";
+                        echo "<td>".$result->poption."</td>";
+                        echo "<td>".$result->color."</td>";
+                        echo "<td>".$result->hardness."</td>";
+                        echo "<td>".$result->price."</td>";
+                        echo "<td>".$result->adate."</td>";
+                        echo "<td>"."<a href=\"$result->id\">Edit me</a>"."</td>";
+                        echo "</tr>"."\n";
+                    }
+                    echo "</tbody>"."\n";
+                    echo "</table>"."\n";
+                    $results->close();
+                } else {
+                    echo "Database connection error";
+                }
+                $connection->close();
+            ?>
         </div>
-        <!-- Selected products -->
         <!-- Content -->
         </div>
       </div>
