@@ -14,9 +14,15 @@
         $topic = "webshop";
         $completeTopic = $topic."/".$subtopic;
 
-        $client = new Mosquitto\Client(CLIENT_ID);
-        $client->connect(BROKER, PORT, 60);
-        $client->publish($completeTopic, $message, 0, false);
+        try {
+            $client = new Mosquitto\Client(CLIENT_ID);
+            $client->connect(BROKER, PORT, 60);
+            $client->publish($completeTopic, $message, 0, false);
+        }
+        catch (Mosquitto\Exception $e) {
+            echo "The mosquitto broker is not running.";
+            die;
+        }
     }
 	/**
 	 * Send a default message to a MQTT broker.
