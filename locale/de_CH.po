@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-27 21:28+0100\n"
+"POT-Creation-Date: 2013-12-30 09:54+0100\n"
 "PO-Revision-Date: 2013-12-27 11:56+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: l10n.php:54
+#: l10n.php:54 l10n.php:61 l10n.php:110 l10n.php:144
 msgid "Good morning"
 msgstr "Guten Morgen"
 
@@ -45,3 +45,7 @@ msgstr "Luftdruck: $pressure Pa"
 #: scripts/openweathermap.php:31
 msgid "Sorry, there are no data available right now."
 msgstr "Entschuldigung, momentan sind keine Daten verfügbar."
+
+#: l10n.php:57 l10n.php:107 l10n.php:141
+msgid "This is a simple test"
+msgstr "Das ist ein einfacher Test"

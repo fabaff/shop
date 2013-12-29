@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-27 21:28+0100\n"
+"POT-Creation-Date: 2013-12-30 09:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: l10n.php:54
+#: l10n.php:54 l10n.php:61 l10n.php:110 l10n.php:144
 msgid "Good morning"
 msgstr ""
 
@@ -43,4 +43,8 @@ msgstr ""
 
 #: scripts/openweathermap.php:31
 msgid "Sorry, there are no data available right now."
+msgstr ""
+
+#: l10n.php:57 l10n.php:107 l10n.php:141
+msgid "This is a simple test"
 msgstr ""
