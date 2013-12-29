@@ -1,6 +1,14 @@
-<?php 
+<?php
+	session_start();
+
     require_once('scripts/send-msg.php');
     defaultMsg("admin", getShortPage());
+
+	// Allow acces only if the user is logged in, ohterwise send the user to
+    // the login page
+	if ($_SESSION["SESSION_ADMIN"] != "YES") {
+	  header("Location: login.php");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +60,8 @@
                               'Misc'     => array(array('Test MQTT messaging', 'send-test-msg.php'),
                                                   array('Cookies', 'cookies.php'),
                                                   array('Sessions', 'sessions.php'),
-                                                  array('Localisation', 'l10n.php')
+                                                  array('Localisation', 'l10n.php'),
+                                                  array('Graphics', 'graphics.php')
                                                   )
                     );
                     foreach ($menu as $section => $elements) {
