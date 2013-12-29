@@ -1,9 +1,10 @@
 .. 
 
-Sessions
-========
-
-
+Cookies and Sessions
+====================
+The built-in support for sessions in PHP is handling all cookie manipulation
+to provide persistent variables that are accessible from different pages and
+across multiple visits to the site.
 
 Cookies
 -------
@@ -26,8 +27,22 @@ In the footer of the index page the details are presented::
      } 
     ?>
 
-Shopping Cart
--------------
+Hit counter
+-----------
+As a simple show case for PHP sessions a hit counter for the front page is
+available. ::
+
+    <?php
+	    session_start();
+        $_SESSION['hits'] = $_SESSION['hits'] + 1;
+    ?>
+
+Included in the footer it shous the users the total of visits::
+
+    echo " Total ".$_SESSION['hits']." visits of this page.";
+
+Language selection
+------------------
 
 
 User Accounts
