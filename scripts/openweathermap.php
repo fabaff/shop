@@ -1,5 +1,7 @@
 <?php
-    echo _('<h3>Weather data</h3>');
+    echo "<h3>";
+    echo _('Weather data');
+    echo "</h3>";
     // Details about the API:
     // http://bugs.openweathermap.org/projects/api/wiki/Api_2_5_weather
     $url = 'http://api.openweathermap.org/data/2.5/weather?q=Berne,ch&unit=metrics&mode=json';

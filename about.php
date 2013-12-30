@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,16 +31,26 @@
     <!-- Header -->
     <!-- Content -->
         <?php
-            $str = file_get_contents('company.txt');
-            echo $str;
+            echo "<h3>";
+            echo _('Address');
+            echo "</h3>";
+            $content = file_get_contents('company.txt');
+            echo $content;
         ?>
     <!-- Map -->
-        <h3>Lageplan</h3>
-	    <div id="map" class="map" style="width: 600px; height: 400px"></div>
+        <?php
+            echo "<h3>";
+            echo _('Map');
+            echo "</h3>";
+	        echo "<div id=\"map\" class=\"map\" style=\"width: 600px; height: 400px\"></div>";
+	        echo "<script src=\"scripts/leaflet.js\"></script>";
+	        echo "<script src=\"scripts/leaflet-providers.js\"></script>";
+	        echo "<script src=\"scripts/leaflet-osm.js\"></script>";
+        ?>
     <!-- Weather -->
-    <?php 
-        require('scripts/openweathermap.php');
-    ?>
+        <?php 
+            require('scripts/openweathermap.php');
+        ?>
     <!-- Content -->
         </div>
       </div>
@@ -48,10 +61,5 @@
         echo foot();
     ?>
     <!-- Footer -->
-    <!-- Javascript -->
-	<script src="scripts/leaflet.js"></script>
-	<script src="scripts/leaflet-providers.js"></script>
-	<script src="scripts/leaflet-osm.js"></script>
-    <!-- Javascript -->
   </body>
 </html>
