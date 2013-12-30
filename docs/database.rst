@@ -43,6 +43,8 @@ This SQL snipplet is for the customers table::
     CREATE TABLE IF NOT EXISTS `customers` (
         `id` INT(11) NOT NULL AUTO_INCREMENT,
         PRIMARY KEY (`id`),
+        `username` VARCHAR(30) NOT NULL,
+        UNIQUE (`username`),
         `lastname` VARCHAR(30) NOT NULL,
         `firstname` VARCHAR(30) NOT NULL,
         `email` VARCHAR(50) NOT NULL,
