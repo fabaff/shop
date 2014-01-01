@@ -26,7 +26,6 @@
                 echo menu();
             ?>
     <!-- Header -->
-
     <!-- Content -->
         <div>
             <?php
@@ -69,7 +68,6 @@
             echo $form."\n";
         ?>
         </div>
-        <!-- Selected products -->
         <!-- Content -->
         </div>
       </div>
