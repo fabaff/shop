@@ -1,5 +1,6 @@
 <?php
 	session_start();
+    require_once('scripts/l10n.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
