@@ -25,7 +25,7 @@
         echo '<p>';
         printf(_('Temperature: %d °C'), $tempC);
         echo '<br/>';
-        printf(_('Humidity: %d %'), $humidity);
+        printf(_('Humidity: %d'), $humidity);
         echo '<br/>';
         printf(_('Pressure: %d Pa'), $pressure);
         echo '</p>';
