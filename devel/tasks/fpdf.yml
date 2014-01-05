@@ -1,0 +1,36 @@
+# This playbook installs FPDF (http://www.fpdf.org).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory for the font files
+  file: path=/var/www/lighttpd/font
+        mode=0755
+        state=directory
+
+- name: download the fpdf archive
+  get_url: url=http://www.fpdf.org/en/dl.php?v=17&f=zip
+           dest=/var/www/lighttpd/fpdf.zip
+           mode=0644
+
+- name: unpack the fpdf archive
+  command: /usr/bin/unzip -o /var/www/lighttpd/fpdf.zip -d /var/www/lighttpd/
+
+- name: move the class file
+  command: /usr/bin/mv /var/www/lighttpd/fpdf.php /var/www/lighttpd/scripts/fpdf.php
+
+- name: cleanup
+  file: path=/var/www/lighttpd/{{ item }}
+        state=absent
+  with_items:
+    - fpdf.zip
+    - doc
+    - makefont
+    - tutorial
+    - changelog.htm
+    - FAQ.htm
+    - fpdf.css
+    - install.txt
+    - license.txt
