@@ -1,7 +1,7 @@
 <?php
     define('FPDF_FONTPATH','../font/');
     require('fpdf.php');
-    include('../config/dbconnect.php');
+    require_once('../config/dbconnect.php');
     require_once('helpers.php');
 
     // Get the parameter
