@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Webshop Pencil AG für Bleistifte">
     <meta name="author" content="Fabian Affolter">
-    <title>Webshop Pencil AG | Home</title>
+    <title>Webshop Pencil AG | Test messaging system</title>
 
     <link href="css/webshop.css" rel="stylesheet">
   </head>
@@ -31,7 +31,7 @@
         <div>
         <h2>Sending test messages to MQTT</h2>
             <p>This page sends a single MQTT message to the topic <b>webshop/test</b>.</p>
-            <!-- Add error handling -->
+            <!-- Add error and exception handling. Check scripts/send-msg.php for details.-->
             <?php
                 define('BROKER', 'localhost');
                 define('PORT', 1883);
@@ -43,6 +43,7 @@
                 $client = new Mosquitto\Client(CLIENT_ID);
                 $client->connect(BROKER, PORT, 60);
 
+                date_default_timezone_set("Europe/Vaduz");
                 $message = "Test message from webshop at ".date("Y-m-d H:i:s");
                 $client->publish($completeTopic, $message, 0, false);
 
@@ -50,6 +51,28 @@
             ?>
             <p>To see the messages, subscribe to the topic <b>webshop/#</b>.</p>
             <code>mosquitto_sub -h localhost -t webshop/#</code>
+        <h2>Sending a test email</h2>
+        <?php
+            $filename = $_SERVER["PHP_SELF"];
+            $recipient = 'root@localhost';
+            $subject = 'Test Message';
+            $message = 'Test message body.';
+            if (isset($_GET['send-mail'])) {
+                if (mail($recipient, $subject, $message)) {
+                    echo "Message sent.";
+                }
+            } else {
+            echo "<form action=\"$filename\" method=\"GET\">
+                    <input type=\"hidden\" name=\"send-mail\" value=\"send\">
+                    <input type=\"submit\" class=\"btn btn-default\" value=\"Send e-mail message\">
+                </form>";
+            }
+
+            /* or with the external file
+             * include('scripts/send-mail.php');
+             * sendMail('root@localhost', 'This is a test', 'We are just testing the email feature.');
+            */
+        ?>
         </div>
       </div>
     </div>
