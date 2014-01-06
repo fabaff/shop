@@ -69,7 +69,7 @@ help. This simple bash script creates virtual machines without user interaction.
 Requirements for this are installed libvirt tools and additional storage space
 (approx. 8 GB) for the image.
 
-For local development it's possbile to use an LXC container to save resources.::
+For local development it's possbile to use an LXC container to save resources. ::
 
     $ sudo ansible-playbook devel/container.yml
 
@@ -85,7 +85,7 @@ container, generate keys, etc.) are needed. After you are done, check it::
 Deployment
 ----------
 For the simple deployment of the lastest version of the shop a playbook called
-``deploy.yml`` is provided. This palybook put all files in place. ::
+``deploy.yml`` is provided. This playbook put all files in place. ::
 
     $ sudo ansible-playbook devel/deploy.yml
 
