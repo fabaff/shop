@@ -5,6 +5,12 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
+- name: install additional packages
+  yum: pkg={{ item }}
+       state=present
+  with_items:
+    - unzip
+
 - name: create the directory for the javascript files
   file: path=/var/www/lighttpd/scripts
         mode=0755
@@ -37,3 +43,9 @@
   get_url: url=https://raw.github.com/leaflet-extras/leaflet-providers/master/leaflet-providers.js
            dest=/var/www/lighttpd/scripts/leaflet-providers.js
            mode=0644
+
+- name: remove additional packages
+  yum: pkg={{ item }}
+       state=absent
+  with_items:
+    - unzip
