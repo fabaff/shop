@@ -5,7 +5,7 @@
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
     $email = $_POST['email'];
- 
+
     if ($password1 != $password2) {
         header('Location: ../register.php');
     }
@@ -13,9 +13,13 @@
     if (strlen($username) > 30) {
         header('Location: ../register.php');
     }
- 
+
+    if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email)) {
+        $email = "fix_me";
+    }
+
     $hash = hash('sha256', $password1);
-     
+
     function createSalt() {
         $text = md5(uniqid(rand(), true));
         return substr($text, 0, 3);
