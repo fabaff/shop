@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,12 +96,12 @@
             echo "<td>".$result->price." CHF"."</td>";
             echo "</tr>"."\n";
             echo "<tr>"."\n";
-            echo "<td>"."<a class=\"btn btn-default\" href=\"#\" role=\"button\">Buy it</a>"."</td>";
+            echo "<td>"."<a class=\"btn btn-xs  btn-default\" href=\"#\" role=\"button\">Add to cart</a>"."</td>";
             echo "<td>"."&nbsp;"."</td>";
             echo "</tr>"."\n";
             echo "</table>"."\n";
             echo "<br/>"."\n";
-            echo "<p><a class=\"btn btn-default\" href=\"overview-products.php\" role=\"button\">Back to overview</a></p>";
+            echo "<p><a class=\"btn btn-xs  btn-default\" href=\"overview-products.php\" role=\"button\">Back to overview</a></p>";
             ?>
     <!-- Content -->
         </div>
