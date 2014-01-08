@@ -39,6 +39,10 @@
                 <td><input class="form-control" type="text" name="pname" maxlength="20" /></td>
             </tr>
             <tr>
+                <td>Product description:</td>
+                <td><textarea class="form-control" type="text" name="pdesc"></textarea></td>
+            </tr>
+            <tr>
                 <td>Type:</td>
                 <td><select class="form-control input-sm" name="ptype">
 									<option></option>
@@ -107,7 +111,7 @@
 
             <tr>
                 <td>&nbsp;</td>
-                <td><button class="btn btn-default" type="submit" value="Add">Add entry</button></td>
+                <td><button class="btn btn-xs btn-default" type="submit" value="Add">Add entry</button></td>
             </tr>
             </table>
             </form>

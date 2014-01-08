@@ -3,6 +3,7 @@
     require_once('helpers.php');
     //Get the parameters
     $pname = $_POST['pname'];
+    $ptype = $_POST['pdesc'];
     $ptype = $_POST['ptype'];
     $poption = $_POST['poption'];
     $color = $_POST['color'];
@@ -22,7 +23,7 @@
     $table = 'products';
 
     // Create SQLquery
-    $query = "INSERT INTO $table (`id`, `pname`, `ptype`, `poption`, `color`, `hardness`, `price`, `adate`) VALUES ( NULL, '$pname', $ptype, $poption, $color, $hardness, $price, '$adate')";
+    $query = "INSERT INTO $table (`id`, `pname`, `pdesc`, `ptype`, `poption`, `color`, `hardness`, `price`, `adate`) VALUES ( NULL, '$pname', '$pdesc', $ptype, $poption, $color, $hardness, $price, '$adate')";
     //Run query and redirect to admin page
     if ($connection->query($query)) {
         echo "<script type=\"text/javascript\">
