@@ -74,10 +74,15 @@
                 require_once('config/dbconnect.php');
                 if (mysqli_connect_errno() == 0) {                  
                     // Get data
-                    $sql = "SELECT * FROM products";
+                    //$sql = "SELECT * FROM products";
+$sql="SELECT products.id AS id, products.pname AS name, products.pdesc AS description, pencils.type AS type, options.type AS option, colors.type AS color, hardness.type AS hardness, products.price AS price, products.adate AS date FROM products 
+                JOIN pencils ON products.ptype=pencils.id
+                JOIN options ON products.poption=options.id
+                JOIN colors ON products.color=colors.id
+                JOIN hardness ON products.hardness=hardness.id";
                     $results = $connection->query($sql);
                     $tableinfo = $results->fetch_fields();
-                    echo $results->num_rows." products entries found."."<br />"."\n";
+                    echo $results->num_rows." products found"."<br />"."\n";
                     // Create table
                     echo "<table class=\"table table-striped\">"."\n";
                     echo "<thead valign=\"bottom\">"."\n";
@@ -85,21 +90,31 @@
                     foreach ($tableinfo as $element) {
                         echo "<th class=\"head\">".ucfirst($element->name)."</th>"."\n";
                     }
-                    echo "<th class=\"head\">  </th>"."\n";
+                    echo "<th class=\"head\">Modifications</th>"."\n";
                     echo "</tr>"."\n";
                     echo "</thead>"."\n";
                     echo "<tbody valign=\"top\">"."\n";
                     while ($result = $results->fetch_object()) {
                         echo "<tr>"."\n";
                         echo "<td>".$result->id."</td>";
-                        echo "<td>".$result->pname."</td>";
-                        echo "<td>".$result->ptype."</td>";
-                        echo "<td>".$result->poption."</td>";
+                        echo "<td>".$result->name."</td>";
+                        echo "<td>".$result->description."</td>";
+                        echo "<td>".$result->type."</td>";
+                        echo "<td>".$result->option."</td>";
                         echo "<td>".$result->color."</td>";
                         echo "<td>".$result->hardness."</td>";
                         echo "<td>".$result->price."</td>";
-                        echo "<td>".$result->adate."</td>";
-                        echo "<td>"."<a href=\"$result->id\">Edit me</a>"."</td>";
+                        echo "<td>".$result->date."</td>";
+                        echo "<td><form action=\"edit.php\" method=\"POST\">
+                            <input type=\"hidden\" name=\"table\" value=\"products\"/>
+                            <input type=\"hidden\" name=\"id\" value=\"$result->id\"/>
+                            <input type=\"submit\" name=\"Submit\" class=\"btn btn-xs btn-default\" value=\"Edit\">
+                        </form>"."\n";
+                        echo "<form action=\"scripts/delete-process.php\" onSubmit=\"return confirm('Are you sure to delete this entry?');\" method=\"POST\">
+                                <input type=\"hidden\" name=\"table\" value=\"products\"/>
+                                <input type=\"hidden\" name=\"id\" value=\"$result->id\"/>
+                                <input type=\"submit\" name=\"Submit\" class=\"btn btn-xs btn-default\" value=\"Delete\">
+                            </form></td>"."\n";
                         echo "</tr>"."\n";
                     }
                     echo "</tbody>"."\n";
