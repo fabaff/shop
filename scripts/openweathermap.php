@@ -17,17 +17,17 @@
 
     if(!empty($data)) {
         // Get the relevant data out of the json object
-        $tempC = round((273.15 - $data->main->temp)*100) / 100;
+        $tempC = round(($data->main->temp - 273.15)*100) / 100;
         $humidity = $data->main->humidity;
         $pressure = $data->main->pressure;
 
         // Output
         echo '<p>';
-        echo _('Temperature: $tempC °C');
+        printf(_('Temperature: %d °C'), $tempC);
         echo '<br/>';
-        echo _('Humidity: $humidity %');
+        printf(_('Humidity: %d %'), $humidity);
         echo '<br/>';
-        echo _('Pressure: $pressure Pa');
+        printf(_('Pressure: %d Pa'), $pressure);
         echo '</p>';
     } else {
         echo _('Sorry, there are no data available right now.');
