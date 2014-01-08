@@ -1,8 +1,15 @@
 <?php
 	session_start();
-    $cartItemCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+    require_once('config/dbconnect.php');
+	require_once('scripts/cart-functions.php');
+	
+	if($_REQUEST['command'] == 'add' && $_REQUEST['productid'] > 0){
+		$pid=$_REQUEST['productid'];
+		addtocart($pid, 1);
+		header("location:cart.php");
+		exit();
+	}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +20,13 @@
     <title>Webshop Pencil AG | Products</title>
 
     <link href="css/webshop.css" rel="stylesheet">
+    <script language="javascript">
+	    function addtocart(pid){
+		    document.form1.productid.value=pid;
+		    document.form1.command.value='add';
+		    document.form1.submit();
+	    }
+    </script>
   </head>
 
   <body>
@@ -34,6 +48,10 @@
 
     <!-- Content -->
         <div>
+<form name="form1">
+	<input type="hidden" name="productid" />
+    <input type="hidden" name="command" />
+</form>
 <!--        <table class="table table-striped">
             <thead valign="bottom">
             <tr>
@@ -76,25 +94,12 @@
             </table>
 -->
             <?php
-
-                $action = isset($_GET['action']) ? $_GET['action'] : "";
-                $name = isset($_GET['name']) ? $_GET['name'] : "";
-
-                if($action=='add'){
-                    echo "<div>" . $name . " was added to your cart.</div>";
-                }
-
-                if($action=='exists'){
-                    echo "<div>" . $name . " already exists in your cart.</div>";
-                }
-
                 require_once('config/dbconnect.php');
                 if (mysqli_connect_errno() == 0) {                  
                     // Get data
                     $sql = "SELECT * FROM products";
                     $results = $connection->query($sql);
                     //echo $results->num_rows." products entries found."."<br />"."\n";
-                    
                     echo "<div class=\"row\">";
                     while ($result = $results->fetch_object()) {
                         echo "<div class=\"col-6 col-sm-6 col-lg-4\">";
@@ -120,8 +125,8 @@
                                 echo "<p><img src=\"images/default.png\" alt=\"Product name\" class=\"img-rounded\"></img></p>";
                                 break;
                         }
-                        echo "<p><a class=\"btn btn-default\" href=\"product.php?id=$result->id\" role=\"button\">View details</a> &nbsp;";
-                        echo "<a class=\"btn btn-default\" href=\"#\" role=\"button\">Buy it</a></p>";
+                        echo "<p><a class=\"btn btn-xs btn-default\" href=\"product.php?id=$result->id\" role=\"button\">View details</a> &nbsp;";
+                        echo "<form name=\"add\"><input class=\"btn btn-xs btn-default\" type=\"button\" value=\"Add to cart\" onclick=\"addtocart($result->id)\"/></form>";
                         echo "</div>";
                     }
                     echo "</div>";
@@ -177,6 +182,10 @@
                     echo "Database connection error";
                 }
                 $connection->close();
+#                echo "<form name=\"form1\" method=\"POST\">";
+#                echo "<input type=\"hidden\" name=\"$result->id\" />";
+#                echo "<input type=\"hidden\" name=\"command\" />"
+#                echo "</form>";
             ?>
         </div>
         <!-- Content -->
