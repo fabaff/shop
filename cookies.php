@@ -44,6 +44,7 @@
             </p>
             <a class="btn btn-link" href="<?php echo $_SERVER['PHP_SELF']; ?>">Check it.</a>
             <h4>Read all cookies and their values</h4>
+<div class="panel panel-default" style="margin: 10px; padding: 10px; border: 1px solid black;">
             <?php
                 if(!empty($_COOKIE)) {
                     foreach($_COOKIE as $key => $value) {
@@ -53,6 +54,7 @@
                     echo 'There are no cookies configured for this website so far.';
                 }
             ?>
+</div>
             <!-- <h4>Delete cookie</h4> -->
         </div>
         <!-- Content -->
