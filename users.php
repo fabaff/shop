@@ -55,7 +55,13 @@
                         echo "<td>".$result->password."</td>";
                         echo "<td>".$result->email."</td>";
                         echo "<td>".$result->salt."</td>";
-                        echo "<td>"."Edit me"."</td>";
+                        echo "<td>";
+                        echo "<form action=\"scripts/edit.php\" method=\"POST\">
+                                <input type=\"hidden\" name=\"table\" value=\"users\"/>
+                                <input type=\"hidden\" name=\"id\" value=\"$result->id\"/>
+                                <input type=\"submit\" name=\"Submit\" class=\"btn btn-xs btn-default\" value=\"Edit\">
+                            </form>"."\n";
+                        echo "</td>"."\n";
                         echo "</tr>"."\n";
                     }
                     echo "</tbody>"."\n";
