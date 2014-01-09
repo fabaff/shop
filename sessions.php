@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	// If the user is not logged in, ohterwise send the user to the login page
+	// If the user is not logged in, otherwise send the user to the login page
 	if ($_SESSION["SESSION_ADMIN"] != "YES") {
 	  header("Location: login.php");
 	}
@@ -36,11 +36,10 @@
     <!-- Header -->
     <!-- Content -->
         <h3>Sessions</h3>
-        <p>This site is protected. If you can read this, your session is running.</p>
-        <h3>Session variables</h3>
-        <p>The following variables are available in $_SESSION.</p>
+        <p>The following variables are available in $_SESSION:</p>
+<div class="panel panel-default" style="margin: 10px; padding: 10px; border: 1px solid black;">
         <?php 
-            if(!empty($_SESSION)) {
+            if (!empty($_SESSION)) {
                 foreach($_SESSION as $key => $value) {
                     echo "<p>".$key." : ".$value."</p>";
                 }
@@ -48,6 +47,7 @@
                 echo 'There are no session variables available.';
             }
         ?>
+    </div>
     <!-- Content -->
         </div>
       </div>
