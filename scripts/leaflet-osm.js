@@ -7,12 +7,12 @@ var map = L.map('map', {
 	zoomControl: true
 });
 
-//var pencilIcon = L.icon({
-//    iconUrl:      'images/default.png',
-//    iconSize:     [31, 17],
-//    iconAnchor:   [22, 94],
-//    popupAnchor:  [-3, -76]
-//});
-var marker = L.marker([25.057, -77.3255]).addTo(map);
-//var marker = L.marker([25.057, -77.3255], {icon: pencilIcon}).addTo(map)
+var pencilIcon = L.icon({
+    iconUrl:      'images/default.png',
+    iconSize:     [31, 17],
+    iconAnchor:   [22, 94],
+    popupAnchor:  [-3, -76]
+});
+//var marker = L.marker([25.057, -77.3255]).addTo(map);
+var marker = L.marker([25.057, -77.3255], {icon: pencilIcon}).addTo(map)
 var defaultLayer = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map)
