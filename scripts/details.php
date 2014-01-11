@@ -13,6 +13,7 @@
     $client = array(array('Remote address', $_SERVER['REMOTE_ADDR']),
                     array('User agent', $_SERVER['HTTP_USER_AGENT']),
                     array('HTTP accept', $_SERVER['HTTP_ACCEPT']),
+                    array('Language', $_SERVER['HTTP_ACCEPT_LANGUAGE'])
              );
 
     echo "<div class=\"panel panel-default\" style=\"float: right; width: 400px; margin: 10px; padding: 10px; border: 1px solid black;\">"."\n";
@@ -24,7 +25,5 @@
     foreach ($client as $entries) {
         echo "<b>".$entries[0]."</b>  ".$entries[1]."<br/>"."\n";
     }
-
-
     echo "</div>"."\n";
 ?>
