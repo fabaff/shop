@@ -12,10 +12,10 @@ that Lighttpd provides faster setup, easier configuration, and better
 performance. Lighttpd is running with `FastCGI`_.
 
 The path of the web server is ``/var/www/lighttpd/`` and the SELinux
-configuration are still defaults.
+configuration are still the defaults.
 
 The web server is running in SSL-only mode and the certificate is generated
-during the server setup.
+during the server setup process.
 
 .. _Apache: http://apache.org/
 .. _Lighttpd: http://www.lighttpd.net/
@@ -23,10 +23,12 @@ during the server setup.
 
 Database server
 ---------------
-For persistence storage a `MySQL`_ or the drop-in replacement `MariaDB`_
-database is used. `phpMyAdmin` is available under `/phpmyadmin/` on the
-web server, beside the command-line tools, for easy administration. The
-default credentials for `phpMyAdmin` are root/webshop.
+For persistence storage the drop-in replacement `MariaDB`_ is used. `MySQL`_ 
+will work to but this is not tested. `phpMyAdmin` is available under ``/phpmyadmin/``
+on the web server, beside the command-line tools, for easy administration.
+
+The default credentials for ``phpMyAdmin`` are root/webshop or the entry you made
+in the Ansible playbook ``devel/variables/sensitive.yml``
 
 .. _MySQL: http://www.mysql.com/
 .. _phpMyAdmin: http://www.phpmyadmin.net
@@ -39,13 +41,18 @@ releases can be used and may work but this will not be tested. Probably it
 will work with different releases. 
 
 - Operating system: Fedora 20
-- Kernel: 3.12.6-300.fc20.x86_64
+- Kernel: 3.12.5-302.fc20.x86_64
 - Lighttpd: 1.4.32
 - PHP: 5.5.7
 - MariaDB: 5.5.34
 
+For communication ``postfix`` and ``mosquitto`` are needed additionally.
+
+Setup infrastructure
+--------------------
+
 Configuration management
-------------------------
+''''''''''''''''''''''''
 For the creation of reproducable and identical environment for the development
 and the run-time across different systems `Ansible`_ is used as configuration
 management solution. All needed steps of the installation are automated. The
@@ -55,21 +62,24 @@ matters only for the deployment of the web content.
 The configuration of Ansible itself (adding the system to ``/etc/ansible/hosts``
 and copying the SSH keys) is not documented at this place. There are various
 resources available, like `here`_. All playbooks are located in the folder
-`devel`::
+`devel`. Start the setup with the command shown below::
 
     $ sudo ansible-playbook devel/setup.yml
 
 The used group name in ``/etc/ansible/hosts`` is: **webshop**
 
-If the setup completes without errors, then the web server is accessible and show
-a default page.
+If the setup completes without errors, then the web server is accessible and
+show a default page. Please keep in mind, that the server is only accessible 
+over https://, unencrypted traffic is not allowed.
 
 For testing the deployment of new instances of the web shop, `short-virt`_ can
 help. This simple bash script creates virtual machines without user interaction.
 Requirements for this are installed libvirt tools and additional storage space
-(approx. 8 GB) for the image.
+(approx. 8 GB) for the image. With a fast internet connection the vm is ready
+within 15 min.
 
-For local development it's possbile to use an LXC container to save resources. ::
+For local development it's possible to use an LX container to save resources.
+The container is ::
 
     $ sudo ansible-playbook devel/container.yml
 
@@ -80,18 +90,30 @@ container, generate keys, etc.) are needed. After you are done, check it::
 
 .. _Ansible: https://github.com/ansible/ansible
 .. _here: https://github.com/fabaff/fedora-ansible/blob/master/README.md
-.. _shop-virt: https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop/blob/master/devel/shop-virt
+.. _short-virt: https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop/blob/master/devel/shop-virt
 
-Deployment
-----------
+Deployment/Setup website
+''''''''''''''''''''''''
 For the simple deployment of the lastest version of the shop a playbook called
 ``deploy.yml`` is provided. This playbook put all files in place. ::
 
     $ sudo ansible-playbook devel/deploy.yml
 
+To full deploy the webshop all tables in the database must exist. The file
+``create-tables.txt`` contains all needed SQL commands.
+
+It's possible to deploy the website manually but this is not recommended. A
+couple of files are depending on templates which are created during the 
+deployment. 
+
+It's also not recommanded to clone everything into your webserver root. This 
+would save you the trouble of doing it by hand but third-party features are
+missing then. Those missing parts are the template engine, the pdf generation, 
+the connection to Openstreetmap, and probably other things not mentioned here.
+
 Git respository
 ---------------
-All project relevante informations (Source code, templates, documentation, etc)
+All project relevante informations (Source code, templates, documentation, etc.)
 is located in a public `Git`_ repository on `Github`_.
 
 https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop 
