@@ -3,7 +3,7 @@
     require_once('helpers.php');
     //Get the parameters
     $pname = $_POST['pname'];
-    $ptype = $_POST['pdesc'];
+    $pdesc = $_POST['pdesc'];
     $ptype = $_POST['ptype'];
     $poption = $_POST['poption'];
     $color = $_POST['color'];
@@ -11,15 +11,6 @@
     $price = $_POST['price'];
     $adate = getDateYMD();
 
-    //Debug
-    /*echo$pname;
-    echo$pptype;
-    echo$poption;
-    echo$color;
-    echo$hardness;
-    echo$price;
-    echo$adate;
-    */
     $table = 'products';
 
     // Create SQLquery
