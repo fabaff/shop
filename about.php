@@ -1,5 +1,7 @@
 <?php
 	session_start();
+    require_once('scripts/helpers.php');
+
     require_once('scripts/l10n.php');
 ?>
 <!DOCTYPE html>
@@ -18,6 +20,7 @@
     <div class="container" style="margin-top: 10px;">
     <!-- Header -->
       <div class="panel panel-default">
+        <?php setLanguage() ?>
         <div class="panel-body">
         <!-- Logo and company name -->
             <?php 
