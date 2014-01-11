@@ -11,11 +11,11 @@ multi-lingual content in a wide area of programming languages.
 .. _php-gettext: http://php.net/gettext
 
 Make sure that the `php-gettext`_ package is available on your system. If not
-install it.::
+install it. ::
 
     $ sudo yum -y install php-php-gettext
 
-Check if gettext support is available.::
+Check if gettext support is available. ::
 
     <?php
         if (!function_exists("gettext")){
@@ -31,7 +31,7 @@ Make sure that all locales your want are available on the server::
     locale -a
 
 The first step is to mark all string which should be translatable as shown
-below. For further details please refer to the `Gettext`_ documentation.::
+below. For further details please refer to the `Gettext`_ documentation. ::
 
     echo _('Some text');
 
@@ -39,7 +39,7 @@ The next step is to extract all strings.::
 
     xgettext --from-code=UTF-8 -o locale/webshop.pot *.php scripts/*.php
 
-To re-generate the file after an update, join the strings.::
+To re-generate the file after an update, join the strings. ::
 
     xgettext -j --from-code=UTF-8 -o locale/webshop.pot *.php scripts/*.php
 
@@ -53,7 +53,7 @@ futures::
 
     msgmerge -U locale/de_CH.po locale/webshop.pot
 
-If you re finish, create the mo file for the specific language.::
+If you re finish, create the mo file for the specific language. ::
 
     msgfmt -c -v -o locale/de_CH/LC_MESSAGES/webshop.mo locale/de_CH.po
 
