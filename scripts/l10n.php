@@ -1,6 +1,13 @@
 <?php
     // This is setting the locale to use.
-    $locale = $_SESSION["SESSION_LANG"];
+    require_once('helpers.php');
+
+    $language = getLanguage();
+    if (!empty($_SESSION['SESSION_LANG'])) {
+        $locale = $_SESSION['SESSION_LANG'];
+    } else {
+        $locale = $language;
+    }
 
     putenv('LANG='.$locale);
     setlocale(LC_ALL, $locale);
