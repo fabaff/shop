@@ -9,12 +9,6 @@
 
     <link href="css/webshop.css" rel="stylesheet">
 
-    <script type="text/javascript">
-        function confirmDelete() {
-            return window.confirm("Are you sure you want to delete this record?");
-        }
-    </script>
-
   </head>
 
   <body>
