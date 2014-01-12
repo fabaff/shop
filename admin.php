@@ -57,10 +57,11 @@
                               'Database' => array(array('Show users', 'users.php'),
                                                   array('Register new users', 'register.php')
                                                         ),
-                              'Misc'     => array(array('Test MQTT messaging', 'send-test-msg.php'),
+                              'Misc'     => array(array('Messaging', 'send-test-msg.php'),
                                                   array('Cookies', 'cookies.php'),
                                                   array('Sessions', 'sessions.php'),
                                                   array('Localisation', 'l10n.php'),
+                                                  array('JSON', 'json.php'),
                                                   array('Graphics', 'graphics.php')
                                                   )
                     );
@@ -72,6 +73,8 @@
                         }
                     }
             ?>
+
+
     <!-- Content -->
         </div>
       </div>
