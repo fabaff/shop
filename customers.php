@@ -51,6 +51,7 @@
                     while ($result = $results->fetch_object()) {
                         echo "<tr>"."\n";
                         echo "<td>".$result->id."</td>";
+                        echo "<td>".$result->username."</td>";
                         echo "<td>".$result->lastname."</td>";
                         echo "<td>".$result->firstname."</td>";
                         echo "<td>".$result->email."</td>";
