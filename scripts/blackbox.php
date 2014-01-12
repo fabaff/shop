@@ -21,5 +21,5 @@
     imagestring($image, 4, 20, $height - 30, "A dynamically generated image", $white);
 
     header("Content-Type: image/png");
-    imagejpeg($image);
+    imagepng($image);
 ?>
