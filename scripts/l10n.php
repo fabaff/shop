@@ -1,4 +1,5 @@
 <?php
+    // This is setting the locale to use.
     $locale = $_SESSION["SESSION_LANG"];
 
     putenv('LANG='.$locale);
