@@ -43,6 +43,8 @@ Thumbs.db
 *.log
 *.lot
 *.out
+*.nav
+*.snm
 *.toc
 *.*~
 docs/_build/
