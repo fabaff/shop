@@ -26,7 +26,7 @@
            dest=/var/www/lighttpd/leaflet.zip
            mode=0644
 
-- name: unpack the bootstrap archive
+- name: unpack the leafletjs archive
   command: /usr/bin/unzip -o /var/www/lighttpd/leaflet.zip -d /var/www/lighttpd/
 
 - name: delete the leafletjs archive
