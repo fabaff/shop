@@ -1,14 +1,7 @@
 <?php
 	session_start();
     require_once('config/dbconnect.php');
-	require_once('scripts/cart-functions.php');
-	
-	if($_REQUEST['command'] == 'add' && $_REQUEST['productid'] > 0){
-		$pid=$_REQUEST['productid'];
-		addtocart($pid, 1);
-		header("location:cart.php");
-		exit();
-	}
+    require_once('scripts/helpers.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,12 +13,26 @@
     <title>Webshop Pencil AG | Products</title>
 
     <link href="css/webshop.css" rel="stylesheet">
+    <!-- Based on http://www.w3schools.com/ajax/ajax_database.asp -->
     <script language="javascript">
-	    function addtocart(pid){
-		    document.form1.productid.value=pid;
-		    document.form1.command.value='add';
-		    document.form1.submit();
-	    }
+        function showPencils(color) {
+            if (color == "") {
+                document.getElementById("pencils").innerHTML = "";
+                return;
+            }
+            if (window.XMLHttpRequest) {
+                xmlhttp=new XMLHttpRequest();
+            } else {
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("pencils").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "scripts/get-products.php?id=" + color, true);
+            xmlhttp.send();
+        }
     </script>
   </head>
 
@@ -48,10 +55,10 @@
 
     <!-- Content -->
         <div>
-<form name="form1">
-	<input type="hidden" name="productid" />
-    <input type="hidden" name="command" />
-</form>
+           <?php
+                colorControl();
+            ?>
+
 <!--        <table class="table table-striped">
             <thead valign="bottom">
             <tr>
@@ -93,43 +100,25 @@
             </tbody>
             </table>
 -->
+            <div id="pencils" class="row">
             <?php
-                require_once('config/dbconnect.php');
-                if (mysqli_connect_errno() == 0) {                  
-                    // Get data
+                if ($connection->connect_errno == 0) {
                     $sql = "SELECT * FROM products";
                     $results = $connection->query($sql);
-                    //echo $results->num_rows." products entries found."."<br />"."\n";
-                    echo "<div class=\"row\">";
                     while ($result = $results->fetch_object()) {
-                        echo "<div class=\"col-6 col-sm-6 col-lg-4\">";
-                        echo "<h4>".$result->pname."</h4>";
-                        //echo "<p><img src=\"images/default.png\" alt=\"Product name\" class=\"img-rounded\"></img></p>";
+                        echo "<div class=\"col-6 col-sm-6 col-lg-4\">"."\n";
+                        echo "<h4>".$result->pname."</h4>"."\n";
+                        // Execute the second SQL query to get the color. Speed difference
+                        // to JOIN or only style question?
                         $sql_color = "SELECT * FROM colors WHERE id=$result->color";
                         $result_color = $connection->query($sql_color);
                         $color = $result_color->fetch_object()->type;
-                        switch($color) {
-                            case black:
-                                echo "<p><img src=\"images/black.png\" alt=\"Product name\" class=\"img-rounded\"></img></p>";
-                                break;
-                            case blue:
-                                echo "<p><img src=\"images/blue.png\" alt=\"Product name\" class=\"img-rounded\"></img></p>";
-                                break;
-                            case red:
-                                echo "<p><img src=\"images/red.png\" alt=\"Product name\" class=\"img-rounded\"></img></p>";
-                                break;
-                            case white:
-                                echo "<p><img src=\"images/white.png\" alt=\"Product name\" class=\"img-rounded\"></img></p>";
-                                break;
-                            default:
-                                echo "<p><img src=\"images/default.png\" alt=\"Product name\" class=\"img-rounded\"></img></p>";
-                                break;
-                        }
-                        echo "<p><a class=\"btn btn-xs btn-default\" href=\"product.php?id=$result->id\" role=\"button\">View details</a> &nbsp;";
-                        echo "<form name=\"add\"><input class=\"btn btn-xs btn-default\" type=\"button\" value=\"Add to cart\" onclick=\"addtocart($result->id)\"/></form>";
-                        echo "</div>";
+                        echo getImage($color);
+                        echo "<p><a class=\"btn btn-xs btn-default\" href=\"product.php?id=$result->id\" role=\"button\">View details</a> &nbsp;"."\n";
+                        echo "<a class=\"btn btn-xs btn-default\" href=\"cart.php?artID=$result->id&qty=1\" role=\"button\">Add to cart</a></p>"."\n";
+                        echo "</div>"."\n";
                     }
-                    echo "</div>";
+                    //echo "</div>"."\n";
                     // Create table for displaying data, not very nice
                     /*echo "<table class=\"table table-striped\">"."\n";
                     echo "<thead valign=\"bottom\">"."\n";
@@ -182,11 +171,8 @@
                     echo "Database connection error";
                 }
                 $connection->close();
-#                echo "<form name=\"form1\" method=\"POST\">";
-#                echo "<input type=\"hidden\" name=\"$result->id\" />";
-#                echo "<input type=\"hidden\" name=\"command\" />"
-#                echo "</form>";
             ?>
+            </div>
         </div>
         <!-- Content -->
         </div>

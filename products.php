@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Webshop Pencil AG für Bleistifte">
     <meta name="author" content="Fabian Affolter">
-    <title>Webshop Pencil AG | Produkte</title>
+    <title>Webshop Pencil AG | Products</title>
 
     <link href="css/webshop.css" rel="stylesheet">
   </head>
@@ -72,7 +72,8 @@
 -->
             <?php
                 require_once('config/dbconnect.php');
-                if (mysqli_connect_errno() == 0) {                  
+                if ($connection->connect_errno == 0) {  
+                    $rows = array();
                     // Get data
                     //$sql = "SELECT * FROM products";
 $sql="SELECT products.id AS id, products.pname AS name, products.pdesc AS description, pencils.type AS type, options.type AS option, colors.type AS color, hardness.type AS hardness, products.price AS price, products.adate AS date FROM products 
@@ -95,6 +96,7 @@ $sql="SELECT products.id AS id, products.pname AS name, products.pdesc AS descri
                     echo "</thead>"."\n";
                     echo "<tbody valign=\"top\">"."\n";
                     while ($result = $results->fetch_object()) {
+                        $rows[] = $result;
                         echo "<tr>"."\n";
                         echo "<td>".$result->id."</td>";
                         echo "<td>".$result->name."</td>";
@@ -124,6 +126,10 @@ $sql="SELECT products.id AS id, products.pname AS name, products.pdesc AS descri
                     echo "Database connection error";
                 }
                 $connection->close();
+            // Writing all rows to a JSON file
+            $fp = fopen('pencils.json', 'w');
+            fwrite($fp, json_encode($rows));
+            fclose($fp);
             ?>
         </div>
         <!-- Content -->
