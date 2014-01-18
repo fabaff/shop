@@ -1,6 +1,12 @@
 <?php
 	session_start();
     require_once('scripts/helpers.php');
+
+	// Allow acces only if the user is logged in, ohterwise send the user to
+    // the login page
+	if ($_SESSION["SESSION_ADMIN"] != "YES") {
+	  header("Location: login.php");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">

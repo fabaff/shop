@@ -1,3 +1,12 @@
+<?php
+	session_start();
+
+	// Allow acces only if the user is logged in, ohterwise send the user to
+    // the login page
+	if ($_SESSION["SESSION_ADMIN"] != "YES") {
+	  header("Location: login.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Webshop Pencil AG für Bleistifte">
     <meta name="author" content="Fabian Affolter">
-    <title>Webshop Pencil AG | Kunden</title>
+    <title>Webshop Pencil AG | Customers</title>
 
     <link href="css/webshop.css" rel="stylesheet">
   </head>

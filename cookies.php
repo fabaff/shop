@@ -1,4 +1,12 @@
 <?php
+	session_start();
+
+	// Allow acces only if the user is logged in, ohterwise send the user to
+    // the login page
+	if ($_SESSION["SESSION_ADMIN"] != "YES") {
+	  header("Location: login.php");
+	}
+
     setcookie("Check", "yes", time() + 10, "/", $_SERVER['SERVER_NAME'], true, true);
 ?>
 <!DOCTYPE html>
