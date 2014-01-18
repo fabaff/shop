@@ -1,7 +1,6 @@
 <?php
 	session_start();
     require_once('scripts/helpers.php');
-
     require_once('scripts/l10n.php');
 ?>
 <!DOCTYPE html>
@@ -34,14 +33,25 @@
             ?>
     <!-- Header -->
     <!-- Content -->
-        <?php
-            echo "<h3>";
-            echo _('Address');
-            echo "</h3>";
-            $content = file_get_contents('company.txt');
-            echo $content;
-        ?>
-    <!-- Map -->
+    <div class="row">
+        <div class="col-md-6">
+        <!-- Address -->
+            <?php
+                echo "<h3>";
+                echo _('Address');
+                echo "</h3>";
+                $content = file_get_contents('company.txt');
+                echo $content;
+            ?>
+    </div>
+    <div class="col-md-6">
+        <!-- Weather -->
+            <?php 
+                require('scripts/openweathermap.php');
+            ?>
+        </div>
+    </div>
+        <!-- Map -->
         <?php
             echo "<h3>";
             echo _('Map');
@@ -51,10 +61,7 @@
 	        echo "<script src=\"scripts/leaflet-providers.js\"></script>";
 	        echo "<script src=\"scripts/leaflet-osm.js\"></script>";
         ?>
-    <!-- Weather -->
-        <?php 
-            require('scripts/openweathermap.php');
-        ?>
+
     <!-- Content -->
         </div>
       </div>
