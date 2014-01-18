@@ -1,13 +1,13 @@
-.. 
+.. input:
 
 Input processing
 ================
 
 "Buy Now" links
 ---------------
-The "Buy Now" links are attached to the ``products`` page. Every entry has
+The "Buy Now" links are attached to the **Products** page. Every entry has
 it's own link which lead to a detail page. The links are using hidden form
-elements to transfer the data.
+elements to transfer the data. ::
 
     <?php
         $products = array(array('Bleistift', 'keine', 'rot', 'HB', '1'),
@@ -44,23 +44,30 @@ And the detail page contains the code fragement mentioned below. ::
         $hardness=$_GET['hardness'];
         $options=$_GET['options'];
         $price=$_GET['price'];
-        echo "Ich bin ein $type, in $color und mit der Härte $hardness. Ich habe $options Optionen und koste $price CHF.";
+        echo "I am a $type, in $color and a hardness of $hardness. I have $options as an option and my price is $price CHF.";
     ?>
 
+.. note::
+
+   The **Products** page was modified in the process of the development.
 
 Select options
 --------------
+The **signup/billing** page contains a dropdown element that all days of a month for
+the entry of the user's birthday. ::
+
+    <select name="day">
+	    <option>Day</option>
+        <?php 
+	        $days = range(31, 1);
+	        foreach ($days as $day) {
+		        echo '<option value='.$day.'>'.$day.'</option>';
+	        }
+        ?>
+    </select>
 
 
 Form validation
 ---------------
 
-
-
-Shipping address
-----------------
-
-
-Confirmation
-------------
 
