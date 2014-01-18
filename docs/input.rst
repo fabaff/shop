@@ -65,9 +65,3 @@ the entry of the user's birthday. ::
 	        }
         ?>
     </select>
-
-
-Form validation
----------------
-
-
