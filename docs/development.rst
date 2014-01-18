@@ -1,4 +1,4 @@
-.. 
+.. _development:
 
 Development
 ===========
@@ -100,7 +100,8 @@ For the simple deployment of the lastest version of the shop a playbook called
     $ sudo ansible-playbook devel/deploy.yml
 
 To full deploy the webshop all tables in the database must exist. The file
-``create-tables.txt`` contains all needed SQL commands.
+``webshop.sql`` contains all needed SQL commands and sample data for the
+webshop.
 
 It's possible to deploy the website manually but this is not recommended. A
 couple of files are depending on templates which are created during the 
