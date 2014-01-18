@@ -1,0 +1,13 @@
+TODO
+====
+
+- Use the page-elements on all pages
+- Fix include of database connection
+- Replace all <?php echo $_SERVER["PHP_SELF"]; ?> with
+  <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>
+- Input validation against SQL injection, XSS, and friends
+- Input validation for users
+- Finish checkout process (only proceed if user is providing the needed data
+  or already registered)
+- Include customers address in confirmation pdf
+- Finish all managing functionality for tables (stupid diligence)
