@@ -99,7 +99,7 @@
         }
     }
 	/**
-	 * Send a message to a MQTT broker.
+	 * Returns the html for the active menu entry. 
      * 
 	 * @param String $subtopic Array of menu
 	 * @return String The html string 
