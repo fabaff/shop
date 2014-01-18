@@ -10,13 +10,25 @@ Simple use case
 Javascript makes it easy to access elements in the DOM. Setting the focus is a 
 nice way to support the user with input form :: 
 
-    <script language="javascript">
-        function setFocus() {
+        <script language="javascript">
+            function setFocus() {
+                document.forms["login"]["username"].focus();
+            }
+        </script>
+    </head>
+    <body onload="setFocus()">
+
+Another one is to check if something was entered in an input field.
+
+    function validateForm() {
+        var username = document.forms["login"]["username"].value;
+        if (username == null || username == "") {
+            document.forms["login"]["username"].style.backgroundColor = "#FF9999";
+            document.forms["login"]["username"].placeholder = "Please, your username!";
             document.forms["login"]["username"].focus();
+            return false;
         }
-    </script>
-  </head>
-  <body onload="setFocus()">
+        ...
 
 A simple message is informing the user about an action which was taken against
 the database. ::
@@ -34,14 +46,5 @@ The delete process is only executed if the user confirm to delete a record. ::
         <input type="submit" name="Submit" value="Delete">
     </form>
 
-Purchase confirmation
----------------------
-
-
-
-Confirmation
-------------
-
-
-
-For additional Javascript 
+For additional Javascript please check the source of the ``index.php`` file and
+the :ref:`webservice`_ section.
