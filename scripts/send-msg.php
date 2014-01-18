@@ -3,8 +3,8 @@
 	/**
 	 * Send a message to a MQTT broker.
      * 
-	 * @param String $subtopic
-	 * @param String $message
+	 * @param String $subtopic The subtopic of send the message
+	 * @param String $message The message
 	 */
     function sendMsg($subtopic, $message) {
         define('BROKER', 'localhost');
@@ -27,8 +27,8 @@
 	/**
 	 * Send a default message to a MQTT broker.
      * 
-	 * @param String $subtopic
-	 * @param String $page
+	 * @param String $subtopic The subtopic to send the message
+	 * @param String $page The sanme of the page
 	 */
     function defaultMsg($subtopic, $page) {
         $date = getDateDMY();
@@ -39,8 +39,8 @@
 	/**
 	 * Send a custom message to a MQTT broker.
      * 
-	 * @param String $subtopic
-	 * @param String $message
+	 * @param String $subtopic  The subtopic to send the message 
+	 * @param String $message The message
 	 */
     function customMsg($subtopic, $message) {
         $date = getDateDMY();
