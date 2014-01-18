@@ -15,10 +15,18 @@
 <h3>JSON</h3>
 <p>The following data were created by the <a href="products.php">Products page</a> in the admin section.</p>
 <div class="panel panel-default" style="margin: 10px; padding: 10px; border: 1px solid black;">
-    <?php 
-        $json = file_get_contents('pencils.json');
-        // Decode the json
-        print_r(json_decode($json));
+    <?php
+        if (file_exists('pencils.json')) {
+            $json = file_get_contents('pencils.json');
+            if (!empty($json)) {
+                // Decode the json
+                print_r(json_decode($json));
+            } else {
+                echo "No JSON data available.";
+            }
+        } else {
+            echo "No JSON file avaialble.";
+        }
     ?>
 </div>
 <!----------------------------------------------------------------------------->
