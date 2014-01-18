@@ -1,15 +1,15 @@
 # German translations for PACKAGE package
 # German messages for PACKAGE.
-# Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2013.
+# Automatically generated, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-30 16:47+0100\n"
-"PO-Revision-Date: 2013-12-27 11:56+0100\n"
+"POT-Creation-Date: 2014-01-18 15:08+0100\n"
+"PO-Revision-Date: 2014-01-18 15:08+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: de_CH\n"
@@ -18,46 +18,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: l10n.php:54 l10n.php:61 l10n.php:110 l10n.php:144 l10n.php:112 l10n.php:148
-msgid "Good morning"
-msgstr "Guten Morgen"
-
-#: l10n.php:57 l10n.php:58 l10n.php:65 l10n.php:116 l10n.php:152
-msgid "Good night"
-msgstr "Gute Nacht"
-
-#: scripts/openweathermap.php:2
-msgid "<h3>Weather data</h3>"
-msgstr "<h3>Wetter-Daten</h3>"
-
-#: scripts/openweathermap.php:24 scripts/openweathermap.php:26
-msgid "Temperature: $tempC °C"
-msgstr "Temperatur: $tempC °C"
-
-#: scripts/openweathermap.php:26 scripts/openweathermap.php:28
-msgid "Humidity: $humidity %"
-msgstr "Luftfeuchtigkeit: $humidity %"
-
-#: scripts/openweathermap.php:28 scripts/openweathermap.php:30
-msgid "Pressure: $pressure Pa"
-msgstr "Luftdruck: $pressure Pa"
-
-#: scripts/openweathermap.php:31 scripts/openweathermap.php:33
-msgid "Sorry, there are no data available right now."
-msgstr "Entschuldigung, momentan sind keine Daten verfügbar."
-
-#: l10n.php:57 l10n.php:107 l10n.php:141 l10n.php:108 l10n.php:144
-msgid "This is a simple test"
-msgstr "Das ist ein einfacher Test"
-
-#: about.php:36
+#: about.php:41
 msgid "Address"
 msgstr "Adresse"
 
-#: about.php:44
+#: about.php:57
 msgid "Map"
 msgstr "Karte"
+
+#: l10n.php:71 l10n.php:96 l10n.php:146
+msgid "This is a simple test"
+msgstr "Das ist ein einfacher Test"
+
+#: l10n.php:75 l10n.php:100 l10n.php:150
+msgid "Good morning"
+msgstr "Guten Morgen"
+
+#: l10n.php:79 l10n.php:104 l10n.php:154
+msgid "Good night"
+msgstr "Guten Nacht"
 
 #: scripts/openweathermap.php:3
 msgid "Weather data"
 msgstr "Wetter-Daten"
+
+#: scripts/openweathermap.php:26
+#, php-format
+msgid "Temperature: %d °C"
+msgstr "Temperatur: %d °C"
+
+#: scripts/openweathermap.php:28
+#, php-format
+msgid "Humidity: %d"
+msgstr "Luftfeuchtigkeit: %d"
+
+#: scripts/openweathermap.php:30
+#, php-format
+msgid "Pressure: %d Pa"
+msgstr "Luftdruck: %d Pa"
+
+#: scripts/openweathermap.php:33
+msgid "Sorry, there are no data available right now."
+msgstr "Entschuldigung, momentan sind keine Daten verfügbar."

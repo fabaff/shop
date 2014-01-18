@@ -1,23 +1,61 @@
-# German translations for PACKAGE package
-# German messages for PACKAGE.
-# Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
+# English translations for PACKAGE package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2013.
+# Automatically generated, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-27 11:08+0100\n"
-"PO-Revision-Date: 2013-12-27 11:08+0100\n"
+"POT-Creation-Date: 2014-01-18 15:08+0100\n"
+"PO-Revision-Date: 2014-01-18 15:08+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
-"Language: de_CH\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: l10n.php:53
+#: about.php:41
+msgid "Address"
+msgstr "Address"
+
+#: about.php:57
+msgid "Map"
+msgstr "Map"
+
+#: l10n.php:71 l10n.php:96 l10n.php:146
+msgid "This is a simple test"
+msgstr "This is a simple test"
+
+#: l10n.php:75 l10n.php:100 l10n.php:150
 msgid "Good morning"
-msgstr ""
+msgstr "Good morning"
+
+#: l10n.php:79 l10n.php:104 l10n.php:154
+msgid "Good night"
+msgstr "Good night"
+
+#: scripts/openweathermap.php:3
+msgid "Weather data"
+msgstr "Weather data"
+
+#: scripts/openweathermap.php:26
+#, php-format
+msgid "Temperature: %d °C"
+msgstr "Temperature: %d °C"
+
+#: scripts/openweathermap.php:28
+#, php-format
+msgid "Humidity: %d"
+msgstr "Humidity: %d"
+
+#: scripts/openweathermap.php:30
+#, php-format
+msgid "Pressure: %d Pa"
+msgstr "Pressure: %d Pa"
+
+#: scripts/openweathermap.php:33
+msgid "Sorry, there are no data available right now."
+msgstr "Sorry, there are no data available right now."

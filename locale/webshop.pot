@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-30 16:47+0100\n"
+"POT-Creation-Date: 2014-01-18 15:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: l10n.php:54 l10n.php:61 l10n.php:110 l10n.php:144 l10n.php:112 l10n.php:148
-msgid "Good morning"
-msgstr ""
-
-#: l10n.php:57 l10n.php:58 l10n.php:65 l10n.php:116 l10n.php:152
-msgid "Good night"
-msgstr ""
-
-#: scripts/openweathermap.php:2
-msgid "<h3>Weather data</h3>"
-msgstr ""
-
-#: scripts/openweathermap.php:24 scripts/openweathermap.php:26
-msgid "Temperature: $tempC °C"
-msgstr ""
-
-#: scripts/openweathermap.php:26 scripts/openweathermap.php:28
-msgid "Humidity: $humidity %"
-msgstr ""
-
-#: scripts/openweathermap.php:28 scripts/openweathermap.php:30
-msgid "Pressure: $pressure Pa"
-msgstr ""
-
-#: scripts/openweathermap.php:31 scripts/openweathermap.php:33
-msgid "Sorry, there are no data available right now."
-msgstr ""
-
-#: l10n.php:57 l10n.php:107 l10n.php:141 l10n.php:108 l10n.php:144
-msgid "This is a simple test"
-msgstr ""
-
-#: about.php:36
+#: about.php:41
 msgid "Address"
 msgstr ""
 
-#: about.php:44
+#: about.php:57
 msgid "Map"
+msgstr ""
+
+#: l10n.php:71 l10n.php:96 l10n.php:146
+msgid "This is a simple test"
+msgstr ""
+
+#: l10n.php:75 l10n.php:100 l10n.php:150
+msgid "Good morning"
+msgstr ""
+
+#: l10n.php:79 l10n.php:104 l10n.php:154
+msgid "Good night"
 msgstr ""
 
 #: scripts/openweathermap.php:3
 msgid "Weather data"
+msgstr ""
+
+#: scripts/openweathermap.php:26
+#, php-format
+msgid "Temperature: %d °C"
+msgstr ""
+
+#: scripts/openweathermap.php:28
+#, php-format
+msgid "Humidity: %d"
+msgstr ""
+
+#: scripts/openweathermap.php:30
+#, php-format
+msgid "Pressure: %d Pa"
+msgstr ""
+
+#: scripts/openweathermap.php:33
+msgid "Sorry, there are no data available right now."
 msgstr ""
