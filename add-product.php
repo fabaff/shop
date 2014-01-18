@@ -54,70 +54,68 @@
             <tr>
                 <td>Type:</td>
                 <td><select class="form-control input-sm" name="ptype">
-									<option></option>
-            <?php
-                require_once('config/dbconnect.php');
-                $table = "pencils";
-                $sql = "SELECT * FROM $table";
-                $results = $connection->query($sql);
-                while ($result = $results->fetch_object()) {
-                    echo '<option value='.$result->id.'>'.$result->type.'</option>';
-                }
-            ?></select>
-</td>
+                    <option></option>
+                    <!-- Move this to a function in helpers.php-->
+                        <?php
+                            require_once('config/dbconnect.php');
+                            $table = "pencils";
+                            $sql = "SELECT * FROM $table";
+                            $results = $connection->query($sql);
+                            while ($result = $results->fetch_object()) {
+                                echo '<option value='.$result->id.'>'.$result->type.'</option>';
+                            }
+                        ?>
+                </select></td>
             </tr>
             <tr>
                 <td>Option:</td>
                 <td><select class="form-control input-sm" name="poption">
-									<option></option>
-									            <?php
-                require_once('config/dbconnect.php');
-                $table = "options";
-                $sql = "SELECT * FROM $table";
-                $results = $connection->query($sql);
-                while ($result = $results->fetch_object()) {
-                    echo '<option value='.$result->id.'>'.$result->type.'</option>';
-                }
-            ?>
-								</select></td>
+                    <option></option>
+                        <?php
+                            require_once('config/dbconnect.php');
+                            $table = "options";
+                            $sql = "SELECT * FROM $table";
+                            $results = $connection->query($sql);
+                            while ($result = $results->fetch_object()) {
+                                echo '<option value='.$result->id.'>'.$result->type.'</option>';
+                            }
+                        ?>
+                </select></td>
             </tr>
             <tr>
-                <td>Color:</td>
-                <td>
-<select class="form-control input-sm" name="color">
-									<option></option>
-            <?php
-                require_once('config/dbconnect.php');
-                $table = "colors";
-                $sql = "SELECT * FROM $table";
-                $results = $connection->query($sql);
-                while ($result = $results->fetch_object()) {
-                    echo '<option value='.$result->id.'>'.$result->type.'</option>';
-                }
-            ?>
-								</select>
-</td>
+            <td>Color:</td>
+            <td><select class="form-control input-sm" name="color">
+	            <option></option>
+                    <?php
+                        require_once('config/dbconnect.php');
+                        $table = "colors";
+                        $sql = "SELECT * FROM $table";
+                        $results = $connection->query($sql);
+                        while ($result = $results->fetch_object()) {
+                            echo '<option value='.$result->id.'>'.$result->type.'</option>';
+                        }
+                    ?>
+            </select></td>
             </tr>
             <tr>
                 <td>Hardness:</td>
                 <td><select class="form-control input-sm" name="hardness">
-									<option></option>
-            <?php
-                require_once('config/dbconnect.php');
-                $table = "hardness";
-                $sql = "SELECT * FROM $table";
-                $results = $connection->query($sql);
-                while ($result = $results->fetch_object()) {
-                    echo '<option value='.$result->id.'>'.$result->type.'</option>';
-                }
-            ?>
-								</select>
+                    <option></option>
+                        <?php
+                            require_once('config/dbconnect.php');
+                            $table = "hardness";
+                            $sql = "SELECT * FROM $table";
+                            $results = $connection->query($sql);
+                            while ($result = $results->fetch_object()) {
+                                echo '<option value='.$result->id.'>'.$result->type.'</option>';
+                            }
+                        ?>
+            </select></td>
             </tr>
             <tr>
                 <td>Price (CHF):</td>
                 <td><input class="form-control" type="text" name="price" maxlength="10" /></td>
             </tr>
-
             <tr>
                 <td>&nbsp;</td>
                 <td><button class="btn btn-xs btn-default" type="submit" value="Add">Add entry</button></td>
