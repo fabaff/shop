@@ -1,5 +1,5 @@
 <?php
-    require_once 'scripts/Savant3.php';
+    require_once('scripts/Savant3.php');
     $tpl = new Savant3();
 
     // Define page elements

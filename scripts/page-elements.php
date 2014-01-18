@@ -1,13 +1,14 @@
 <?php
+    require_once('config/dbconnect.php');
     require_once("helpers.php");
     require_once("config/variables.php");
 
+	session_start();
+
     /**
-     * Get the year.
-     *
-     * @return date
+     * Start section of the page.
      */
-    function startp($page_title) {
+    function getStart($page_title) {
         global $company;
         global $author;
         global $description;
@@ -22,14 +23,16 @@
         echo "\t<meta name=\"author\" content=\"$author\">"."\n";
         echo "\t<title>Webshop ".$company." | ".$page_title."</title>"."\n";
         echo "\t<link href=\"$css_file\" rel=\"stylesheet\">"."\n";
-        echo "</head>"."\n";
-        echo "<body>"."\n";
     }
 
-    function head() {
+    /**
+     * Header section of the page.
+     */
+    function getHeader() {
         global $company;
         global $start_page;
-
+        echo "</head>"."\n";
+        echo "<body>"."\n";
         echo "<div class=\"container\" style=\"margin-top: 10px;\">"."\n";
         echo "<!-- Header -->"."\n";
         echo "\t<div class=\"panel panel-default\">"."\n";
@@ -41,7 +44,10 @@
         echo "</div>\n";
     }
 
-    function foot() {
+    /**
+     * Footer section of the page.
+     */
+    function getFooter() {
         global $company;
 
         echo "</div>"."\n"."</div>"."\n"."</div>"."\n";
@@ -50,20 +56,59 @@
         echo "</div>"."\n";
     }
 
-    function endp() {
+    /**
+     * End section of the page.
+     */
+    function getEnd() {
         echo "</body>"."\n"."</html>";
     }
 
-    function menu() {
+    /**
+     * Menu for the page.
+     */
+    function getMenu() {
+        // Menu for logged-in users admin area
+        if (!empty($_SESSION["SESSION_ADMIN"]) || !empty($_SESSION["SESSION_LOGIN"])) {
+	        if ($_SESSION["SESSION_ADMIN"] == "YES") {
+                $menu = array('Home' => 'index.php',
+                              'Products' => 'overview-products.php', 
+                              'About' => 'about.php',
+                              'Admin' => 'admin.php',
+                              'Logout' => 'logout.php'
+                    );
+                echo entries($menu);
+
+            // Menu for logged-in customers (just a precaution, not implemented)
+	        } elseif ($_SESSION["SESSION_LOGIN"] == "YES") {
+                $menu = array('Home' => 'index.php',
+                              'Products' => 'overview-products.php', 
+                              'About' => 'about.php',
+                              'Orders' => 'order.php',
+                              'Logout' => 'logout.php'
+                    );
+                echo entries($menu);
+        }
+        // Standard menu
+        } else {
+            $menu = array('Home' => 'index.php',
+                          'Products' => 'overview-products.php', 
+                          'About' => 'about.php',
+                          'Login' => 'login.php'
+                );
+            echo entries($menu);
+        }
+    }
+	/**
+	 * Send a message to a MQTT broker.
+     * 
+	 * @param String $subtopic Array of menu
+	 * @return String The html string 
+	 */
+    function entries($array) {
         $part1 = '<ul class="nav nav-tabs">'."\n";
         $part2 = '';
         $part3 = '</ul>'."\n";
-        // Menu array with page title and assigned file
-        $menu = array('Home' => 'index.php',
-                      'Products' => 'overview-products.php', 
-                      'About' => 'about.php'
-            );
-        foreach ($menu as $label => $link) {
+        foreach ($array as $label => $link) {
             // For the CSS, only the file name without / is needed
             $url = trim($_SERVER['PHP_SELF'], '/');
             if ($link == $url) {
@@ -72,6 +117,6 @@
                 $part2 = $part2."<li class=''><a href='".$link."'>".$label."</a></li>\n";
             }
         }
-        echo $part1.$part2.$part3;
+        return $part1.$part2.$part3;
     }
 ?>

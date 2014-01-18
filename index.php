@@ -67,15 +67,14 @@
                     $sql = "SELECT * FROM products WHERE id='$id'";
                     $results = $connection->query($sql);
                     $result = $results->fetch_object();
-
-                        echo "<div align=\"center\">";
-                        echo "<h4>".$result->pname."</h4>";
-                        $sql_color = "SELECT * FROM colors WHERE id=$result->color";
-                        $result_color = $connection->query($sql_color);
-                        $color = $result_color->fetch_object()->type;
-                        echo getImage($color);
-                        echo "<p><a class=\"btn btn-xs btn-default\" href=\"product.php?id=$result->id\" role=\"button\">View details</a>";
-                        echo "</div>";
+                    echo "<div align=\"center\">";
+                    echo "<h4>".$result->pname."</h4>";
+                    $sql_color = "SELECT * FROM colors WHERE id=$result->color";
+                    $result_color = $connection->query($sql_color);
+                    $color = $result_color->fetch_object()->type;
+                    echo getImage($color);
+                    echo "<p><a class=\"btn btn-xs btn-default\" href=\"product.php?id=$result->id\" role=\"button\">View details</a>";
+                    echo "</div>";
                     $results->close();
                 } else {
                     echo "Database connection error";
