@@ -1,4 +1,4 @@
-.. 
+.. _webservice:
 
 Web service
 ===========
