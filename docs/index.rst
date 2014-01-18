@@ -23,8 +23,10 @@ Contents:
    sessions
    database
    webservice
+   data-export
    messaging
    l10n
+   templates
    development
 
 Indices and tables
