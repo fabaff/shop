@@ -11,7 +11,7 @@ Categories:
 
 - Standard pencils
 - Mechnical pencils
-- Spezial pencils
+- Special pencils
 
 Variants or options:
 
