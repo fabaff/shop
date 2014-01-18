@@ -1,6 +1,17 @@
-<?php 
+<?php
+	session_start();
+
+    require_once('config/dbconnect.php');
+    require_once('scripts/helpers.php');
     require_once('scripts/cookie.php');
+
     lastVisit('LastVisit', 3600);
+
+    if (empty($_SESSION)) {
+        $_SESSION['hits'] = 1;
+    } else {
+        $_SESSION['hits'] = $_SESSION['hits'] + 1;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,16 +23,16 @@
     <title>Webshop Pencil AG | Home</title>
 
     <link href="css/webshop.css" rel="stylesheet">
-<!--    <script type="text/javascript">
+<!--    <script >
     function dialog() {
         name = window.prompt("Name", "your name");
         result = window.confirm("Hello " + name + ". Continue?");
     if (result) window.alert("Welcome!");
     }
     </script>-->
+<!--<body onload="dialog()">-->
   </head>
-
-  <body onload="dialog()">
+  <body>
     <div class="container" style="margin-top: 10px;">
     <!-- Header -->
       <div class="panel panel-default">
@@ -37,37 +48,57 @@
                 echo menu();
             ?>
     <!-- Header -->
-
     <!-- Content -->
         <!-- Action container aka Jumbotron Bootstrap -->
-        <div class="action">
-          <h1>Wochen-Aktion</h1>
-          <p>Dies ist eine super Aktion. 10 Bleistifte für CHF 8.</p>
+        <div id="showHide" class="jumbotron">
+            <h2>Super deal of the week. Click here for details.</h2>
         </div>
-        <!-- Action container -->
-
+        <div id="deal" style="display:none">We guess you like that offer ;-)</div>
+        <br />
+        <!-- Action container class="label label-default"-->
         <!-- Selected products -->
         <div>
-            <p>Hier hat es zufällige Produkte...Die Bleistifte und deren Freunde...</p>
-        </div>
-        <!-- Selected products -->
+            <p>This is one of our products:</p>
+
             <?php
-                require_once('config/dbconnect.php');
-                if (mysqli_connect_errno() == 0) {
-                    $sql = "SELECT * FROM products";
+                if ($connection->connect_errno == 0) {
+                    // Get a random number
+                    $id = rand(1, 5);
+                    $sql = "SELECT * FROM products WHERE id='$id'";
                     $results = $connection->query($sql);
-                    echo "Wir haben die unglaubliche Menge von ".$results->num_rows." Produkten im Sortiment."."<br />"."\n";
+                    $result = $results->fetch_object();
+
+                        echo "<div align=\"center\">";
+                        echo "<h4>".$result->pname."</h4>";
+                        $sql_color = "SELECT * FROM colors WHERE id=$result->color";
+                        $result_color = $connection->query($sql_color);
+                        $color = $result_color->fetch_object()->type;
+                        echo getImage($color);
+                        echo "<p><a class=\"btn btn-xs btn-default\" href=\"product.php?id=$result->id\" role=\"button\">View details</a>";
+                        echo "</div>";
                     $results->close();
                 } else {
                     echo "Database connection error";
                 }
-                $connection->close();
+            ?>
+
+        </div>
+        <!-- Selected products -->
+            <?php
+                require_once('config/dbconnect.php');
+                if ($connection->connect_errno == 0) {
+                    $sql = "SELECT * FROM products";
+                    $results = $connection->query($sql);
+                    echo "<div align=\"center\">This shop contains the incredible amount of ".$results->num_rows." products.</div>"."\n";
+                    $results->close();
+                } else {
+                    echo "Database connection error";
+                }
             ?>
         <!-- Content -->
         </div>
       </div>
     </div>
-
     <!-- Footer -->
     <?php 
         require('scripts/footer.php');
@@ -75,14 +106,29 @@
     ?>
 <div class="footer">
     <?php 
-     if(isset($_COOKIE['LastVisit'])) { 
+     if (isset($_COOKIE['LastVisit'])) { 
         $last = $_COOKIE['LastVisit']; 
-        echo "You last visited us on ".$last; 
+        echo "You last visited us on ".$last;
      } else { 
         echo "This is your first visit."; 
-     } 
+     }
+    if (!empty($_SESSION['hits'])) {
+        echo " Total ".$_SESSION['hits']." visits of this page.";
+    }
     ?>
     </div>
     <!-- Footer -->
+    <script type="text/javascript">
+        document.getElementById("showHide").onclick = function() {
+            var deal = document.getElementById("deal");
+            if (deal.style.display == 'none') {
+                deal.style.display = 'block';
+                this.innerHTML = '10 pencils for CHF 8.';
+            } else {
+                deal.style.display = 'none';
+                this.innerHTML = '<h2>Super deal of the week. Click here for details.</h2>';
+            }
+        }
+    </script>
   </body>
 </html>
