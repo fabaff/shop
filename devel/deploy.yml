@@ -11,15 +11,20 @@
   user: root
   vars:
     - css: [webshop.css]
-    - html: [index.html]
-    - script: [menu.php, header.php, footer.php, helpers.php, add-process.php,
-              openweathermap.php, send-msg.php, signup-process.php,
+    - html: [index.html, presentation.html]
+    - script: [menu.php, header.php, footer.php, helpers.php,  add-process.php, 
+              openweathermap.php, send-msg.php, signup-process.php, 
+              get-products.php, login-process.php, edit-process.php,
+              delete-process.php, 
               leaflet-osm.js, cookie.php, details.php, register-process.php,
-              check-username.php, add-product-process.php]
-    - php: [index.php, add.php, customers.php, products.php, product.php, 
-            about.php, register.php, signup.php, admin.php, send-test-msg.php,
-            tables.php, tables.php, users.php, cookies.php, l10n.php,
-            add-product.php, overview-products.php]
+              send-mail.php, page-elements.php, Product.php, ShoppingCart.php,
+              add-product-process.php, pdf-cart.php, pdf-spec.php, l10n.php]
+    - php: [index.php, index1.php, add.php, customers.php, graphics.php,
+            products.php, product.php, json.php, cart.php, billing.php,
+            about.php, register.php, billing.php, admin.php, send-test-msg.php,
+            tables.php, customers.php, users.php, cookies.php, l10n.php, 
+            sessions.php, master.tpl.php, terms.php, edit.php, logout.php,
+            add-product.php, overview-products.php, login.php]
     - config: [dbconnect, variables]
     - static: [company]
     - logos: [logo.png]
@@ -30,10 +35,12 @@
     - variables/common.yml
 
   tasks:
-    - include: tasks/images.yml
+#    - include: tasks/images.yml
     - include: tasks/css.yml
 #    - include: tasks/html.yml ## This playbook is no longer needed.
     - include: tasks/static.yml
+#    - include: tasks/savant.yml
+#    - include: tasks/fpdf.yml
     - include: tasks/script.yml
     - include: tasks/php.yml
     - include: tasks/l10n.yml
