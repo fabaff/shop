@@ -74,10 +74,9 @@
            enabled=yes
 
 - name: configure firewall, allow https traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=443/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+  firewalld: port=443/tcp
+             permanent=true
+             state=enabled
 
 - name: remove lighttpd default file (images)
   file: path=/var/www/lighttpd/{{ item }}
