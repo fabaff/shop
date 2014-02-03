@@ -6,7 +6,7 @@ This will become a shop in the near future.
 
 Documentation
 -------------
-The project documention is placed under `docs` and 
+The project documentation is placed under `docs` and 
 
 - is in English.
 - uses [reStructuredText](http://docutils.sourceforge.net/rst.html) as markup.
