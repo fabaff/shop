@@ -11,11 +11,11 @@
   user: root
   vars:
     - css: [webshop.css]
-    - html: [index.html, presentation.html]
+    - html: [index.html]
     - script: [menu.php, header.php, footer.php, helpers.php,  add-process.php, 
               openweathermap.php, send-msg.php, signup-process.php, 
               get-products.php, login-process.php, edit-process.php,
-              delete-process.php, 
+              delete-process.php, recieve-msg.php,
               leaflet-osm.js, cookie.php, details.php, register-process.php,
               send-mail.php, page-elements.php, Product.php, ShoppingCart.php,
               add-product-process.php, pdf-cart.php, pdf-spec.php, l10n.php]
@@ -36,12 +36,12 @@
 
   tasks:
 #    - include: tasks/images.yml
-    - include: tasks/css.yml
+#    - include: tasks/css.yml
 #    - include: tasks/html.yml ## This playbook is no longer needed.
     - include: tasks/static.yml
 #    - include: tasks/savant.yml
 #    - include: tasks/fpdf.yml
     - include: tasks/script.yml
     - include: tasks/php.yml
-    - include: tasks/l10n.yml
-    - include: tasks/config.yml
+#    - include: tasks/l10n.yml
+#    - include: tasks/config.yml
