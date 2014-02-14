@@ -2,12 +2,12 @@
 #
 # shop-virt - Creator for a libvirt-based virtual machine for a shop.
 #
-# Copyright (c) 2012-2013 Fabian Affolter <fab@fedoraproject.org>
+# Copyright (c) 2012-2014 Fabian Affolter <fab@fedoraproject.org>
 #
 # Licensed under GPLv2+. All rights reserved.
 #
 cat <<END_ENTRY >> webshop.ks
-# Minimal Kickstart file for the Fedora Security Lab test bench
+# Minimal Kickstart file for a simple libvirt virtual machine.
 # Installation, not an upgrade
 install
 
