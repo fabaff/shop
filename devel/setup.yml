@@ -1,11 +1,11 @@
 # This playbook contains tasks to create a test or runtime environment for a
 # PHP based webshop.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
-# Usage: sudo ansible-playbook setup.yml
+# Usage: sudo ansible-playbook devel/setup.yml
 # 
 ---
 - hosts: webshop
@@ -15,12 +15,12 @@
     - variables/common.yml
 
   tasks:
-#    - include: tasks/motd.yml  # Not needed, just for fun and to test ansible
-#    - include: tasks/firewalld.yml
-#    - include: tasks/lighttpd.yml
-#    - include: tasks/mariadb.yml
-#    - include: tasks/mosquitto.yml
+    - include: tasks/motd.yml  # Not needed, just for fun and to test ansible
+    - include: tasks/firewalld.yml
+    - include: tasks/lighttpd.yml
+    - include: tasks/mariadb.yml
+    - include: tasks/mosquitto.yml
 #    - include: tasks/default.yml  # A default index.html to test the web server
-#    - include: tasks/phpinfo.yml  # Test for the PHP installation
-#    - include: tasks/leafletjs.yml  # Leaflet javascript library
+    - include: tasks/phpinfo.yml  # Test for the PHP installation
+    - include: tasks/leafletjs.yml  # Leaflet javascript library
     - include: tasks/phpmyadmin.yml
