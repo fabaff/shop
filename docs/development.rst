@@ -27,7 +27,7 @@ For persistence storage the drop-in replacement `MariaDB`_ is used. `MySQL`_
 will work to but this is not tested. `phpMyAdmin` is available under ``/phpmyadmin/``
 on the web server, beside the command-line tools, for easy administration.
 
-The default credentials for ``phpMyAdmin`` are root/webshop or the entry you made
+The default credentials for ``phpMyAdmin`` are root/rav or the entry you made
 in the Ansible playbook ``devel/variables/sensitive.yml``
 
 .. _MySQL: http://www.mysql.com/
@@ -41,8 +41,8 @@ releases can be used and may work but this will not be tested. Probably it
 will work with different releases. 
 
 - Operating system: Fedora 20
-- Kernel: 3.12.5-302.fc20.x86_64
-- Lighttpd: 1.4.32
+- Kernel: 3.13.5-202.fc20.x86_64
+- Lighttpd: 1.4.34
 - PHP: 5.5.7
 - MariaDB: 5.5.34
 
@@ -59,6 +59,19 @@ management solution. All needed steps of the installation are automated. The
 configuration doesn't differentiate between local or remote installations. This
 matters only for the deployment of the web content.
 
+For local development it's possible to use an LX container. ::
+
+    $ sudo ansible-playbook devel/container.yml
+
+To get everything running some additional steps (check the network inside the
+container, generate keys, etc.) are needed. After you are done, check it::
+
+    $ sudo ansible rav -m setup
+
+From the management system::
+
+    $ sudo ssh-copy-id -i /root/.ssh/id_rsa.pub root@[IP address of your managed node]
+
 The configuration of Ansible itself (adding the system to ``/etc/ansible/hosts``
 and copying the SSH keys) is not documented at this place. There are various
 resources available, like `here`_. All playbooks are located in the folder
@@ -66,31 +79,14 @@ resources available, like `here`_. All playbooks are located in the folder
 
     $ sudo ansible-playbook devel/setup.yml
 
-The used group name in ``/etc/ansible/hosts`` is: **webshop**
+The used group name in ``/etc/ansible/hosts`` is: **rav**
 
 If the setup completes without errors, then the web server is accessible and
 show a default page. Please keep in mind, that the server is only accessible 
 over https://, unencrypted traffic is not allowed.
 
-For testing the deployment of new instances of the web shop, `short-virt`_ can
-help. This simple bash script creates virtual machines without user interaction.
-Requirements for this are installed libvirt tools and additional storage space
-(approx. 8 GB) for the image. With a fast internet connection the vm is ready
-within 15 min.
-
-For local development it's possible to use an LX container to save resources.
-The container is ::
-
-    $ sudo ansible-playbook devel/container.yml
-
-To get everything running some additional steps (check the network inside the
-container, generate keys, etc.) are needed. After you are done, check it::
-
-    $ sudo ansible webshop -m setup
-
 .. _Ansible: https://github.com/ansible/ansible
 .. _here: https://github.com/fabaff/fedora-ansible/blob/master/README.md
-.. _short-virt: https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop/blob/master/devel/shop-virt
 
 Deployment/Setup website
 ''''''''''''''''''''''''
@@ -100,8 +96,8 @@ For the simple deployment of the lastest version of the shop a playbook called
     $ sudo ansible-playbook devel/deploy.yml
 
 To full deploy the webshop all tables in the database must exist. The file
-``webshop.sql`` contains all needed SQL commands and sample data for the
-webshop.
+``rav-calc.sql`` contains all needed SQL commands and sample data for the
+web application.
 
 It's possible to deploy the website manually but this is not recommended. A
 couple of files are depending on templates which are created during the 
@@ -117,7 +113,7 @@ Git respository
 All project relevante informations (Source code, templates, documentation, etc.)
 is located in a public `Git`_ repository on `Github`_.
 
-https://github.com/fabaff/ch.bfh.bti7054.w2013.p.shop 
+https://github.com/fabaff/rav-calc 
 
 .. _Github: https://github.com
 .. _Git: http://git-scm.com/
@@ -141,7 +137,7 @@ The output is stored under ``docs/_build/html``.
 After every push to `Github`_ a hook launch a rebuild of the documentation.
 The latest release will be published on `Read the Docs`_ automatically.
 
-https://shop.rtfd.org/
+https://rav-calc.rtfd.org/
 
 .. _Sphinx: http://sphinx-doc.org/
 .. _reStructuredText: http://docutils.sf.net/rst.html
