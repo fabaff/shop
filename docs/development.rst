@@ -27,7 +27,7 @@ For persistence storage the drop-in replacement `MariaDB`_ is used. `MySQL`_
 will work to but this is not tested. `phpMyAdmin` is available under ``/phpmyadmin/``
 on the web server, beside the command-line tools, for easy administration.
 
-The default credentials for ``phpMyAdmin`` are root/rav or the entry you made
+The default credentials for ``phpMyAdmin`` are root/webshop or the entry you made
 in the Ansible playbook ``devel/variables/sensitive.yml``
 
 .. _MySQL: http://www.mysql.com/
@@ -66,7 +66,7 @@ For local development it's possible to use an LX container. ::
 To get everything running some additional steps (check the network inside the
 container, generate keys, etc.) are needed. After you are done, check it::
 
-    $ sudo ansible rav -m setup
+    $ sudo ansible webshop -m setup
 
 From the management system::
 
@@ -79,7 +79,7 @@ resources available, like `here`_. All playbooks are located in the folder
 
     $ sudo ansible-playbook devel/setup.yml
 
-The used group name in ``/etc/ansible/hosts`` is: **rav**
+The used group name in ``/etc/ansible/hosts`` is: **webshop**
 
 If the setup completes without errors, then the web server is accessible and
 show a default page. Please keep in mind, that the server is only accessible 
@@ -96,7 +96,7 @@ For the simple deployment of the lastest version of the shop a playbook called
     $ sudo ansible-playbook devel/deploy.yml
 
 To full deploy the webshop all tables in the database must exist. The file
-``rav-calc.sql`` contains all needed SQL commands and sample data for the
+``webshop.sql`` contains all needed SQL commands and sample data for the
 web application.
 
 It's possible to deploy the website manually but this is not recommended. A
@@ -112,8 +112,6 @@ Git respository
 ---------------
 All project relevante informations (Source code, templates, documentation, etc.)
 is located in a public `Git`_ repository on `Github`_.
-
-https://github.com/fabaff/rav-calc 
 
 .. _Github: https://github.com
 .. _Git: http://git-scm.com/
@@ -137,7 +135,7 @@ The output is stored under ``docs/_build/html``.
 After every push to `Github`_ a hook launch a rebuild of the documentation.
 The latest release will be published on `Read the Docs`_ automatically.
 
-https://rav-calc.rtfd.org/
+https://shop.rtfd.org/
 
 .. _Sphinx: http://sphinx-doc.org/
 .. _reStructuredText: http://docutils.sf.net/rst.html
