@@ -22,3 +22,7 @@ company_country: Schweiz
 website_desc: 'Webshop for pencils'
 website_css: 'css/webshop.css'
 website_start: 'index.php'
+
+## Versions
+# phpMyAdmin- http://www.phpmyadmin.net/
+phpmyadmin_version: 4.2.12 
